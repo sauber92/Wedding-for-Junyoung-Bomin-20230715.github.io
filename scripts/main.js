@@ -1,4 +1,5 @@
 const remainTime = document.querySelector("#remain-time");
+const shareButton = document.querySelector('.share-button');
 
 function diffDay() {
     const weddingTime = new Date("2023-07-15 11:00:00");
@@ -13,7 +14,28 @@ function diffDay() {
     remainTime.innerText = `${diffDay}일 ${diffHour}시간 ${diffMin}분 ${diffSec}초`;
 }
 
-$(document).ready (function () {
+// Share Button
+// using WebShare API
+$(shareButton).on("click", function() {
+    navigator.share({
+        title: '준영 ♥ 보민 결혼합니다',
+        url: 'https://wedding-for-junyoung-bomin-20220715.github.io'
+    }).then(() => {
+        console.log('Thanks for sharing!');
+    }).catch(console.error);
+})
+
+
+$(document).ready(function() {
+    // Confetti Effect
+    startConfetti();
+    setTimeout(stopConfetti, 3000);
+
+    // Calculate D-day
+    diffDay();
+    setInterval(diffDay, 1000);
+
+    // Account Info. Expand Button
     $(".account-btn-groomfamily").on("click", function(){
         $(".account-box-groomfamily").slideToggle("fast");
         if ($("#groomExpandBtn").text() == "expand_more") {
@@ -33,11 +55,3 @@ $(document).ready (function () {
         }
     });
 })
-
-window.onload = function() {
-    startConfetti();
-    setTimeout(stopConfetti, 3000);
-
-    diffDay();
-    setInterval(diffDay, 1000);
-};
