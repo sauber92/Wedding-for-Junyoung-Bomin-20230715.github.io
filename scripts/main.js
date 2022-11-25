@@ -1,4 +1,4 @@
-const remainTime = document.querySelector("#remain-time");
+const remainTime = document.querySelector("#remainTime");
 const shareButton = document.querySelector('.share-button');
 
 function diffDay() {
