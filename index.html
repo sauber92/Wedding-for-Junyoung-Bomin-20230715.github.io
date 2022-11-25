@@ -13,40 +13,221 @@
         <meta property="og:type" content="website">
         <title>준영♥보민 - 07.15 11:00</title>
         <link rel="stylesheet" href="style/main.css">
+        <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  </head>
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
-    <body>
-        <div class="mainview hiddenscroll">
-            <div class="intro" id="layout">
+    <body style="background-color: #393942; touch-action: pan-y;"onmousedown="return false">
+        
+        <div class="mainview">
+            <div class="intro centered" id="layout">
                 <h2>Intro</h2>
                 <h3 id="remain-time"></h3>
                 <p>안녕하세요, &lt;p&gt;태그 테스트 중입니다.</p>
-                <p>version 0.0.1</p>
+                <p>version 0.0.2</p>
             </div>
 
-            <div class="calendar hiddenscroll" id="layout">
+            <div class="calendar centered" id="layout">
                 <h2>calendar</h2>
             </div>
 
-            <div class="gallery hiddenscroll" id="layout">
+            <div class="gallery centered" id="layout">
                 <h2>gallery</h2>
             </div>
 
-            <div class="location hiddenscroll" id="layout">
+            <div class="location centered" id="layout">
                 <h2>location</h2>
             </div>
 
-            <div class="account hiddenscroll" id="layout">
-                <h2>account</h2>
+            <div class="account centered" id="layout">
+                <h3>마음 전하실 곳</h3>
+                <div class="centered" id="accountBox">
+                    <button class= "account-btn-groomfamily" id="accountButton" type="button" aria-expanded="false">
+                        <span>신랑측 계좌번호</span>
+                        <span class="account-cursor-span">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="account-cursor-svg">
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" d="M4 8l8 8 8-8"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+                <div class="account-content account-box-groomfamily" id="accountBox">
+                    <div class="account-content-style">
+                        <div class="account-content-family" id="groomFamily">
+                            <div class="account-content-family-block">
+                                <div class="account-content-role">신랑</div>
+                                <div class="account-content-name">정준영</div>
+                                <div class="account-content-role">국민은행</div>
+                                <div class="account-content-name"><a>94726400957</a></div>
+                            </div>
+                            <div class="account-content-icon">
+                                <button type="button" class="account-content-icon-btn">
+                                    <svg viewBox="0 0 48 48" class="account-content-icon-svg">
+                                        <path
+                                            fill="currentColor"
+                                            class="kakao-logo_svg__st0"
+                                            d="M21.9 0C9.8 0 0 7.8 0 17.3 0 23.5 4.1 28.9 10.2 32l-2.1 7.7c-.1.2 0 .5.2.7.1.1.3.2.4.2.1 0 .3-.1.4-.1l8.9-6c1.3.2 2.6.3 4 .3 12.1 0 21.9-7.8 21.9-17.3 0-9.7-9.8-17.5-22-17.5z"
+                                        ></path>
+                                    </svg>
+                                    <p class="account-content-icon-p">카카오페이</p>
+                                </button>
+                                <button type="button" class="account-content-icon-btn">
+                                    <span class="material-icons md-18 account-content-name">content_paste</span>
+                                    <p class="account-content-icon-p">계좌 복사하기</p>
+                                </button>
+                            </div>
+                        </div>
+                        <hr class="account-content-hr">
+                        <div class="account-content-family" id="groomFamily">
+                            <div class="account-content-family-block">
+                                <div class="account-content-role">아버님</div>
+                                <div class="account-content-name">정진열</div>
+                                <div class="account-content-role">국민은행</div>
+                                <div class="account-content-name"><a>000-000-000000</a></div>
+                            </div>
+                            <div class="account-content-icon">
+                                <button type="button" class="account-content-icon-btn">
+                                    <svg viewBox="0 0 48 48" class="account-content-icon-svg">
+                                        <path
+                                            fill="currentColor"
+                                            class="kakao-logo_svg__st0"
+                                            d="M21.9 0C9.8 0 0 7.8 0 17.3 0 23.5 4.1 28.9 10.2 32l-2.1 7.7c-.1.2 0 .5.2.7.1.1.3.2.4.2.1 0 .3-.1.4-.1l8.9-6c1.3.2 2.6.3 4 .3 12.1 0 21.9-7.8 21.9-17.3 0-9.7-9.8-17.5-22-17.5z"
+                                        ></path>
+                                    </svg>
+                                    <p class="account-content-icon-p">카카오페이</p>
+                                </button>
+                                <button type="button" class="account-content-icon-btn">
+                                    <span class="material-icons md-18 account-content-name">content_paste</span>
+                                    <p class="account-content-icon-p">계좌 복사하기</p>
+                                </button>
+                            </div>
+                        </div>
+                        <hr class="account-content-hr">
+                        <div class="account-content-family" id="groomFamily">
+                            <div class="account-content-family-block">
+                                <div class="account-content-role">어머님</div>
+                                <div class="account-content-name">유재희</div>
+                                <div class="account-content-role">국민은행</div>
+                                <div class="account-content-name"><a>000-000-000000</a></div>
+                            </div>
+                            <div class="account-content-icon">
+                                <button type="button" class="account-content-icon-btn">
+                                    <svg viewBox="0 0 48 48" class="account-content-icon-svg">
+                                        <path
+                                            fill="currentColor"
+                                            class="kakao-logo_svg__st0"
+                                            d="M21.9 0C9.8 0 0 7.8 0 17.3 0 23.5 4.1 28.9 10.2 32l-2.1 7.7c-.1.2 0 .5.2.7.1.1.3.2.4.2.1 0 .3-.1.4-.1l8.9-6c1.3.2 2.6.3 4 .3 12.1 0 21.9-7.8 21.9-17.3 0-9.7-9.8-17.5-22-17.5z"
+                                        ></path>
+                                    </svg>
+                                    <p class="account-content-icon-p">카카오페이</p>
+                                </button>
+                                <button type="button" class="account-content-icon-btn">
+                                    <span class="material-icons md-18 account-content-name">content_paste</span>
+                                    <p class="account-content-icon-p">계좌 복사하기</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="centered" id="accountBox">
+                    <button class="account-btn-bridefamily" id="accountButton" type="button" aria-expanded="false">
+                        <span>신부측 계좌번호</span>
+                        <span class="account-cursor-span">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="account-cursor-svg">
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" d="M4 8l8 8 8-8"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+                <div class="account-content account-box-bridefamily" id="accountBox">
+                    <div class="account-content-style">
+                        <div class="account-content-family" id="brideFamily">
+                            <div class="account-content-family-block">
+                                <div class="account-content-role">신부</div>
+                                <div class="account-content-name">전보민</div>
+                                <div class="account-content-role">국민은행</div>
+                                <div class="account-content-name"><a>000-000-000000</a></div>
+                            </div>
+                            <div class="account-content-icon">
+                                <button type="button" class="account-content-icon-btn">
+                                    <svg viewBox="0 0 48 48" class="account-content-icon-svg">
+                                        <path
+                                            fill="currentColor"
+                                            class="kakao-logo_svg__st0"
+                                            d="M21.9 0C9.8 0 0 7.8 0 17.3 0 23.5 4.1 28.9 10.2 32l-2.1 7.7c-.1.2 0 .5.2.7.1.1.3.2.4.2.1 0 .3-.1.4-.1l8.9-6c1.3.2 2.6.3 4 .3 12.1 0 21.9-7.8 21.9-17.3 0-9.7-9.8-17.5-22-17.5z"
+                                        ></path>
+                                    </svg>
+                                    <p class="account-content-icon-p">카카오페이</p>
+                                </button>
+                                <button type="button" class="account-content-icon-btn">
+                                    <span class="material-icons md-18 account-content-name">content_paste</span>
+                                    <p class="account-content-icon-p">계좌 복사하기</p>
+                                </button>
+                            </div>
+                        </div>
+                        <hr class="account-content-hr">
+                        <div class="account-content-family" id="brideFamily">
+                            <div class="account-content-family-block">
+                                <div class="account-content-role">아버님</div>
+                                <div class="account-content-name">전이원</div>
+                                <div class="account-content-role">국민은행</div>
+                                <div class="account-content-name"><a>000-000-000000</a></div>
+                            </div>
+                            <div class="account-content-icon">
+                                <button type="button" class="account-content-icon-btn">
+                                    <svg viewBox="0 0 48 48" class="account-content-icon-svg">
+                                        <path
+                                            fill="currentColor"
+                                            class="kakao-logo_svg__st0"
+                                            d="M21.9 0C9.8 0 0 7.8 0 17.3 0 23.5 4.1 28.9 10.2 32l-2.1 7.7c-.1.2 0 .5.2.7.1.1.3.2.4.2.1 0 .3-.1.4-.1l8.9-6c1.3.2 2.6.3 4 .3 12.1 0 21.9-7.8 21.9-17.3 0-9.7-9.8-17.5-22-17.5z"
+                                        ></path>
+                                    </svg>
+                                    <p class="account-content-icon-p">카카오페이</p>
+                                </button>
+                                <button type="button" class="account-content-icon-btn">
+                                    <span class="material-icons md-18 account-content-name">content_paste</span>
+                                    <p class="account-content-icon-p">계좌 복사하기</p>
+                                </button>
+                            </div>
+                        </div>
+                        <hr class="account-content-hr">
+                        <div class="account-content-family" id="brideFamily">
+                            <div class="account-content-family-block">
+                                <div class="account-content-role">어머님</div>
+                                <div class="account-content-name">양영옥</div>
+                                <div class="account-content-role">국민은행</div>
+                                <div class="account-content-name"><a>000-000-000000</a></div>
+                            </div>
+                            <div class="account-content-icon">
+                                <button type="button" class="account-content-icon-btn">
+                                    <svg viewBox="0 0 48 48" class="account-content-icon-svg">
+                                        <path
+                                            fill="currentColor"
+                                            class="kakao-logo_svg__st0"
+                                            d="M21.9 0C9.8 0 0 7.8 0 17.3 0 23.5 4.1 28.9 10.2 32l-2.1 7.7c-.1.2 0 .5.2.7.1.1.3.2.4.2.1 0 .3-.1.4-.1l8.9-6c1.3.2 2.6.3 4 .3 12.1 0 21.9-7.8 21.9-17.3 0-9.7-9.8-17.5-22-17.5z"
+                                        ></path>
+                                    </svg>
+                                    <p class="account-content-icon-p">카카오페이</p>
+                                </button>
+                                <button type="button" class="account-content-icon-btn">
+                                    <span class="material-icons md-18 account-content-name">content_paste</span>
+                                    <p class="account-content-icon-p">계좌 복사하기</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="guestbook hiddenscroll" id="layout">
+            <div class="guestbook centered" id="layout">
                 <h2>guestbook</h2>
                 <!-- ref: https://codepen.io/apansare/pen/grWaGV -->
             </div>
 
-            <div class="share hiddenscroll" id="layout">
+            <div class="share centered" id="layout">
                 <h2>share</h2>
             </div>
         </div>

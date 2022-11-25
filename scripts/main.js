@@ -13,9 +13,18 @@ function diffDay() {
     remainTime.innerText = `${diffDay}일 ${diffHour}시간 ${diffMin}분 ${diffSec}초`;
 }
 
+$(document).ready (function () {
+    $(".account-btn-groomfamily").on("click", function(){
+        $(".account-box-groomfamily").slideToggle("fast");
+    });
+    $(".account-btn-bridefamily").on("click", function(){
+        $(".account-box-bridefamily").slideToggle("fast");
+    });
+})
+
 window.onload = function() {
     startConfetti();
-    setTimeout(stopConfetti, 5000);
+    setTimeout(stopConfetti, 3000);
 
     diffDay();
     setInterval(diffDay, 1000);
