@@ -1,5 +1,5 @@
 const remainTime = document.querySelector("#remainTime");
-const shareButton = document.querySelector('.share-button');
+const shareButton = document.querySelector(".share-button");
 
 function diffDay() {
     const weddingTime = new Date("2023-07-15 11:00:00");
