@@ -16,9 +16,21 @@ function diffDay() {
 $(document).ready (function () {
     $(".account-btn-groomfamily").on("click", function(){
         $(".account-box-groomfamily").slideToggle("fast");
+        if ($("#groomExpandBtn").text() == "expand_more") {
+            $("#groomExpandBtn").text("expand_less");
+        }
+        else {
+            $("#groomExpandBtn").text("expand_more");
+        }
     });
     $(".account-btn-bridefamily").on("click", function(){
         $(".account-box-bridefamily").slideToggle("fast");
+        if ($("#brideExpandBtn").text() == "expand_more") {
+            $("#brideExpandBtn").text("expand_less");
+        }
+        else {
+            $("#brideExpandBtn").text("expand_more");
+        }
     });
 })
 
