@@ -27,6 +27,12 @@ $(shareButton).on("click", function() {
 
 
 $(document).ready(function() {
+    // Hello world
+    console.log("안녕하세요, 이 모바일 청접장을 개발한 정준영입니다.");
+    console.log("개발자 모드를 열어서 내부를 보고 싶은 마음 충분히 이해합니다.");
+    console.log("궁금한 점이 있으면, 아래 github을 통해 연락주세요 ^^*");
+    console.log("https://github.com/Wedding-for-Junyoung-Bomin-20220715/Wedding-for-Junyoung-Bomin-20220715.github.io");
+
     // Confetti Effect
     startConfetti();
     setTimeout(stopConfetti, 3000);
