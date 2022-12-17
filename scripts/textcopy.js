@@ -19,15 +19,8 @@ $(copyAccount_0).on("click", function() {
             swal({
                 title: "성공적으로 복사했습니다.",
                 text: "계좌번호: "+textToCopy_0,
-                buttons: {
-                    cancel: {
-                        text: "완료",
-                        value: null,
-                        visible: true,
-                        className: "",
-                        closeModal: true,
-                    },
-                },
+                buttons: {},
+                timer: 1500,
                 icon: "success"
             });
         },
@@ -45,15 +38,8 @@ $(copyAccount_1).on("click", function() {
             swal({
                 title: "성공적으로 복사했습니다.",
                 text: "계좌번호: "+textToCopy_1,
-                buttons: {
-                    cancel: {
-                        text: "완료",
-                        value: null,
-                        visible: true,
-                        className: "",
-                        closeModal: true,
-                    },
-                },
+                buttons: {},
+                timer: 1500,
                 icon: "success"
             });
         },
@@ -71,15 +57,8 @@ $(copyAccount_2).on("click", function() {
             swal({
                 title: "성공적으로 복사했습니다.",
                 text: "계좌번호: "+textToCopy_2,
-                buttons: {
-                    cancel: {
-                        text: "완료",
-                        value: null,
-                        visible: true,
-                        className: "",
-                        closeModal: true,
-                    },
-                },
+                buttons: {},
+                timer: 1500,
                 icon: "success"
             });
         },
@@ -97,15 +76,8 @@ $(copyAccount_3).on("click", function() {
             swal({
                 title: "성공적으로 복사했습니다.",
                 text: "계좌번호: "+textToCopy_3,
-                buttons: {
-                    cancel: {
-                        text: "완료",
-                        value: null,
-                        visible: true,
-                        className: "",
-                        closeModal: true,
-                    },
-                },
+                buttons: {},
+                timer: 1500,
                 icon: "success"
             });
         },
@@ -123,15 +95,8 @@ $(copyAccount_4).on("click", function() {
             swal({
                 title: "성공적으로 복사했습니다.",
                 text: "계좌번호: "+textToCopy_4,
-                buttons: {
-                    cancel: {
-                        text: "완료",
-                        value: null,
-                        visible: true,
-                        className: "",
-                        closeModal: true,
-                    },
-                },
+                buttons: {},
+                timer: 1500,
                 icon: "success"
             });
         },
@@ -149,15 +114,8 @@ $(copyAccount_5).on("click", function() {
             swal({
                 title: "성공적으로 복사했습니다.",
                 text: "계좌번호: "+textToCopy_5,
-                buttons: {
-                    cancel: {
-                        text: "완료",
-                        value: null,
-                        visible: true,
-                        className: "",
-                        closeModal: true,
-                    },
-                },
+                buttons: {},
+                timer: 1500,
                 icon: "success"
             });
         },
