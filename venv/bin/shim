@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+export NODE_PATH='/Users/JUNG/Desktop/Project/2022-2023/Wedding-for-Junyoung-Bomin-20220715.github.io/venv/lib/node_modules'
+export NPM_CONFIG_PREFIX='/Users/JUNG/Desktop/Project/2022-2023/Wedding-for-Junyoung-Bomin-20220715.github.io/venv'
+export npm_config_prefix='/Users/JUNG/Desktop/Project/2022-2023/Wedding-for-Junyoung-Bomin-20220715.github.io/venv'
+exec 'venv/bin/node' "$@"
