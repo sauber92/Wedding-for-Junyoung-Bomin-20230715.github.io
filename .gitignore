@@ -5,3 +5,4 @@ _site/
 note.txt
 tailwind*
 .vscode
+node_modules
