@@ -1,18 +1,35 @@
 <template>
-  <img alt="안녕하세요" src="./assets/mainveiw_0.jpeg">
-  <IntroCard msg="초대합니다"/>
-  <CalendarCard msg="Calendar"/>
+  <IntroCard reciever_name="민채" postfix="야"/>
+  <HelloCard/>
+  <GroombrideCard/>
+  <CalendarCard/>
+  <LocationCard/>
+  <GalleryCard/>
+  <ClosingCard/>
+  <TestCard/>
 </template>
 
 <script>
 import IntroCard from './components/Intro.vue'
+import HelloCard from './components/Hello.vue'
+import GroombrideCard from './components/Groombride.vue'
 import CalendarCard from './components/Calendar.vue'
+import LocationCard from './components/Location.vue'
+import GalleryCard from './components/Gallery.vue'
+import ClosingCard from './components/Closing.vue'
+import TestCard from './components/Test.vue'
 
 export default {
   name: 'App',
   components: {
     IntroCard,
-    CalendarCard
+    HelloCard,
+    GroombrideCard,
+    CalendarCard,
+    LocationCard,
+    GalleryCard,
+    ClosingCard,
+    TestCard
   }
 }
 </script>
