@@ -1,10 +1,25 @@
 # Wedding-for-Junyoung-Bomin-20220715.github.io
 
-# Opensource lists  
-* bootstrap@5.2.2  
-* jquery-2.2.4  
-* Material Icons  
-* maru-buri font  
-* https://sweetalert.js.org/  
-* https://confettijs.org/  
-* https://w3c.github.io/web-share/  
+# TODO
+
+1. 라이브러리 적용  
+  * vue-router: 쿼리스트링 작업 시 필요
+  * aos.js: Animation On Scroll - 스크롤 애니메이션 적용에 필요
+  * vue-fullpage.js: 단 별로 스크롤 구분을 위해 필요 --> AOS 작업, 고정된 폭에 영향을 줄 수 도 있음. 테스트 필요
+  * animate.css: 여러 변환 적용 시 필요
+  * Naver or Kakao Map
+  * maru-buri font: 일단 적용해보고 전체 디자인 고려
+  * Material Icons: 일단 적용해보고 전체 디자인 고려
+  * web-hsare: 일단 적용해보고 전체 디자인 고려
+  * sweetalert.js: 일단 적용해보고 전체 디자인 고려
+ 
+2. 엑셀 파싱 프로그램
+  * 손님 리스트 작성
+  * 이름 / 조사 / 인삿말 등 구분 필요
+  * 엑셀 파싱 프로그램 기능: 이름 / 조사 / 인삿말 등을 쿼리로 사용하는 URL 생성 및 QR 코드 생성 (Python 사용?)
+  * 조사 필요
+    * QR 생성 라이브러리
+    
+3. 테스트 완료
+  * 아이폰 12
+  * 아이폰 13
