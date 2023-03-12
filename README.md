@@ -3,7 +3,6 @@
 # TODO
 
 1. 라이브러리 적용  
-  * vue-router: 쿼리스트링 작업 시 필요
   * aos.js: Animation On Scroll - 스크롤 애니메이션 적용에 필요
   * vue-fullpage.js: 단 별로 스크롤 구분을 위해 필요 --> AOS 작업, 고정된 폭에 영향을 줄 수 도 있음. 테스트 필요
   * animate.css: 여러 변환 적용 시 필요

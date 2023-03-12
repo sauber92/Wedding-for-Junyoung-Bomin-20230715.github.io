@@ -1,5 +1,5 @@
 <template>
-  <IntroCard reciever_name="민채" postfix="야"/>
+  <IntroCard postfix="야"/>
   <HelloCard/>
   <GroombrideCard/>
   <CalendarCard/>
@@ -35,13 +35,25 @@ export default {
 </script>
 
 <style>
+html {
+    animation: blur .7s ease-out ;
+    font-family: sans-serif;
+    --mdc-typography-font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.15;
+    overscroll-behavior-x: none;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 html::-webkit-scrollbar {
     display: none;
     -webkit-overflow-scrolling: touch;
 }
 
 body {
-    width: 100%;
+    width: 414px;
     margin: 0 auto;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1rem;
@@ -77,11 +89,13 @@ button, select {
 }
 
 #app {
+  background-color: #FFFFFFFF;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  margin: 0 auto;
 }
 </style>

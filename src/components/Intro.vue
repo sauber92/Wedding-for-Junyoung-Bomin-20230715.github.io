@@ -7,22 +7,76 @@
   <div class="intro">
     <img alt="안녕하세요" src="../assets/mainveiw_0.jpeg">
     <h1>
-      {{ reciever_name }}{{ postfix }},<br />
-      나 결혼해
-  </h1>
+      {{ guestName }}{{ guestPostfix }},<br />
+      {{ guestMessage }}
+    </h1>
   </div>
 </template>
 
 <script>
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+const name = params.get('name');
+const postfix = params.get('postfix');
+const message = params.get('message');
+
 export default {
   name: 'IntroCard',
   props: {
-    reciever_name: String,
     postfix: String
+  },
+  computed: {
+    guestName() {
+      if (queryString && name) {
+        return name;
+      } else {
+        return '안녕하세요';
+      }
+    },
+    guestPostfix() {
+      let ret;
+      if (queryString && postfix) {
+        switch (postfix) {
+          case '1':
+            ret = '아';
+            break;
+          case '2':
+            ret = '야';
+            break;
+          default:
+            ret = '';
+            break;
+        }
+        return ret;
+      } else {
+        return '안녕하세요';
+      }
+    },
+    guestMessage() {
+      let ret;
+      if (queryString && message) {
+        switch (message) {
+          case '1':
+            ret = '안녕';
+            break;
+          case '2':
+            ret = '안녕하세요';
+            break;
+          default:
+            ret = '';
+            break;
+        }
+        return ret;
+      } else {
+        return '안녕하세요';
+      }
+    }
   }
 }
 </script>
 
 <style scoped>
-
+img {
+  width:100%
+}
 </style>
