@@ -53,7 +53,7 @@ html::-webkit-scrollbar {
 }
 
 body {
-    width: 414px;
+    width: 360px;
     margin: 0 auto;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1rem;
