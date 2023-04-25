@@ -10,7 +10,6 @@
           <LocationCard class="section"/>
           <GalleryCard class="section"/>
           <ClosingCard class="section"/>
-          <!-- <TestCard class="section"/> -->
         </div>
       </router-view>
     </KeepAlive>
@@ -19,6 +18,8 @@
 
 <script>
 import fullpage from 'fullpage.js'
+import AOS from 'aos'
+import "aos/dist/aos.css"
 import IntroCard from '@/components/Intro'
 import HelloCard from '@/components/Hello'
 import GroombrideCard from './components/Groombride.vue'
@@ -26,7 +27,6 @@ import CalendarCard from './components/Calendar.vue'
 import LocationCard from './components/Location.vue'
 import GalleryCard from './components/Gallery.vue'
 import ClosingCard from './components/Closing.vue'
-// import TestCard from './components/Test.vue'
 
 export default {
   name: 'App',
@@ -38,11 +38,13 @@ export default {
     LocationCard,
     GalleryCard,
     ClosingCard,
-    // TestCard
   },
   mounted() {
     new fullpage('#fullpage', {
-      // options
+      // verticalCentered: true
+    })
+    AOS.init({
+      duration: 1000
     })
   }
 }
@@ -113,8 +115,12 @@ button, select {
   margin: 0 auto;
 }
 
+/* Fullpage vertical center */
 .section {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .fp-watermark {

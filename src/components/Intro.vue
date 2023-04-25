@@ -6,8 +6,8 @@
 <template>
   <div class="intro">
     <img alt="안녕하세요" src="../assets/mainveiw_0.jpeg">
-    <h1>
-      {{ guestName }}{{ guestPostfix }},<br />
+    <h1 data-aos="fade-up">
+      {{ guestName }}{{ guestPostfix }}<br />
       {{ guestMessage }}
     </h1>
   </div>
@@ -30,7 +30,7 @@ export default {
       if (queryString && name) {
         return name;
       } else {
-        return '안녕하세요';
+        return '';
       }
     },
     guestPostfix() {
@@ -38,10 +38,10 @@ export default {
       if (queryString && postfix) {
         switch (postfix) {
           case '1':
-            ret = '아';
+            ret = '아,';
             break;
           case '2':
-            ret = '야';
+            ret = '야,';
             break;
           default:
             ret = '';
@@ -49,7 +49,7 @@ export default {
         }
         return ret;
       } else {
-        return '안녕하세요';
+        return '';
       }
     },
     guestMessage() {
@@ -57,10 +57,10 @@ export default {
       if (queryString && message) {
         switch (message) {
           case '1':
-            ret = '안녕';
+            ret = '나 결혼해';
             break;
           case '2':
-            ret = '안녕하세요';
+            ret = '저 결혼해요';
             break;
           default:
             ret = '';
@@ -68,7 +68,7 @@ export default {
         }
         return ret;
       } else {
-        return '안녕하세요';
+        return '저희 결혼합니다.';
       }
     }
   }

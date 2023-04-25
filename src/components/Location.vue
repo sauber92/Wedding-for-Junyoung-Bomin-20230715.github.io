@@ -6,17 +6,26 @@
 <template>
     <div class="location">
         <p>Location Card</p>
+        <!-- <naver-map :center="center" :zoom="zoom">
+          <naver-map-marker :position="center" />
+        </naver-map> -->
     </div>
   </template>
   
   <script>
   export default {
     name: 'LocationCard',
-    props: {
-  
+    data() {
+      return {
+        center: {
+          lat: 37.567545,
+          lng: 126.977335
+        },
+        zoom: 13
+      };
     }
   }
-  </script>
+</script>
   
   <style scoped>
   p {
