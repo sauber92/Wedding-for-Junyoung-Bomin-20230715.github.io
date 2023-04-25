@@ -1,23 +1,32 @@
 <template>
-  <IntroCard postfix="야"/>
-  <HelloCard/>
-  <GroombrideCard/>
-  <CalendarCard/>
-  <LocationCard/>
-  <GalleryCard/>
-  <ClosingCard/>
-  <TestCard/>
+  <div>
+    <KeepAlive>
+      <router-view>
+        <div id="fullpage">
+          <IntroCard class="section"></IntroCard>
+          <HelloCard class="section"></HelloCard>
+          <GroombrideCard class="section"/>
+          <CalendarCard class="section"/>
+          <LocationCard class="section"/>
+          <GalleryCard class="section"/>
+          <ClosingCard class="section"/>
+          <!-- <TestCard class="section"/> -->
+        </div>
+      </router-view>
+    </KeepAlive>
+  </div>
 </template>
 
 <script>
-import IntroCard from './components/Intro.vue'
-import HelloCard from './components/Hello.vue'
+import fullpage from 'fullpage.js'
+import IntroCard from '@/components/Intro'
+import HelloCard from '@/components/Hello'
 import GroombrideCard from './components/Groombride.vue'
 import CalendarCard from './components/Calendar.vue'
 import LocationCard from './components/Location.vue'
 import GalleryCard from './components/Gallery.vue'
 import ClosingCard from './components/Closing.vue'
-import TestCard from './components/Test.vue'
+// import TestCard from './components/Test.vue'
 
 export default {
   name: 'App',
@@ -29,7 +38,12 @@ export default {
     LocationCard,
     GalleryCard,
     ClosingCard,
-    TestCard
+    // TestCard
+  },
+  mounted() {
+    new fullpage('#fullpage', {
+      // options
+    })
   }
 }
 </script>
@@ -97,5 +111,13 @@ button, select {
   color: #2c3e50;
   width: 100%;
   margin: 0 auto;
+}
+
+.section {
+  height: 100vh;
+}
+
+.fp-watermark {
+display: none;
 }
 </style>
