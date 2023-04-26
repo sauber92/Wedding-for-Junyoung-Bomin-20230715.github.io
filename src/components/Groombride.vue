@@ -3,22 +3,26 @@
 <!-- 글자: 신랑 준영, 신부 보민 -->
 <!-- 글자효과: 스크롤에 따라 사진 위or오른쪽에 글자 나오게 -->
 <template>
-    <div class="groombride">
-        <p>Groombride Card</p>
-    </div>
+  <div class="section groom">
+    <p>Groom Card</p>
+  </div>
+
+  <div class="section bride">
+    <p>Bride Card</p>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'GroombrideCard',
-    props: {
+  name: 'GroombrideCard',
+  props: {
 
-    }
+  }
 }
 </script>
 
 <style scoped>
 p {
-    background-color:orange;
+  background-color:orange;
 }
 </style>

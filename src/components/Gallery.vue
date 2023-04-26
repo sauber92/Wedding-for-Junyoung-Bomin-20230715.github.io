@@ -4,22 +4,22 @@
 <!-- 글자효과: TBD -->
 <!-- 그리드, 클릭 시 팝업 -->
 <template>
-    <div class="gallery">
-        <p>Gallery Card</p>
-    </div>
-  </template>
+  <div class="gallery">
+      <p>Gallery Card</p>
+  </div>
+</template>
   
-  <script>
-  export default {
-    name: 'GalleryCard',
-    props: {
-  
-    }
+<script>
+export default {
+  name: 'GalleryCard',
+  props: {
+
   }
-  </script>
+}
+</script>
   
-  <style scoped>
-  p {
-    background-color:blue;
-  }
-  </style>
+<style scoped>
+p {
+  background-color:blue;
+}
+</style>
