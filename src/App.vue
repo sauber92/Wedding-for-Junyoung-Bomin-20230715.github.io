@@ -2,8 +2,8 @@
   <div>
     <router-view>
       <div id="fullpage">
-        <IntroCard class="section"></IntroCard>
-        <HelloCard class="section"></HelloCard>
+        <IntroCard class="section"/>
+        <HelloCard class="section"/>
         <GroombrideCard/>
         <CalendarCard class="section"/>
         <LocationCard class="section"/>
@@ -38,9 +38,18 @@ export default {
     ClosingCard,
   },
   mounted() {
-    new fullpage('#fullpage', {
+    const fullpageApi = new fullpage('#fullpage', {
       // verticalCentered: true
+      scrollingSpeed: 1000,
+      afterLoad: function(origin, destination, direction, trigger) {  // eslint-disable-line no-unused-vars
+        if (destination.index == 0) {
+          setTimeout(function() {
+            fullpageApi.moveSectionDown();
+          }, 1500);
+        }
+      }
     })
+
     AOS.init({
       startEvent: 'load',
       disableMutationObserver: false,
@@ -74,9 +83,9 @@ html::-webkit-scrollbar {
 
 body {
   background-color: rgb(189, 189, 189);
-  /* width: 360px; */
-  height: 100vh;
-  margin: 0;
+  width: 360px;
+  /* height: 100vh; */
+  margin: 0 auto;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1rem;
@@ -87,6 +96,10 @@ body {
   justify-content: center;
   overflow-x: hidden;
   overflow-y: none;
+}
+
+img {
+  width:100%
 }
 
 a {

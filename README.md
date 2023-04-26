@@ -4,7 +4,8 @@
 
 1. 라이브러리 적용  
   - [x] aos.js: Animation On Scroll - 스크롤 애니메이션 적용에 필요
-  - [x] fullpage.js: 단 별로 스크롤 구분을 위해 필요 --> AOS 작업, 고정된 폭에 영향을 줄 수 도 있음. 테스트 필요
+  - [x] fullpage.js: 단 별로 스크롤 구분
+  - [x] vue-fullpage.js: 단 별로 스크롤 구분
   - [ ] animate.css: 여러 변환 적용 시 필요
   - [ ] Naver Map: vue-naver-maps [info](https://github.com/ManbokLee/vue-naver-map)
   - [ ] maru-buri font: 일단 적용해보고 전체 디자인 고려

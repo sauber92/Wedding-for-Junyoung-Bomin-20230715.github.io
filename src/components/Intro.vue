@@ -5,7 +5,6 @@
 <!-- 순서: gif에서 컨페티가 뿌려질 때 글씨 등장 -->
 <template>
   <div class="intro">
-    <img alt="안녕하세요" src="../assets/mainveiw_0.jpeg">
     <h1 data-aos="fade-up">
       {{ guestName }}{{ guestPostfix }}<br />
       {{ guestMessage }}
@@ -37,6 +36,9 @@ export default {
       let ret;
       if (queryString && postfix) {
         switch (postfix) {
+          case '0':
+            ret = ',';
+            break;
           case '1':
             ret = '아,';
             break;
@@ -62,6 +64,12 @@ export default {
           case '2':
             ret = '저 결혼해요';
             break;
+          case '3':
+            ret = '우리 아들 결혼합니다';
+            break;
+          case '4':
+            ret = '우리 딸 결혼합니다';
+            break;
           default:
             ret = '';
             break;
@@ -76,7 +84,5 @@ export default {
 </script>
 
 <style scoped>
-img {
-  width:100%
-}
+
 </style>
