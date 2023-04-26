@@ -3,10 +3,10 @@
 # TODO
 
 1. 라이브러리 적용  
-  - [x] aos.js: Animation On Scroll - 스크롤 애니메이션 적용에 필요
+  - [x] aos.js: Animation On Scroll - 스크롤 애니메이션 적용에 필요 [info](https://michalsnik.github.io/aos/)
   - [x] fullpage.js: 단 별로 스크롤 구분
   - [x] vue-fullpage.js: 단 별로 스크롤 구분
-  - [ ] animate.css: 여러 변환 적용 시 필요
+  - [ ] animate.css: 여러 변환 적용 시 필요 [info](https://animate.style/)
   - [ ] Naver Map: vue-naver-maps [info](https://github.com/ManbokLee/vue-naver-map)
   - [ ] maru-buri font: 일단 적용해보고 전체 디자인 고려
   - [ ] Material Icons: 일단 적용해보고 전체 디자인 고려

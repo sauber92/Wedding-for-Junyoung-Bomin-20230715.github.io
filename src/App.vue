@@ -38,14 +38,24 @@ export default {
     ClosingCard,
   },
   mounted() {
+    let count = 0;
     const fullpageApi = new fullpage('#fullpage', {
       // verticalCentered: true
       scrollingSpeed: 1000,
+      responsiveHeight: 568,
       afterLoad: function(origin, destination, direction, trigger) {  // eslint-disable-line no-unused-vars
-        if (destination.index == 0) {
-          setTimeout(function() {
+        console.log(destination);
+        if (destination.isFirst == true && count == 0) {
+          setTimeout(() => {
             fullpageApi.moveSectionDown();
+            count++;
           }, 1500);
+        }
+        else if (destination.index === 1) {
+          document.querySelector('.my-typing').classList.add('typing');
+          document.querySelector('.my-fadeindown-0').classList.add('animate__animated', 'animate__fadeInDown', 'animate__delay-2s');
+          document.querySelector('.my-fadeindown-1').classList.add('animate__animated', 'animate__fadeInDown', 'animate__delay-3s');
+          document.querySelector('.my-fadeindown-2').classList.add('animate__animated', 'animate__fadeInDown', 'animate__delay-4s');
         }
       }
     })
@@ -83,8 +93,8 @@ html::-webkit-scrollbar {
 
 body {
   background-color: rgb(189, 189, 189);
-  width: 360px;
-  /* height: 100vh; */
+  /* width: 360px; */
+  height: 100vh;
   margin: 0 auto;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -140,7 +150,7 @@ button, select {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .fp-watermark {

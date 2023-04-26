@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { createWebHashHistory, createRouter } from 'vue-router'
 import VCalendar from 'v-calendar';
 import 'v-calendar/style.css';
+import 'animate.css';
 
 // import VueNaverMap from 'vue-naver-map'
 import App from './App'
