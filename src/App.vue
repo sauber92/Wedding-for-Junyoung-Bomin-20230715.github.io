@@ -4,11 +4,12 @@
       <div id="fullpage">
         <IntroCard class="section"/>
         <HelloCard class="section"/>
-        <GroombrideCard/>
+        <GroomCard class="section"/>
+        <BrideCard class="section"/>
         <CalendarCard class="section"/>
         <LocationCard class="section"/>
         <GalleryCard class="section"/>
-        <ClosingCard class="section"/>
+        <!-- <ClosingCard class="section"/> -->
       </div>
     </router-view>
   </div>
@@ -20,22 +21,24 @@ import AOS from 'aos'
 import "aos/dist/aos.css"
 import IntroCard from '@/components/Intro'
 import HelloCard from '@/components/Hello'
-import GroombrideCard from './components/Groombride.vue'
+import GroomCard from './components/Groom.vue'
+import BrideCard from './components/Bride.vue'
 import CalendarCard from './components/Calendar.vue'
 import LocationCard from './components/Location.vue'
 import GalleryCard from './components/Gallery.vue'
-import ClosingCard from './components/Closing.vue'
+// import ClosingCard from './components/Closing.vue'
 
 export default {
   name: 'App',
   components: {
     IntroCard,
     HelloCard,
-    GroombrideCard,
+    GroomCard,
+    BrideCard,
     CalendarCard,
     LocationCard,
     GalleryCard,
-    ClosingCard,
+    // ClosingCard,
   },
   mounted() {
     let count = 0;
@@ -44,18 +47,20 @@ export default {
       scrollingSpeed: 1000,
       responsiveHeight: 568,
       afterLoad: function(origin, destination, direction, trigger) {  // eslint-disable-line no-unused-vars
-        console.log(destination);
         if (destination.isFirst == true && count == 0) {
           setTimeout(() => {
             fullpageApi.moveSectionDown();
             count++;
           }, 1500);
         }
-        else if (destination.index === 1) {
-          document.querySelector('.my-typing').classList.add('typing');
+        else if (destination.index == 1) { // HelloCard
+          document.querySelector('.my-typing').classList.add('my-animate-typing');
           document.querySelector('.my-fadeindown-0').classList.add('animate__animated', 'animate__fadeInDown', 'animate__delay-2s');
           document.querySelector('.my-fadeindown-1').classList.add('animate__animated', 'animate__fadeInDown', 'animate__delay-3s');
           document.querySelector('.my-fadeindown-2').classList.add('animate__animated', 'animate__fadeInDown', 'animate__delay-4s');
+        }
+        else if (destination.index == 5) { // LocationCard
+          document.querySelector('.my-map').classList.add('animate__animated', 'animate__headShake');
         }
       }
     })
@@ -71,6 +76,22 @@ export default {
 </script>
 
 <style>
+/* 모바일 버전 */
+@media screen and (max-width: 768px) {
+  body {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+/* 데스크탑 버전 */
+@media screen and (min-width: 769px) {
+  body {
+    width: 768px;;
+    font-size: 18px;
+  }
+}
+
 html {
   animation: blur .7s ease-out ;
   font-family: sans-serif;
@@ -94,11 +115,11 @@ html::-webkit-scrollbar {
 body {
   background-color: rgb(189, 189, 189);
   /* width: 360px; */
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0 auto;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1rem;
+  /* font-size: 1rem; */
   font-weight: 400;
   line-height: 1.5;
   color: #212529;

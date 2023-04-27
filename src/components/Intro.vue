@@ -5,7 +5,8 @@
 <!-- 순서: gif에서 컨페티가 뿌려질 때 글씨 등장 -->
 <template>
   <div class="intro">
-    <h1 data-aos="fade-up">
+    <img data-aos="fade-in" alt="Intro" src="@/assets/intro.jpg" class="intro-img">
+    <h1 data-aos="fade-down" class="intro-container">
       {{ guestName }}{{ guestPostfix }}<br />
       {{ guestMessage }}
     </h1>
@@ -84,5 +85,29 @@ export default {
 </script>
 
 <style scoped>
+.intro {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
 
+.intro-img {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.intro-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
 </style>
