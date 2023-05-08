@@ -23,5 +23,4 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### Build test example
-http://localhost:8080/?name=정진열 사장님&postfix=0&message=3#/
+### Build test examplehttp://localhost:8080/?name=정진열 사장님&postfix=0&message=3#/

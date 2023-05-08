@@ -4,9 +4,6 @@
 <!-- 글자효과: TBD -->
 <template>
   <h4 class="mdc-typography--headline1">마음 전하실 곳</h4>
-  <div>
-    <!-- <v-icon large>md-add</v-icon> -->
-  </div>
   
   <!-- <div> -->
         <!-- <button class="account-btn-groomfamily" id="materialButton" type="button" aria-expanded="false"> -->

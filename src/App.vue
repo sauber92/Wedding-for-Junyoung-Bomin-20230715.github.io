@@ -9,7 +9,7 @@
         <CalendarCard class="section"/>
         <LocationCard class="section"/>
         <GalleryCard class="section"/>
-        <!-- <ClosingCard class="section"/> -->
+        <ClosingCard class="section"/>
       </div>
     </router-view>
   </div>
@@ -26,7 +26,7 @@ import BrideCard from './components/Bride.vue'
 import CalendarCard from './components/Calendar.vue'
 import LocationCard from './components/Location.vue'
 import GalleryCard from './components/Gallery.vue'
-// import ClosingCard from './components/Closing.vue'
+import ClosingCard from './components/Closing.vue'
 
 export default {
   name: 'App',
@@ -38,7 +38,7 @@ export default {
     CalendarCard,
     LocationCard,
     GalleryCard,
-    // ClosingCard,
+    ClosingCard,
   },
   mounted() {
     let count = 0;
@@ -59,9 +59,9 @@ export default {
           document.querySelector('.my-fadeindown-1').classList.add('animate__animated', 'animate__fadeInDown', 'animate__delay-3s');
           document.querySelector('.my-fadeindown-2').classList.add('animate__animated', 'animate__fadeInDown', 'animate__delay-4s');
         }
-        else if (destination.index == 5) { // LocationCard
-          document.querySelector('.my-map').classList.add('animate__animated', 'animate__headShake');
-        }
+        // else if (destination.index == 5) { // LocationCard
+        //   document.querySelector('.my-map').classList.add('animate__animated', 'animate__headShake');
+        // }
       }
     })
 

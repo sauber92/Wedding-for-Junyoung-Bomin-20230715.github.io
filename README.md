@@ -7,7 +7,7 @@
   - [x] fullpage.js: 단 별로 스크롤 구분
   - [x] vue-fullpage.js: 단 별로 스크롤 구분
   - [ ] animate.css: 여러 변환 적용 시 필요 [info](https://animate.style/)
-  - [ ] Naver Map: vue-naver-maps [info](https://github.com/ManbokLee/vue-naver-map)
+  - [x] Kakao Map: 카카오 맵 공식 문서  
   - [ ] maru-buri font: 일단 적용해보고 전체 디자인 고려
   - [ ] Material Icons: 일단 적용해보고 전체 디자인 고려
   - [ ] web-hsare: 일단 적용해보고 전체 디자인 고려

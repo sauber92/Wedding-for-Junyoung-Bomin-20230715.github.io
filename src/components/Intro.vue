@@ -5,8 +5,8 @@
 <!-- 순서: gif에서 컨페티가 뿌려질 때 글씨 등장 -->
 <template>
   <div class="intro">
-    <img data-aos="fade-in" alt="Intro" src="@/assets/intro.jpg" class="intro-img">
-    <h1 data-aos="fade-down" class="intro-container">
+    <img alt="Intro" src="@/assets/intro.jpg" class="intro-img">
+    <h1 class="intro-container">
       {{ guestName }}{{ guestPostfix }}<br />
       {{ guestMessage }}
     </h1>
