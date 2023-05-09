@@ -47,15 +47,15 @@ export default {
     ClosingCard,
   },
   mounted() {
-    let count = 0;  // eslint-disable-line no-unused-vars
+    let isDown = false;  // eslint-disable-line no-unused-vars
     const fullpageApi = new fullpage('#fullpage', { // eslint-disable-line no-unused-vars
       scrollingSpeed: 1000,
       responsiveHeight: 568,
       afterLoad: function(origin, destination, direction, trigger) {  // eslint-disable-line no-unused-vars
-        if (destination.isFirst == true && count == 0) {
+        if (destination.isFirst == true && !isDown) {
           setTimeout(() => {
             fullpageApi.moveSectionDown();
-            count++;
+            isDown = true;
           }, 1500);
         }
         else if (destination.index == 1) { // HelloCard
@@ -89,6 +89,9 @@ export default {
   body {
     width: 100%;
     font-size: 14px;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    height: fill-available;
   }
 }
 
