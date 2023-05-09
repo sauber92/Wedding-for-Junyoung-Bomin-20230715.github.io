@@ -1,4 +1,4 @@
-<!-- 출력순서: 6 -->
+<!-- 출력순서: 8 -->
 <!-- 사진: 그리드, 팝업창 -->
 <!-- 글자: TBD -->
 <!-- 글자효과: TBD -->
@@ -120,8 +120,8 @@ h2 {
   .gallery-container {
     position: absolute;
     top: 0;
-    left: 0%;
-    width: 100%;
+    left: 10%;
+    width: 80%;
   }
 }
 

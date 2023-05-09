@@ -6,7 +6,9 @@
         <HelloCard class="section"/>
         <GroomCard class="section"/>
         <BrideCard class="section"/>
-        <CalendarCard class="section"/>
+        <DateCard class="section"/>
+        <TimeCard class="section"/>
+        <!-- <CalendarCard class="section"/> -->
         <LocationCard class="section"/>
         <GalleryCard class="section"/>
         <ClosingCard class="section"/>
@@ -23,7 +25,9 @@ import IntroCard from '@/components/Intro'
 import HelloCard from '@/components/Hello'
 import GroomCard from './components/Groom.vue'
 import BrideCard from './components/Bride.vue'
-import CalendarCard from './components/Calendar.vue'
+import DateCard from './components/Date.vue'
+import TimeCard from './components/Time.vue'
+// import CalendarCard from './components/Calendar.vue'
 import LocationCard from './components/Location.vue'
 import GalleryCard from './components/Gallery.vue'
 import ClosingCard from './components/Closing.vue'
@@ -35,15 +39,16 @@ export default {
     HelloCard,
     GroomCard,
     BrideCard,
-    CalendarCard,
+    DateCard,
+    TimeCard,
+    // CalendarCard,
     LocationCard,
     GalleryCard,
     ClosingCard,
   },
   mounted() {
-    let count = 0;
-    const fullpageApi = new fullpage('#fullpage', {
-      // verticalCentered: true
+    let count = 0;  // eslint-disable-line no-unused-vars
+    const fullpageApi = new fullpage('#fullpage', { // eslint-disable-line no-unused-vars
       scrollingSpeed: 1000,
       responsiveHeight: 568,
       afterLoad: function(origin, destination, direction, trigger) {  // eslint-disable-line no-unused-vars
@@ -59,9 +64,6 @@ export default {
           document.querySelector('.my-fadeindown-1').classList.add('animate__animated', 'animate__fadeInDown', 'animate__delay-3s');
           document.querySelector('.my-fadeindown-2').classList.add('animate__animated', 'animate__fadeInDown', 'animate__delay-4s');
         }
-        // else if (destination.index == 5) { // LocationCard
-        //   document.querySelector('.my-map').classList.add('animate__animated', 'animate__headShake');
-        // }
       }
     })
 
@@ -175,6 +177,6 @@ button, select {
 }
 
 .fp-watermark {
-display: none;
+  display: none;
 }
 </style>

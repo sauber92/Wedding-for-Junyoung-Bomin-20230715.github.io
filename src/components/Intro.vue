@@ -8,7 +8,7 @@
     <img alt="Intro" src="@/assets/intro.jpg" class="intro-img">
     <h1 class="intro-container">
       {{ guestName }}{{ guestPostfix }}<br />
-      {{ guestMessage }}
+      초대합니다!
     </h1>
   </div>
 </template>
@@ -18,7 +18,6 @@ const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const name = params.get('name');
 const postfix = params.get('postfix');
-const message = params.get('message');
 
 export default {
   name: 'IntroCard',
@@ -34,50 +33,10 @@ export default {
       }
     },
     guestPostfix() {
-      let ret;
       if (queryString && postfix) {
-        switch (postfix) {
-          case '0':
-            ret = ',';
-            break;
-          case '1':
-            ret = '아,';
-            break;
-          case '2':
-            ret = '야,';
-            break;
-          default:
-            ret = '';
-            break;
-        }
-        return ret;
-      } else {
-        return '';
-      }
-    },
-    guestMessage() {
-      let ret;
-      if (queryString && message) {
-        switch (message) {
-          case '1':
-            ret = '나 결혼해';
-            break;
-          case '2':
-            ret = '저 결혼해요';
-            break;
-          case '3':
-            ret = '우리 아들 결혼합니다';
-            break;
-          case '4':
-            ret = '우리 딸 결혼합니다';
-            break;
-          default:
-            ret = '';
-            break;
-        }
-        return ret;
-      } else {
-        return '저희 결혼합니다.';
+          return postfix;
+        } else {
+          return '';
       }
     }
   }
