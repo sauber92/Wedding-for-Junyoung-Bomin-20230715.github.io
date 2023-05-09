@@ -73,6 +73,12 @@ export default {
       duration: 1000
     })
     AOS.refresh(true)
+
+    const setVh = () => {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`)
+    };
+    window.addEventListener('resize', setVh);
+    setVh();
   }
 }
 </script>
@@ -92,6 +98,16 @@ export default {
     width: 768px;;
     font-size: 18px;
   }
+}
+
+:root {
+  --vh: 100%;
+}
+
+html,
+body {
+  height: 100vh;
+  height: var(--vh);
 }
 
 html {
