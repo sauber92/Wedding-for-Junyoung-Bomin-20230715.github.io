@@ -120,8 +120,8 @@ h2 {
   .gallery-container {
     position: absolute;
     top: 0;
-    left: 10%;
-    width: 80%;
+    left: 0%;
+    width: 100%;
   }
 }
 
