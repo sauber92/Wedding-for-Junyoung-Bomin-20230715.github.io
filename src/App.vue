@@ -83,9 +83,6 @@ export default {
   body {
     width: 100%;
     font-size: 14px;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-    height: fill-available;
   }
 }
 
@@ -132,6 +129,8 @@ body {
   justify-content: center;
   overflow-x: hidden;
   overflow-y: none;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 img {
