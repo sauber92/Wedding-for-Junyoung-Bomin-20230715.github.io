@@ -65,6 +65,11 @@ export default {
     width: 70%;
   }
 }
+
+h1 {
+  font-size: 1.5em;
+}
+
 .hello {
   /* background-color: rgb(255, 234, 210); */
   position: relative;

@@ -1,13 +1,12 @@
 <!-- 출력순서: 1 -->
-<!-- 사진: 컨페티를 뿌리는 gif -->
+<!-- 사진: 다이아 반지 -->
 <!-- 글자: 쿼리스트링 사용해서 url에 따라 다르게 출력 -->
-<!-- 글자효과: 한번에 디졸브로 나오기 -->
-<!-- 순서: gif에서 컨페티가 뿌려질 때 글씨 등장 -->
+<!-- 글자효과: 한번에 fade로 나오기 -->
 <template>
   <div class="intro">
     <img alt="Intro" src="@/assets/intro.jpg" class="intro-img">
     <h1 class="intro-container" data-aos="fade" data-aos-delay="300" data-aos-duration="2000" data-aos-once="true">
-      {{ guestName }}{{ guestPostfix }}<br />
+      "{{ guestName }}"{{ guestPostfix }}<br />
       초대합니다!
     </h1>
   </div>
@@ -22,6 +21,7 @@ const postfix = params.get('postfix');
 export default {
   name: 'IntroCard',
   props: {
+    name: String,
     postfix: String
   },
   computed: {

@@ -1,18 +1,14 @@
 <template>
   <div>
-    <router-view>
-      <div>
-        <IntroCard class="section"/>
-        <HelloCard class="section"/>
-        <GroomCard class="section"/>
-        <BrideCard class="section"/>
-        <DateCard class="section"/>
-        <TimeCard class="section"/>
-        <LocationCard class="section"/>
-        <GalleryCard class="section"/>
-        <ClosingCard class="section"/>
-      </div>
-    </router-view>
+    <IntroCard class="section" ref="headerRef"/>
+    <HelloCard class="section"/>
+    <GroomCard class="section"/>
+    <BrideCard class="section"/>
+    <DateCard class="section"/>
+    <TimeCard class="section"/>
+    <LocationCard class="section"/>
+    <GalleryCard class="section"/>
+    <ClosingCard class="section" ref="footerRef"/>
   </div>
 </template>
 
@@ -42,6 +38,12 @@ export default {
     GalleryCard,
     ClosingCard,
   },
+  data() {
+    return {
+      windowHeight: window.innerHeight,
+      footerHeight: 0
+    }
+  },
   beforeMount() {
     AOS.init({
       startEvent: 'load',
@@ -49,11 +51,21 @@ export default {
       duration: 1000
     })
     AOS.refresh(true)
+  },
+  mounted() {
+    this.footerHeight = this.$refs.footerRef.$el.clientHeight;
   }
 }
 </script>
 
 <style>
+@font-face {
+    font-family: 'SunBatang-Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/SunBatang-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* 모바일 버전 */
 @media screen and (max-width: 768px) {
   body {
@@ -72,8 +84,8 @@ export default {
 
 html {
   animation: blur .7s ease-out ;
-  font-family: sans-serif;
-  --mdc-typography-font-family: Arial, Helvetica, sans-serif;
+  font-family: 'SunBatang-Light';
+  --mdc-typography-font-family: 'SunBatang-Light';
   line-height: 1.15;
   overscroll-behavior-x: none;
   -webkit-text-size-adjust: 100%;
@@ -94,7 +106,7 @@ body {
   background-color: rgb(189, 189, 189);
   margin: 0 auto;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'SunBatang-Light';
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -134,7 +146,7 @@ button, select {
 
 #app {
   background-color: #FFFFFFFF;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'SunBatang-Light';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -147,5 +159,15 @@ button, select {
   height: 100vh;
   display: flex;
   justify-content: center;
+}
+
+footer {
+  font-weight: 500;
+  color: aliceblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>

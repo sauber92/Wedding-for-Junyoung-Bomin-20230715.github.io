@@ -3,7 +3,12 @@
 <!-- 글자: TBD, 쿼리스트링 이용 -->
 <!-- 글자효과: TBD -->
 <template>
-  <h4 class="mdc-typography--headline1">마음 전하실 곳</h4>
+  <div class="closing">
+    <div class="closing-container">
+      <p>Develop by Junyoung, Design by Bomin</p>
+    </div>
+  </div>
+</template>
   
   <!-- <div> -->
         <!-- <button class="account-btn-groomfamily" id="materialButton" type="button" aria-expanded="false"> -->
@@ -93,8 +98,6 @@
           </div>
       </div>
   </div> -->
-</template>
-  
 <script>
 export default {
   name: 'ClosingCard',
@@ -105,13 +108,24 @@ export default {
 </script>
   
 <style scoped>
-#accountBox {
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    /* font-family: 'MaruBuri'; */
+.closing {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  background-color: rgb(151, 151, 151);
 }
-/* 
+
+.closing-container {
+  font-weight: 500;
+  color: aliceblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/*
 .account-content-icon-p {
     margin-bottom: 0px;
     font-size: 0.625em;
