@@ -18,7 +18,7 @@ export default {
   },
   mounted() {
     const options = {
-      rootMargin: '0px',
+      rootMargin: '100px',
       threshold: 0.5, // 대상 엘리먼트가 뷰포트에 50% 이상 들어왔을 때 콜백 함수 호출
     };
     const observer = new IntersectionObserver(this.callback, options);

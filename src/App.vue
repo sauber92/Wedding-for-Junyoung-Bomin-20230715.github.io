@@ -21,13 +21,13 @@ import AOS from 'aos'
 import "aos/dist/aos.css"
 import IntroCard from '@/components/Intro'
 import HelloCard from '@/components/Hello'
-import GroomCard from './components/Groom.vue'
-import BrideCard from './components/Bride.vue'
-import DateCard from './components/Date.vue'
-import TimeCard from './components/Time.vue'
-import LocationCard from './components/Location.vue'
-import GalleryCard from './components/Gallery.vue'
-import ClosingCard from './components/Closing.vue'
+import GroomCard from '@/components/Groom.vue'
+import BrideCard from '@/components/Bride.vue'
+import DateCard from '@/components/Date.vue'
+import TimeCard from '@/components/Time.vue'
+import LocationCard from '@/components/Location.vue'
+import GalleryCard from '@/components/Gallery.vue'
+import ClosingCard from '@/components/Closing.vue'
 
 export default {
   name: 'App',
@@ -42,7 +42,7 @@ export default {
     GalleryCard,
     ClosingCard,
   },
-  mounted() {
+  beforeMount() {
     AOS.init({
       startEvent: 'load',
       disableMutationObserver: false,
