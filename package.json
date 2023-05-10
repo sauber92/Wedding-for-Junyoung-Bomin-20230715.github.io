@@ -12,7 +12,6 @@
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
     "core-js": "^3.8.3",
-    "fullpage.js": "^4.0.19",
     "v-calendar": "^3.0.3",
     "vue": "^3.2.13",
     "vue-router": "^4.1.6",

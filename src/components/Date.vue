@@ -30,7 +30,6 @@ export default {
     };
     const observer = new IntersectionObserver(this.callback, options);
     observer.observe(this.$refs.startAnimation);
-    this.animateText();
   },
   methods: {
     callback(entries, observer) {// eslint-disable-line no-unused-vars

@@ -6,7 +6,7 @@
 <template>
   <div class="intro">
     <img alt="Intro" src="@/assets/intro.jpg" class="intro-img">
-    <h1 class="intro-container">
+    <h1 class="intro-container" data-aos="fade" data-aos-delay="300" data-aos-duration="2000" data-aos-once="true">
       {{ guestName }}{{ guestPostfix }}<br />
       초대합니다!
     </h1>

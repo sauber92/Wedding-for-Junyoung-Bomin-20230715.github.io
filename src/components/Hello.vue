@@ -5,11 +5,11 @@
 <template>
   <div class="hello">
     <img alt="hello" src="@/assets/mainveiw_0.gif" class="hello-img">
-    <div class="hello-container">
-      <h1 class="my-typing" v-show="showText"><mark>We are getting maried!</mark></h1>
-      <p class="my-fadeindown-0" v-show="showText">평생의 짝이되어<br/>믿음의 가정을 이루겠습니다.</p>
-      <p class="my-fadeindown-1" v-show="showText">저희의 길을 축복해주시고<br/>오셔서 이쁜 모습 많이 담아주세요</p>
-      <p class="my-fadeindown-2" v-show="showText">준영, 보면 올림</p>
+    <div class="hello-container" ref="startAnimation">
+      <h1 :class="{typing: isActive}"><span :class="{mark: isActive}">We are getting maried!</span></h1>
+      <p data-aos="fade" data-aos-delay="500" data-aos-duration="2000" data-aos-once="true">평생의 짝이되어<br/>믿음의 가정을 이루겠습니다.</p>
+      <p data-aos="fade" data-aos-delay="1000" data-aos-duration="2000" data-aos-once="true">저희의 길을 축복해주시고<br/>오셔서 이쁜 모습 많이 담아주세요</p>
+      <p data-aos="fade" data-aos-delay="1500" data-aos-duration="2000" data-aos-once="true">준영, 보면 올림</p>
     </div>
   </div>
 </template>
@@ -19,13 +19,30 @@ export default {
   name: 'HelloCard',
   data() {
     return {
-      showText: false
+      isActive: false
     }
   },
   mounted() {
-    setTimeout(() => {
-      this.showText = true;
-    }, 3000);
+    const options = {
+      rootMargin: '10px',
+      threshold: 0.5, // 대상 엘리먼트가 뷰포트에 50% 이상 들어왔을 때 콜백 함수 호출
+    };
+    const observer = new IntersectionObserver(this.callback, options);
+    observer.observe(this.$refs.startAnimation);
+  },
+  methods: {
+    callback(entries, observer) {// eslint-disable-line no-unused-vars
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // 대상 엘리먼트가 뷰포트에 진입한 경우
+          if (!this.isActive) {
+            this.isActive = true;
+          }
+        } else {
+          // 대상 엘리먼트가 뷰포트를 벗어난 경우
+        }
+      });
+    }
   }
 }
 </script>
@@ -73,7 +90,7 @@ export default {
   /* background-color: rgba(0, 0, 0, 0.301); */
 }
 
-.my-animate-typing {
+.typing {
   display: inline-block;
   overflow: hidden;
   font-size: 1.5em;
@@ -84,7 +101,7 @@ export default {
     blink-caret .75s step-end infinite alternate;
 }
 
-mark {
+.mark {
   -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
           animation: 1.5s highlight 1.5s 1 normal forwards;
   background-color: none;

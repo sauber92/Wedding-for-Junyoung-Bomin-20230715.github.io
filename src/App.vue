@@ -1,14 +1,13 @@
 <template>
   <div>
     <router-view>
-      <div id="fullpage">
+      <div>
         <IntroCard class="section"/>
         <HelloCard class="section"/>
         <GroomCard class="section"/>
         <BrideCard class="section"/>
         <DateCard class="section"/>
         <TimeCard class="section"/>
-        <!-- <CalendarCard class="section"/> -->
         <LocationCard class="section"/>
         <GalleryCard class="section"/>
         <ClosingCard class="section"/>
@@ -18,7 +17,6 @@
 </template>
 
 <script>
-import fullpage from 'fullpage.js'
 import AOS from 'aos'
 import "aos/dist/aos.css"
 import IntroCard from '@/components/Intro'
@@ -27,7 +25,6 @@ import GroomCard from './components/Groom.vue'
 import BrideCard from './components/Bride.vue'
 import DateCard from './components/Date.vue'
 import TimeCard from './components/Time.vue'
-// import CalendarCard from './components/Calendar.vue'
 import LocationCard from './components/Location.vue'
 import GalleryCard from './components/Gallery.vue'
 import ClosingCard from './components/Closing.vue'
@@ -41,32 +38,11 @@ export default {
     BrideCard,
     DateCard,
     TimeCard,
-    // CalendarCard,
     LocationCard,
     GalleryCard,
     ClosingCard,
   },
   mounted() {
-    let isDown = false;  // eslint-disable-line no-unused-vars
-    const fullpageApi = new fullpage('#fullpage', { // eslint-disable-line no-unused-vars
-      scrollingSpeed: 1000,
-      responsiveHeight: 568,
-      afterLoad: function(origin, destination, direction, trigger) {  // eslint-disable-line no-unused-vars
-        if (destination.isFirst == true && !isDown) {
-          setTimeout(() => {
-            fullpageApi.moveSectionDown();
-            isDown = true;
-          }, 1500);
-        }
-        else if (destination.index == 1) { // HelloCard
-          document.querySelector('.my-typing').classList.add('my-animate-typing');
-          document.querySelector('.my-fadeindown-0').classList.add('animate__animated', 'animate__fadeInDown', 'animate__delay-2s');
-          document.querySelector('.my-fadeindown-1').classList.add('animate__animated', 'animate__fadeInDown', 'animate__delay-3s');
-          document.querySelector('.my-fadeindown-2').classList.add('animate__animated', 'animate__fadeInDown', 'animate__delay-4s');
-        }
-      }
-    })
-
     AOS.init({
       startEvent: 'load',
       disableMutationObserver: false,
@@ -116,12 +92,9 @@ html::-webkit-scrollbar {
 
 body {
   background-color: rgb(189, 189, 189);
-  /* width: 360px; */
-  /* height: 100vh; */
   margin: 0 auto;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  /* font-size: 1rem; */
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -170,15 +143,9 @@ button, select {
   margin: 0 auto;
 }
 
-/* Fullpage vertical center */
 .section {
   height: 100vh;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-}
-
-.fp-watermark {
-  display: none;
 }
 </style>
