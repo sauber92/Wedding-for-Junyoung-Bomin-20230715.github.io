@@ -4,12 +4,23 @@
 <!-- 글자효과: 천천히 올라오는 효과, 문단 별로 -->
 <template>
   <div class="hello">
-    <img alt="hello" src="@/assets/mainveiw_0.gif" class="hello-img">
-    <div class="hello-container" ref="startAnimation">
-      <h1 :class="{typing: isActive}"><span :class="{mark: isActive}">We are getting maried!</span></h1>
-      <p data-aos="fade" data-aos-delay="500" data-aos-duration="2000" data-aos-once="true">평생의 짝이되어<br/>믿음의 가정을 이루겠습니다.</p>
-      <p data-aos="fade" data-aos-delay="1000" data-aos-duration="2000" data-aos-once="true">저희의 길을 축복해주시고<br/>오셔서 이쁜 모습 많이 담아주세요</p>
-      <p data-aos="fade" data-aos-delay="1500" data-aos-duration="2000" data-aos-once="true">준영, 보면 올림</p>
+    <!-- <img alt="hello" src="@/assets/mainveiw_0.gif" class="hello-img"> -->
+    <div class="hello-container">
+      <div ref="tag0">
+        <h1 class="tag"><span class="highlight">저희 결혼합니다!</span></h1>
+      </div>
+      <div class="spacer" style="height: 30px"></div>
+      <div ref="tag1">
+        <p class="tag">평생의 짝이되어<br/>믿음의 가정을 이루겠습니다.</p>
+      </div>
+      <div class="spacer" style="height: 30px"></div>
+      <div ref="tag2" >
+        <p class="tag">저희의 길을 축복해주시고<br/>오셔서 이쁜 모습 많이 담아주세요</p>
+      </div>
+      <div class="spacer" style="height: 30px"></div>
+      <div ref="tag3">
+        <p class="tag">준영, 보면 올림</p>
+      </div>
     </div>
   </div>
 </template>
@@ -18,30 +29,55 @@
 export default {
   name: 'HelloCard',
   data() {
-    return {
-      isActive: false
-    }
   },
   mounted() {
-    const options = {
-      rootMargin: '10px',
-      threshold: 0.5, // 대상 엘리먼트가 뷰포트에 50% 이상 들어왔을 때 콜백 함수 호출
-    };
-    const observer = new IntersectionObserver(this.callback, options);
-    observer.observe(this.$refs.startAnimation);
+    this.createObservers();
   },
   methods: {
-    callback(entries, observer) {// eslint-disable-line no-unused-vars
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // 대상 엘리먼트가 뷰포트에 진입한 경우
-          if (!this.isActive) {
-            this.isActive = true;
-          }
+    createObservers() {
+      const options = {
+        rootMargin: '-30px 0px 0px 0px', // viewport top에 100px 마진 추가
+        threshold: 1, // 대상 엘리먼트가 뷰포트에 50% 이상 들어왔을 때 콜백 함수 호출
+      };
+
+      const observer_0 = new IntersectionObserver((entries) => { // eslint-disable-line no-unused-vars
+        if (entries[0].isIntersecting) {
+          this.$refs.tag0.querySelector('.tag').classList.add('show', 'typing');
+          this.$refs.tag0.querySelector('.highlight').classList.add('show', 'mark');
         } else {
-          // 대상 엘리먼트가 뷰포트를 벗어난 경우
+          this.$refs.tag0.querySelector('.tag').classList.remove('show', 'typing');
+          this.$refs.tag0.querySelector('.highlight').classList.remove('show', 'mark');
         }
-      });
+      }, options);
+
+      const observer_1 = new IntersectionObserver((entries) => { // eslint-disable-line no-unused-vars
+        if (entries[0].isIntersecting) {
+          this.$refs.tag1.querySelector('.tag').classList.add(['show']);
+        } else {
+          this.$refs.tag1.querySelector('.tag').classList.remove('show');
+        }
+      }, options);
+
+      const observer_2 = new IntersectionObserver((entries) => { // eslint-disable-line no-unused-vars
+        if (entries[0].isIntersecting) {
+          this.$refs.tag2.querySelector('.tag').classList.add(['show']);
+        } else {
+          this.$refs.tag2.querySelector('.tag').classList.remove('show');
+        }
+      }, options);
+
+      const observer_3 = new IntersectionObserver((entries) => { // eslint-disable-line no-unused-vars
+        if (entries[0].isIntersecting) {
+          this.$refs.tag3.querySelector('.tag').classList.add(['show']);
+        } else {
+          this.$refs.tag3.querySelector('.tag').classList.remove('show');
+        }
+      }, options);
+
+      observer_0.observe(this.$refs.tag0);
+      observer_1.observe(this.$refs.tag1);
+      observer_2.observe(this.$refs.tag2);
+      observer_3.observe(this.$refs.tag3);
     }
   }
 }
@@ -71,7 +107,7 @@ h1 {
 }
 
 .hello {
-  /* background-color: rgb(255, 234, 210); */
+  height: 80vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -81,7 +117,6 @@ h1 {
   position: absolute;
   z-index: 1;
   border-radius: 2%;
-  /* border-color: brown; */
 }
 
 .hello-container {
@@ -90,9 +125,20 @@ h1 {
   top: 10%;
   left: 10%;
   width: 80%;
-  height: 80%;
+  padding-top: 20%;
+  padding-bottom: 20%;
   z-index: 2;
-  /* background-color: rgba(0, 0, 0, 0.301); */
+  border: solid;
+  border-color: #ffec7e;
+}
+
+.tag {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.tag.show {
+  opacity: 1;
 }
 
 .typing {

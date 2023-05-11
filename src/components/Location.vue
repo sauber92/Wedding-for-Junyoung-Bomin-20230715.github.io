@@ -60,10 +60,10 @@ export default {
           // 대상 엘리먼트가 뷰포트에 진입한 경우
           if (!this.isActive) {
             this.isActive = true;
-            console.log('hi');
           }
         } else {
           // 대상 엘리먼트가 뷰포트를 벗어난 경우
+          this.isActive = false;
         }
       });
     },

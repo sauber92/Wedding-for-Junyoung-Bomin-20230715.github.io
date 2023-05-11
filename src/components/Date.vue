@@ -42,6 +42,7 @@ export default {
           }
         } else {
           // 대상 엘리먼트가 뷰포트를 벗어난 경우
+          this.isAnimate = true;
         }
       });
     },

@@ -25,7 +25,6 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: aqua;
 }
 
 .groombride-img {
