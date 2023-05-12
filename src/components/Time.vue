@@ -2,7 +2,10 @@
 <!-- 사진: X -->
 <template>
   <div class="time">
-    <div class="time-container" ref="startCount">{{ currentTime }}</div>
+    <div class="container">
+      <span class="am">오전</span>
+      <span class="count" ref="startCount"> {{ currentTime }} </span>
+    </div>
   </div>
 </template>
     
@@ -59,30 +62,51 @@ export default {
 
 <style scoped>
 .time {
-  background-color: rgb(194, 255, 199);
+  /* background-color: rgb(194, 255, 199); */
   position: relative;
   display: flex;
   justify-content: center;
 }
 
-.time-container {
+.container {
   position: absolute;
-  display: inline-block;
+  display: flex;
   top: 45%;
-  left: 0%;
-  width: 100%;
+  left: 50%;
+  align-items: flex-end;
+  transform: translate(-50%, -50%);
+  color: #55504f;
+}
+
+.am {
+  /* position: absolute; */
+  /* background-color: red; */
+  margin-right: 5px;
+  margin-bottom: 25px;
+}
+
+.count {
+  /* position: absolute; */
+  display: inline-block;
 }
 
 /* 모바일 버전 */
 @media screen and (max-width: 768px) {
-  .time-container {
+  .am {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+  }
+  .count {
     font-size: 3em;
   }
 }
 
 /* 데스크탑 버전 */
 @media screen and (min-width: 769px) {
-  .time-container {
+  .am {
+    font-size: 1em;
+  }
+  .count {
     font-size: 4em;
   }
 }
