@@ -4,11 +4,19 @@
 <!-- 글자효과: 한번에 fade로 나오기 -->
 <template>
   <div class="intro">
-    <img alt="Intro" src="@/assets/intro.jpg" class="intro-img">
-    <h1 class="intro-container" data-aos="fade" data-aos-delay="300" data-aos-duration="2000" data-aos-once="true">
-      "{{ guestName }}"{{ guestPostfix }}<br />
-      초대합니다!
-    </h1>
+    <img alt="Intro" src="@/assets/mainveiw_0.gif" class="intro-img">
+    <div class="intro-container" data-aos="fade" data-aos-delay="300" data-aos-duration="2000">
+      <span class="vertical-text">
+        <span v-if="!hasQuery">
+          <span class="wedding-date">7</span>월<span class="wedding-date">15</span>일 <br>
+          결혼합니다
+        </span>
+        <span v-else>
+          {{ guestName }}{{ guestPostfix }} <br>
+          초대합니다
+        </span>
+      </span>
+    </div>
   </div>
 </template>
 
@@ -24,7 +32,22 @@ export default {
     name: String,
     postfix: String
   },
+  data() {
+    return {
+      query: false,
+    }
+  },
+  mounted() {
+    const searchParams = window.location.search;
+    if (searchParams) {
+      this.query = true
+    }
+    console.log(this.query);
+  },
   computed: {
+    hasQuery() {
+      return this.query;
+    },
     guestName() {
       if (queryString && name) {
         return name;
@@ -38,7 +61,7 @@ export default {
         } else {
           return '';
       }
-    }
+    },
   }
 }
 </script>
@@ -47,7 +70,7 @@ export default {
 .intro {
   position: relative;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .intro-img {
@@ -62,11 +85,43 @@ export default {
 
 .intro-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 20px;
+  left: 82px;
   z-index: 2;
-  /* background-color: rgba(0, 0, 0, 0.5); */
+  text-align: left;
+}
+
+.intro-container span {
+  object-fit: contain;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: normal;
+  color: #242424;
+}
+
+.vertical-text {
+  writing-mode: vertical-lr;
+  letter-spacing: 4px;
+}
+
+.wedding-date {
+  all: unset;
+  display: inline-block;
+  writing-mode: horizontal-tb;
+  letter-spacing: 0px;
+}
+
+/* 모바일 버전 */
+@media screen and (max-width: 768px) {
+  .intro-container span {
+    font-size: 20px;
+  }
+}
+
+/* 데스크탑 버전 */
+@media screen and (min-width: 769px) {
+  .intro-container span {
+    font-size: 40px;
+  }
 }
 </style>

@@ -65,6 +65,18 @@ export default {
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'MapoGoldenPier';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoGoldenPierA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MaruBuri-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* 모바일 버전 */
 @media screen and (max-width: 768px) {
@@ -84,8 +96,10 @@ export default {
 
 html {
   animation: blur .7s ease-out ;
-  font-family: 'SunBatang-Light';
-  --mdc-typography-font-family: 'SunBatang-Light';
+  /* font-family: 'SunBatang-Light'; */
+  font-family: 'MaruBuri-Regular';
+  /* --mdc-typography-font-family: 'SunBatang-Light'; */
+  --mdc-typography-font-family: 'MaruBuri-Regular';
   line-height: 1.15;
   overscroll-behavior-x: none;
   -webkit-text-size-adjust: 100%;
@@ -106,7 +120,8 @@ body {
   background-color: rgb(189, 189, 189);
   margin: 0 auto;
   padding: 0;
-  font-family: 'SunBatang-Light';
+  /* font-family: 'SunBatang-Light'; */
+  font-family: 'MaruBuri-Regular';
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -146,7 +161,8 @@ button, select {
 
 #app {
   background-color: #FFFFFFFF;
-  font-family: 'SunBatang-Light';
+  /* font-family: 'SunBatang-Light'; */
+  font-family: 'MaruBuri-Regular';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
