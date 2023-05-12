@@ -4,10 +4,11 @@
   <div class="date">
     <div class="date-container" ref="startAnimation">
       <div class="date-month half">
-        <span data-aos="fade" class="font-month animate-month"> {{ month }} </span>
+        <span data-aos="fade" class="font-month animate-month"> {{ month }} <span class="date">월</span> </span>
       </div>
+      <div class="slash"></div>
       <div class="date-day half">
-        <span data-aos="fade" class="font-day animate-day"> {{ day }} </span>
+        <span data-aos="fade" class="font-day animate-day"> {{ day }} <span class="date">일(토)</span></span>
       </div>
     </div>
   </div>
@@ -96,27 +97,46 @@ export default {
   height: 100%;
 }
 
+.slash {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  height: 20%;
+  background-color: #55504f;
+  clip-path: polygon(99% 0, 100% 1%, 1% 100%, 0 99%);
+  z-index: 3;
+}
+
 .date-month {
-  background-color: rgb(255, 203, 194);
-  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 65%);
+  background-color: rgb(255, 255, 255);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
   z-index: 1;
 }
 
 .date-day {
-  background-color: rgb(194, 251, 255);
+  background-color: rgb(243, 243, 229);
   z-index: 0;
 }
 
 .font-month {
   position: absolute;
+  display: flex;
   top: 42%;
-  left: 42%;
+  left: 30%;
+  align-items: flex-end;
+  color: #55504f;
 }
 
 .font-day {
   position: absolute;
+  display: flex;
   bottom: 42%;
-  right: 42%;
+  right: 28%;
+  align-items: flex-end;
+  color: #55504f;
 }
 
 /* 모바일 버전 */
@@ -124,12 +144,20 @@ export default {
   .date-container {
     font-size: 3em;
   }
+  .date {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
 }
 
 /* 데스크탑 버전 */
 @media screen and (min-width: 769px) {
   .date-container {
-    font-size: 3.5em;
+    font-size: 4em;
+  }
+  .date {
+    font-size: 20px;
+    margin-bottom: 20px;
   }
 }
 </style>
