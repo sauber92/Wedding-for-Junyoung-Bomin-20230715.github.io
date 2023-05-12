@@ -4,19 +4,23 @@
 <!-- 글자효과: 스크롤에 따라 사진 위or오른쪽에 글자 나오게 -->
 <template>
   <div class="groombride">
-    <img alt="groom" src="@/assets/groom.jpg" class="bride-img groombride-img">
+    <img alt="groom" src="@/assets/groom.webp" srcset="@/assets/groom_2x.webp 2x, @/assets/groom_3x.webp 3x," class="bride-img groombride-img">
     <div class="bride-container groombride-container">
-      <p>신랑 정준영</p>
+      <div class="parent">
+        <span data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">
+          <span class="name">정진열ㆍ유재희</span><span>의 장남</span>
+        </span>
+      </div>
+      <div class="child" data-aos="fade-down" data-aos-delay="300" data-aos-duration="2000">
+        <span>신랑 </span><span class="name">정준영</span>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'GroombrideCard',
-  props: {
-
-  }
+  name: 'GroombrideCard'
 }
 </script>
 
@@ -25,6 +29,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
+  height: 100vh;
 }
 
 .groombride-img {
@@ -36,7 +41,6 @@ export default {
   object-fit: cover;
   z-index: 1;
 }
-
 .groombride-container {
   position: absolute;
   top: 0;
@@ -45,5 +49,34 @@ export default {
   height: 100%;
   z-index: 2;
   /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+.parent {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  line-height: 2;
+  letter-spacing : 4px;
+}
+.parent .name {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.child {
+  position: absolute;
+  top: 40%;
+  right: 5%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  writing-mode: vertical-lr;
+  letter-spacing: 4px;
+}
+
+.child .name {
+  font-size: 1.2em;
+  font-weight: 700;
 }
 </style>
