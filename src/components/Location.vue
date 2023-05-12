@@ -5,6 +5,7 @@
 <!-- Maps API 사용 -->
 <template>
   <div class="location" ref="startAnimation">
+    <span class="title">오시는 길</span>
     <div class="box">
       <span class="icon">
         <font-awesome-icon icon="fa-solid fa-magnifying-glass" bounce size="xs"/>
@@ -16,10 +17,26 @@
     <div>
       <div id="map" data-aos="fade" data-aos-delay="0" data-aos-duration="2000" data-aos-once="true"></div>
     </div>
-    <div class="location-container">
-      <h3><span :class="{mark: isActive}">3층 아모르홀</span></h3>
-      <p>버스</p>
-      <p>지하철</p>
+    <div class="container">
+      <div class="container-address">
+        <p>서울특별시 송파구 올림픽로 319</p>
+        <p>더 컨벤션 잠실점 <span :class="{mark: isActive}">3층 아모르홀</span></p>
+        <p class="tel">T. 02-418-5000</p>
+      </div>
+      <div class="container-trans">
+        <p class="transportation">지하철</p>
+        <p>8호선 잠실역 9번출구 / 도보 2분</p>
+        <p>2호선 잠실역 8번출구 / 도보 6분</p>
+      </div>
+      <div class="container-trans">
+        <p class="transportation">버스</p>
+        <p>잠실광역환승센터(지하) / 도보 14분</p>
+        <p>잠실역 9번출구 정류장 / 도보 2분</p>
+      </div>
+      <div class="container-trans">
+        <p class="transportation">주차</p>
+        <p>더 컨벤션 건물 내 주차</p>
+      </div>
     </div>
   </div>
 </template>
@@ -98,8 +115,16 @@ export default {
 </script>
   
 <style scoped>
+.title {
+  display: inline-block;
+  height: 3.4%;
+  color: #5d493b;
+  border-bottom: solid 0.1em #5d493b;
+}
+
 .location {
-  background-color: rgb(255, 235, 252);
+  height: 150vh;
+  /* background-color: rgb(255, 235, 252); */
   position: relative;
   display: flex;
   justify-content: center;
@@ -108,25 +133,47 @@ export default {
 #map {
   position: absolute;
   display: inline-block;
-  top: 20%;
+  top: 15%;
   left: 10%;
   width: 80%;
   height: 40%;
 }
 
-.location-container {
+.container {
   position: absolute;
   display: inline-block;
-  top: 70%;
-  left: 0%;
-  width: 100%;
+  top: 60%;
+  /* background-color: red; */
+}
+
+.container-address {
+  /* width: 100%; */
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+.container-address .tel {
+  margin-top: 15px;
+  margin-bottom: 40px;
+  font-size: 0.8em;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.container-trans {
+  margin-top: 20px;
+  font-size: 1em;
+  line-height: 1.8;
+}
+
+.container-trans .transportation {
+  color: #5d493b;
 }
 
 .mark {
   -webkit-animation: 1.0s highlight 1.0s 1 normal forwards;
           animation: 1.0s highlight 1.0s 1 normal forwards;
   background-color: none;
-  background: linear-gradient(90deg, #ffec7e 50%, rgba(255, 255, 255, 0) 50%);
+  background: linear-gradient(90deg, #f1efea, 50%, rgba(255, 255, 255, 0) 50%);
   background-size: 200% 100%;
   background-position: 100% 0;
 }
@@ -134,17 +181,17 @@ export default {
 .box {
   position: absolute;
   display: inline-block;
-  top: 10%;
+  top: 6%;
   width: 80%;
   min-height: 2.5em;
-  background-color: rgb(255, 255, 255);
+  background-color: #f1efea;
   border-radius: 1.3em;
   z-index: 0;
 }
 
 .search {
   position: absolute;
-  top: 10.2%;
+  top: 6.2%;
   z-index: 1;
 }
 

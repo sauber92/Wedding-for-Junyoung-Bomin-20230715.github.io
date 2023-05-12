@@ -117,7 +117,7 @@ export default {
 }
 
 .date-day {
-  background-color: rgb(243, 243, 229);
+  background-color: #f1efea;
   z-index: 0;
 }
 
