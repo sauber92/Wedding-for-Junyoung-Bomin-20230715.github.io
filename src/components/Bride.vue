@@ -4,14 +4,14 @@
 <!-- 글자효과: 스크롤에 따라 사진 위or오른쪽에 글자 나오게 -->
 <template>
   <div class="groombride">
-    <img alt="bride" src="@/assets/bride.jpg" class="bride-img groombride-img">
+    <img alt="bride" src="@/assets/bride.jpg" class="bride-img groombride-img" data-aos="fade" data-aos-delay="5000" data-aos-duration="5000">
     <div class="bride-container groombride-container">
       <div class="parent">
-        <span data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">
+        <span data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
           <span class="name">전이원ㆍ양영옥</span><span>의 장녀</span>
         </span>
       </div>
-      <div class="child" data-aos="fade-down" data-aos-delay="300" data-aos-duration="2000">
+      <div class="child" data-aos="fade" data-aos-delay="300" data-aos-duration="2000">
         <span>신부 </span><span class="name">전보민</span>
       </div>
     </div>
@@ -56,8 +56,9 @@ export default {
 
 .parent {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 50%;
+  width: max-content;
   transform: translate(-50%, -50%);
   font-size: 1em;
   line-height: 2;
@@ -70,7 +71,7 @@ export default {
 
 .child {
   position: absolute;
-  top: 40%;
+  top: 15%;
   left: 5%;
   transform: translate(-50%, -50%);
   font-size: 1em;

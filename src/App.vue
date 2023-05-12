@@ -89,7 +89,7 @@ export default {
 /* 데스크탑 버전 */
 @media screen and (min-width: 769px) {
   body {
-    width: 768px;;
+    width: 600px;;
     font-size: 18px;
   }
 }

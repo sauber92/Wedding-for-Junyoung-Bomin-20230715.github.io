@@ -8,11 +8,11 @@
     <span class="title">오시는 길</span>
     <div class="box">
       <span class="icon">
-        <font-awesome-icon icon="fa-solid fa-magnifying-glass" bounce size="xs"/>
+        <font-awesome-icon icon="fa-solid fa-magnifying-glass" size="xs"/>
       </span>
     </div>
     <div class="search">
-      <h1 :class="{typing: isActive}">더 컨벤션 잠실점</h1>
+      <h1 :class="{typing: isActive}">더컨벤션 잠실점</h1>
     </div>
     <div>
       <div id="map" data-aos="fade" data-aos-delay="0" data-aos-duration="2000" data-aos-once="true"></div>
@@ -20,7 +20,7 @@
     <div class="container">
       <div class="container-address">
         <p>서울특별시 송파구 올림픽로 319</p>
-        <p>더 컨벤션 잠실점 <span :class="{mark: isActive}">3층 아모르홀</span></p>
+        <p>더컨벤션 잠실점 <span :class="{mark: isActive}">3층 아모르홀</span></p>
         <p class="tel">T. 02-418-5000</p>
       </div>
       <div class="container-trans">
@@ -94,7 +94,7 @@ export default {
       const container = document.getElementById("map");
       const options = {
         center: new window.kakao.maps.LatLng(lat, lng),
-        level: 3
+        level: 5
       };
 
       this.map = new window.kakao.maps.Map(container, options);
@@ -123,7 +123,7 @@ export default {
 }
 
 .location {
-  height: 150vh;
+  height: 100vh;
   /* background-color: rgb(255, 235, 252); */
   position: relative;
   display: flex;
@@ -134,15 +134,16 @@ export default {
   position: absolute;
   display: inline-block;
   top: 15%;
-  left: 10%;
-  width: 80%;
-  height: 40%;
+  left: 2%;
+  width: 96%;
+  height: 30%;
+  background-color: #5d493f;
 }
 
 .container {
   position: absolute;
   display: inline-block;
-  top: 60%;
+  top: 50%;
   /* background-color: red; */
 }
 
@@ -203,20 +204,20 @@ export default {
 }
 
 .search h1 {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 300;
 }
 
 .typing {
   display: inline-block;
   overflow: hidden;
-  font-size: 1.5em;
+  font-size: 1.2em;
   white-space: nowrap;
   margin: 0 auto;
-  border-right: .15em solid rgb(37, 37, 37);
+  border-right: .13em solid rgb(37, 37, 37);
   letter-spacing: .15em;
   animation:
-    typing 3s steps(30),
+    typing 2s steps(30),
     blink-caret .75s step-end infinite alternate;
 }
 
@@ -239,6 +240,11 @@ export default {
   to {
     width: 100%;
   }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(37, 37, 37); }
 }
 
 </style>

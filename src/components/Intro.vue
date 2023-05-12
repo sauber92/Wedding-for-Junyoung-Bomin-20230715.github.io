@@ -84,8 +84,8 @@ export default {
 
 .intro-container {
   position: absolute;
-  top: 20px;
-  left: 82px;
+  
+  width: max-content;
   z-index: 2;
   text-align: left;
 }
@@ -112,15 +112,23 @@ export default {
 
 /* 모바일 버전 */
 @media screen and (max-width: 768px) {
+  .intro-container {
+    top: 7%;
+    left: 14%;
+  }
   .intro-container span {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 /* 데스크탑 버전 */
 @media screen and (min-width: 769px) {
+  .intro-container {
+    top: 7%;
+    left: 15%;
+  }
   .intro-container span {
-    font-size: 40px;
+    font-size: 26px;
   }
 }
 </style>

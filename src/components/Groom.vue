@@ -4,7 +4,7 @@
 <!-- 글자효과: 스크롤에 따라 사진 위or오른쪽에 글자 나오게 -->
 <template>
   <div class="groombride">
-    <img alt="groom" src="@/assets/groom.webp" srcset="@/assets/groom_2x.webp 2x, @/assets/groom_3x.webp 3x," class="bride-img groombride-img">
+    <img alt="groom" src="@/assets/groom.jpg" class="bride-img groombride-img">
     <div class="bride-container groombride-container">
       <div class="parent">
         <span data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">
@@ -53,8 +53,9 @@ export default {
 
 .parent {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 50%;
+  width: max-content;
   transform: translate(-50%, -50%);
   font-size: 1em;
   line-height: 2;
@@ -67,7 +68,7 @@ export default {
 
 .child {
   position: absolute;
-  top: 40%;
+  top: 15%;
   right: 5%;
   transform: translate(-50%, -50%);
   font-size: 1em;
