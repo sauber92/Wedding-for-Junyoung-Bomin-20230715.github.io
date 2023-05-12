@@ -42,7 +42,6 @@ export default {
     if (searchParams) {
       this.query = true
     }
-    console.log(this.query);
   },
   computed: {
     hasQuery() {
