@@ -6,19 +6,24 @@
 <template>
   <div class="gallery">
     <div class="gallery-container">
-      <h2>갤러리</h2>
+      <span class="title">갤러리</span>
         <v-app class="fill-height">
           <v-container class="pa-3">
             <v-row>
-                <v-col v-for="item in items" :key="item.id" color="grey lighten-3" flat cols="6">
-                  <v-img :src="item.img" :lazy-src="item.img" @click="openDialog(item.img)">
-                    <template v-slot:placeholder>
-                      <v-row class="fill-height ma-0" align="center" justify="center">
-                        <v-progress-circular indeterminate color="grey-lighten-5">
-                        </v-progress-circular>
-                      </v-row>
-                    </template>
-                  </v-img>
+              <v-col v-for="i in 6" :key="items[i].id" color="grey lighten-3" flat cols="6" lg="4" sm="6">
+                <v-img
+                  class="card"
+                  :src="items[i].img"
+                  :lazy-src="items[i].img"
+                  @click="openDialog(items[i].img)"
+                >
+                  <template v-slot:placeholder>
+                    <v-row class="fill-height ma-0" align="center" justify="center">
+                      <v-progress-circular indeterminate color="grey-lighten-5">
+                      </v-progress-circular>
+                    </v-row>
+                  </template>
+                </v-img>
               </v-col>
             </v-row>
             <v-dialog v-model="dialog" max-width="800">
@@ -44,7 +49,7 @@ export default {
         {
           id: 1,
           popup: false,
-          img: require("../assets/intro.jpg")
+          img: require("../assets/bride.jpeg")
         },
         {
           id: 2,
@@ -76,16 +81,16 @@ export default {
           popup: false,
           img: require("../assets/intro.jpg")
         },
-        // {
-        //   id: 8,
-        //   popup: false,
-        //   img: require("../assets/intro.jpg")
-        // },
-        // {
-        //   id: 9,
-        //   popup: false,
-        //   img: require("../assets/intro.jpg")
-        // }
+        {
+          id: 8,
+          popup: false,
+          img: require("../assets/intro.jpg")
+        },
+        {
+          id: 9,
+          popup: false,
+          img: require("../assets/intro.jpg")
+        }
       ],
       dialog: false,
       dialogImg: ""
@@ -104,34 +109,80 @@ export default {
 </script>
   
 <style scoped>
-h2 {
-  background-color: red;
+.title {
+  display: inline-block;
+  height: 3.4%;
+  border-bottom: solid 0.1em #5d493b;
 }
 
 .gallery {
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: rgb(188, 188, 231)
+}
+
+/* 갤럭시 폴드 */
+@media screen and (max-device-width : 359px) {
+  .gallery-container {
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    width: 100%;
+  }
+  .title {
+    background-color: red;
+  }
+}
+
+/* 아이폰 SE */
+@media screen and (min-device-width : 359px) and (max-device-width : 376px) {
+  .gallery-container {
+    position: absolute;
+    top: 2%;
+    left: 10%;
+    width: 80%;
+  }
+  .title {
+    background-color: yellow;
+  }
 }
 
 /* 모바일 버전 */
-@media screen and (max-width: 768px) {
+@media screen and (min-device-width : 376px) and (max-device-width: 768px) {
+  .gallery-container {
+    position: absolute;
+    top: 2%;
+    left: 0%;
+    width: 100%;
+  }
+  .title {
+    background-color: green;
+  }
+}
+
+/* 데스크탑 버전 */
+@media screen and (min-device-width: 769px) and (max-device-width : 1024px) {
   .gallery-container {
     position: absolute;
     top: 0;
     left: 0%;
     width: 100%;
   }
+  .title {
+    background-color: blue;
+  }
 }
 
-/* 데스크탑 버전 */
-@media screen and (min-width: 769px) {
+/* 아이패드 프로 */
+@media only screen and (min-device-width : 1024px) {
   .gallery-container {
     position: absolute;
     top: 0;
-    left: 30%;
-    width: 40%;
+    left: 0%;
+    width: 100%;
+  }
+  .title {
+    background-color: purple;
   }
 }
 </style>

@@ -4,7 +4,7 @@
 <!-- 글자효과: 스크롤에 따라 사진 위or오른쪽에 글자 나오게 -->
 <template>
   <div class="bride">
-    <img alt="bride" src="@/assets/bride.jpg" class="bride-img">
+    <img alt="bride" src="@/assets/bride.jpeg" class="bride-img">
     <div class="bride-container">
       <div class="parent">
         <span>
@@ -42,6 +42,7 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 80% 80%;
   z-index: 1;
 }
 .bride-container {
@@ -71,8 +72,8 @@ export default {
 
 .child {
   position: absolute;
-  top: 15%;
-  left: 5%;
+  top: 30%;
+  left: 10%;
   transform: translate(-50%, -50%);
   font-size: 1em;
   writing-mode: vertical-lr;
@@ -82,5 +83,63 @@ export default {
 .child .name {
   font-size: 1.2em;
   font-weight: 700;
+}
+
+/* 갤럭시 폴드 */
+@media screen and (max-device-width : 359px) {
+  .bride-img {
+    object-position: 80% 80%;
+  }
+  .parent {
+    font-size: 0.9em;
+    top: 10%;
+  }
+  .parent .name {
+    font-size: 1.0em;
+  }
+  .child {
+    font-size: 0.9em;
+    left: 10%;
+  }
+  .child .name {
+    font-size: 1.0em;
+  }
+}
+
+/* 아이폰 SE */
+@media screen and (min-device-width : 359px) and (max-device-width : 376px) {
+  .bride-img {
+    object-position: 80% 80%;
+  }
+  .parent {
+    top: 8%;
+  }
+}
+
+/* 모바일 버전 */
+@media screen and (min-device-width : 376px) and (max-device-width: 768px) {
+  .bride-img {
+    object-position: 80% 80%;
+  }
+  .parent {
+    top: 8%;
+  }
+  .child {
+    left: 12%;
+  }
+}
+
+/* 데스크탑 버전 */
+@media screen and (min-device-width: 769px) and (max-device-width : 1024px) {
+  .bride-img {
+    object-position: 80% 45%;
+  }
+}
+
+/* 아이패드 프로 */
+@media only screen and (min-device-width : 1024px) {
+  .bride-img {
+    object-position: 80% 45%;
+  }
 }
 </style>

@@ -131,6 +131,15 @@ export default {
         .from(".map", { opacity: 0 })
         .from(".location .container", { opacity: 0 })
 
+        gsap.timeline({ // GalleryCard
+          scrollTrigger: {
+            trigger: ".gallery",
+            start: "center center",
+            end: "bottom top",
+            pin: true,
+          }
+        })
+        .from(".card", { opacity: 0 })
     }
   }
 }

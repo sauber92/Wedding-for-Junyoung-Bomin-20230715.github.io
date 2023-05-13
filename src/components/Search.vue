@@ -74,6 +74,7 @@ export default {
 .search-txt {
   position: absolute;
   top: 50.5%;
+  letter-spacing: .15em;
   z-index: 1;
 }
 

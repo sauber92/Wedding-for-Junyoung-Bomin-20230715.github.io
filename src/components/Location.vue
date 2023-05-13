@@ -91,8 +91,9 @@ export default {
   
 <style scoped>
 .title {
-  display: inline-block;
+  display: flex;
   height: 3.4%;
+  margin-top: 5%;
   color: #5d493b;
   border-bottom: solid 0.1em #5d493b;
 }
@@ -106,8 +107,8 @@ export default {
 
 .map-click {
   position: absolute;
-  display: inline-block;
-  top: 6%;
+  display: flex;
+  top: 10%;
   left: 2%;
   width: 96%;
   height: 33%;
@@ -125,8 +126,8 @@ export default {
 
 #map {
   position: absolute;
-  display: inline-block;
-  top: 6%;
+  display: flex;
+  top: 10%;
   left: 2%;
   width: 96%;
   height: 30%;
@@ -135,26 +136,8 @@ export default {
 .container {
   position: absolute;
   display: inline-block;
-  top: 42%;
-}
-
-.container-address {
-  /* width: 100%; */
-  font-weight: 600;
-  letter-spacing: 4px;
-}
-.container-address .tel {
-  margin-top: 15px;
-  margin-bottom: 50px;
-  font-size: 0.8em;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-
-.container-trans {
-  margin-top: 55px;
-  font-size: 1em;
-  line-height: 1.8;
+  top: 45%;
+  height: 53%;
 }
 
 .container-trans .transportation {
@@ -179,6 +162,110 @@ export default {
 @keyframes highlight {
   to {
     background-position: 0 0;
+  }
+}
+
+/* 갤럭시 폴드 */
+@media screen and (max-device-width : 359px) {
+  .container-address {
+    margin-top: 8%;
+    font-size: 0.9em;
+  }
+  .container-address .tel {
+    margin-top: 8%;
+    margin-bottom: 17%;
+    font-size: 0.7em;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  .container-trans {
+    margin-top: 15%;
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+}
+
+/* 아이폰 SE */
+@media screen and (min-device-width : 359px) and (max-device-width : 376px) {
+  .container-address {
+    margin-top: 10%;
+    font-size: 0.9em;
+  }
+  .container-address .tel {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-size: 0.7em;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  .container-trans {
+    margin-top: 15%;
+    font-size: 0.9em;
+    line-height: 1.3;
+  }
+}
+
+/* 모바일 버전 */
+@media screen and (min-device-width : 376px) and (max-device-width: 768px) {
+  .container-address {
+    margin-top: 10%;
+    font-size: 1em;
+  }
+  .container-address .tel {
+    margin-top: 8%;
+    margin-bottom: 13%;
+    font-size: 0.8em;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  .container-trans {
+    margin-top: 18%;
+    font-size: 1em;
+    line-height: 1.8;
+  }
+}
+
+/* 데스크탑 버전 */
+@media screen and (min-device-width: 769px) and (max-device-width : 1024px) {
+  .container-address {
+    margin-top: 10%;
+    font-size: 1em;
+  }
+  .container-address .tel {
+    margin-top: 8%;
+    margin-bottom: 15%;
+    font-size: 0.8em;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  .container-trans {
+    margin-top: 22%;
+    font-size: 1em;
+    line-height: 2;
+  }
+}
+
+/* 아이패드 프로 */
+@media only screen and (min-device-width : 1024px) {
+  .title {
+    height: 4%;
+    margin-top: 3%;
+  }
+  .container-address {
+    margin-top: 3%;
+    font-size: 1em;
+  }
+  .container-address .tel {
+    margin-top: 5%;
+    margin-bottom: 13%;
+    font-size: 0.8em;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  .container-trans {
+    margin-top: 10%;
+    font-size: 0.9em;
+    line-height: 1.5;
   }
 }
 </style>

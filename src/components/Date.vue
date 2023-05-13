@@ -150,14 +150,82 @@ export default {
   }
 }
 
+/* 갤럭시 폴드 */
+@media screen and (max-device-width : 359px) {
+  .date-container {
+    font-size: 3em;
+  }
+  .date {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  .font-month {
+    top: 40%;
+    left: 25%;
+  }
+  .font-day {
+    bottom: 40%;
+    right: 23%;
+  }
+}
+
+/* 아이폰 SE */
+@media screen and (min-device-width : 359px) and (max-device-width : 376px) {
+  .date-container {
+    font-size: 3em;
+  }
+  .date {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+/* 모바일 버전 */
+@media screen and (min-device-width : 376px) and (max-device-width: 768px) {
+  .date-container {
+    font-size: 3em;
+  }
+  .date {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+}
+
 /* 데스크탑 버전 */
-@media screen and (min-width: 769px) {
+@media screen and (min-device-width: 769px) and (max-device-width : 1024px) {
   .date-container {
     font-size: 4em;
   }
   .date {
     font-size: 20px;
     margin-bottom: 20px;
+  }
+  .font-month {
+    top: 36%;
+    left: 30%;
+  }
+  .font-day {
+    bottom: 36%;
+    right: 28%;
+  }
+}
+
+/* 아이패드 프로 */
+@media only screen and (min-device-width : 1024px) {
+  .date-container {
+    font-size: 4em;
+  }
+  .date {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .font-month {
+    top: 36%;
+    left: 30%;
+  }
+  .font-day {
+    bottom: 36%;
+    right: 28%;
   }
 }
 </style>

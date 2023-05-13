@@ -113,7 +113,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
-  height: 20vh;
+  height: 15vh;
   background-color: rgb(151, 151, 151);
 }
 
