@@ -1,7 +1,6 @@
 <template>
   <div>
-    <p>아래로 내려보세요</p>
-    <IntroCard class="section" ref="headerRef"/>
+    <IntroCard class="section"/>
     <HelloCard class="section"/>
     <GroomCard class="section"/>
     <BrideCard class="section"/>
@@ -10,7 +9,7 @@
     <SearchCard class="section"/>
     <LocationCard class="section"/>
     <GalleryCard class="section"/>
-    <ClosingCard class="section" ref="footerRef"/>
+    <ClosingCard class="section"/>
   </div>
 </template>
 
@@ -64,17 +63,6 @@ export default {
   },
   methods: {
       scrollAnimation() {
-        gsap.timeline({ // IntroCard
-          scrollTrigger: {
-            trigger: ".intro",
-            start: "center center",
-            end: "bottom top",
-            pin: true,
-          }
-        })
-        .from(".intro-img", { opacity: 0 })
-        .from(".vertical-text", { opacity: 0 })
-        
         gsap.timeline({ // HelloCard
           scrollTrigger: {
             trigger: ".hello",
@@ -156,12 +144,6 @@ export default {
     font-style: normal;
 }
 @font-face {
-    font-family: 'MapoGoldenPier';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoGoldenPierA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
     font-family: 'MaruBuri-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
     font-weight: normal;
@@ -218,7 +200,7 @@ body {
   display: flex;
   justify-content: center;
   overflow-x: hidden;
-  overflow-y: none;
+  overflow-y: auto!important;;
   min-height: 100vh;
   min-height: -webkit-fill-available;
 }

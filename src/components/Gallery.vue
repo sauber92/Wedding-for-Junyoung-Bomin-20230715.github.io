@@ -6,7 +6,7 @@
 <template>
   <div class="gallery">
     <div class="gallery-container">
-      <h2>GalleryCard</h2>
+      <h2>갤러리</h2>
         <v-app class="fill-height">
           <v-container class="pa-3">
             <v-row>
@@ -44,12 +44,12 @@ export default {
         {
           id: 1,
           popup: false,
-          img: require("../assets/bride.jpg")
+          img: require("../assets/intro.jpg")
         },
         {
           id: 2,
           popup: false,
-          img: require("../assets/groom.jpg")
+          img: require("../assets/intro.jpg")
         },
         {
           id: 3,
@@ -64,27 +64,27 @@ export default {
         {
           id: 5,
           popup: false,
-          img: require("../assets/bride.jpg")
+          img: require("../assets/intro.jpg")
         },
         {
           id: 6,
           popup: false,
-          img: require("../assets/bride.jpg")
+          img: require("../assets/intro.jpg")
         },
-        // {
-        //   id: 7,
-        //   popup: false,
-        //   img: require("../assets/bride.jpg")
-        // },
+        {
+          id: 7,
+          popup: false,
+          img: require("../assets/intro.jpg")
+        },
         // {
         //   id: 8,
         //   popup: false,
-        //   img: require("../assets/bride.jpg")
+        //   img: require("../assets/intro.jpg")
         // },
         // {
         //   id: 9,
         //   popup: false,
-        //   img: require("../assets/bride.jpg")
+        //   img: require("../assets/intro.jpg")
         // }
       ],
       dialog: false,
