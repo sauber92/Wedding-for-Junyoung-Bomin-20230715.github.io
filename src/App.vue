@@ -1,11 +1,13 @@
 <template>
   <div>
+    <p>아래로 내려보세요</p>
     <IntroCard class="section" ref="headerRef"/>
     <HelloCard class="section"/>
     <GroomCard class="section"/>
     <BrideCard class="section"/>
     <DateCard class="section"/>
     <TimeCard class="section"/>
+    <SearchCard class="section"/>
     <LocationCard class="section"/>
     <GalleryCard class="section"/>
     <ClosingCard class="section" ref="footerRef"/>
@@ -15,12 +17,15 @@
 <script>
 import AOS from 'aos'
 import "aos/dist/aos.css"
+import { gsap } from 'gsap'
+
 import IntroCard from '@/components/Intro'
 import HelloCard from '@/components/Hello'
 import GroomCard from '@/components/Groom.vue'
 import BrideCard from '@/components/Bride.vue'
 import DateCard from '@/components/Date.vue'
 import TimeCard from '@/components/Time.vue'
+import SearchCard from '@/components/Search.vue'
 import LocationCard from '@/components/Location.vue'
 import GalleryCard from '@/components/Gallery.vue'
 import ClosingCard from '@/components/Closing.vue'
@@ -34,6 +39,7 @@ export default {
     BrideCard,
     DateCard,
     TimeCard,
+    SearchCard,
     LocationCard,
     GalleryCard,
     ClosingCard,
@@ -53,7 +59,91 @@ export default {
     AOS.refresh(true)
   },
   mounted() {
-    this.footerHeight = this.$refs.footerRef.$el.clientHeight;
+    // this.footerHeight = this.$refs.footerRef.$el.clientHeight;
+    this.scrollAnimation();
+  },
+  methods: {
+      scrollAnimation() {
+        gsap.timeline({ // IntroCard
+          scrollTrigger: {
+            trigger: ".intro",
+            start: "center center",
+            end: "bottom top",
+            pin: true,
+          }
+        })
+        .from(".intro-img", { opacity: 0 })
+        .from(".vertical-text", { opacity: 0 })
+        
+        gsap.timeline({ // HelloCard
+          scrollTrigger: {
+            trigger: ".hello",
+            start: "center center",
+            end: "bottom top",
+            pin: true,
+          }
+        })
+        .from(".msg1", { opacity: 0 })
+        .from(".msg2", { opacity: 0 })
+
+        gsap.timeline({ // GroomCard
+          scrollTrigger: {
+            trigger: ".groom",
+            start: "center center",
+            end: "bottom top",
+            pin: true,
+          }
+        })
+        .from(".groom-container .parent", { opacity: 0 })
+        .from(".groom-img", { opacity: 0 })
+        .from(".groom-container .child", { opacity: 0 })
+
+        gsap.timeline({ // BridCard
+          scrollTrigger: {
+            trigger: ".bride",
+            start: "center center",
+            end: "bottom top",
+            pin: true,
+          }
+        })
+        .from(".bride-container .parent", { opacity: 0 })
+        .from(".bride-img", { opacity: 0 })
+        .from(".bride-container .child", { opacity: 0 })
+
+        gsap.timeline({ // TimeCard
+          scrollTrigger: {
+            trigger: ".time",
+            start: "center center",
+            end: "bottom top",
+            pin: true,
+          }
+        })
+        .from(".time .container", { opacity: 0 })
+
+        gsap.timeline({ // SearchCard
+          scrollTrigger: {
+            trigger: ".search",
+            start: "center center",
+            end: "bottom top",
+            pin: true,
+          }
+        })
+        .from(".search-box", { opacity: 0 })
+        .from(".search-txt", { opacity: 0 })
+
+        gsap.timeline({ // LocationCard
+          scrollTrigger: {
+            trigger: ".location",
+            start: "center center",
+            end: "bottom top",
+            pin: true,
+          }
+        })
+        .from(".title", { opacity: 0 })
+        .from(".map", { opacity: 0 })
+        .from(".location .container", { opacity: 0 })
+
+    }
   }
 }
 </script>

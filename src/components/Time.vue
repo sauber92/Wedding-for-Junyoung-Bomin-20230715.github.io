@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       targetTime: '11:00',
-      currentTime: '10:00',
+      currentTime: '09:00',
       timer: null
     }
   },

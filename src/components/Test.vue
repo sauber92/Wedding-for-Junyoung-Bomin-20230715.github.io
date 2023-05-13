@@ -1,46 +1,29 @@
-<template>
-  <div class="scroll-interactive">
-    <div class="section" :style="{ backgroundColor: backgroundColor }">
-      <h1>Scroll Interactive</h1>
-      <p>This section's background color changes as you scroll.</p>
+  <template>
+    <div id="app">
+      <div class="box">
+        <h2 class="text1">Scroll trigger</h2>
+        <h2 class="text2">This is my first one</h2>
+        <h2 class="text3">How is it?</h2>
+  
     </div>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'TestCard',
-  data() {
-    return {
-      backgroundColor: 'white'
-    }
-  },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  methods: {
-    handleScroll() {
-      const scrollPosition = window.scrollY
-      const maxScrollPosition = document.body.scrollHeight - window.innerHeight
-      const scrollPercentage = scrollPosition / maxScrollPosition
-
-      this.backgroundColor = `rgba(255, 0, 0, ${scrollPercentage})`
-    }
+      <div class="box2">
+        <h2 class="text4">Let get out</h2>
+        <h2 class="text5">of this town</h2>
+        <h2 class="text6">Drive out the city</h2>
+    </div>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    name: 'TestCard',
+  };
+  </script>
+  
+  <!-- Use preprocessors via the lang attribute! e.g. <style lang="scss"> -->
+  <style>
+  h2 {
+    margin-top: 200px;
+    margin-bottom: 200px;
   }
-}
-</script>
-
-<style>
-.scroll-interactive {
-  height: 2000px;
-}
-
-.section {
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.5s ease;
-}
-</style>
+  </style>

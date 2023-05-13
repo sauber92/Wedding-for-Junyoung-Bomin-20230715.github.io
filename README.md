@@ -7,7 +7,8 @@
   - [x] fontawesome: 아이콘 사용 [info](https://fontawesome.com/)
   - [x] animate.css: 사용 안 할 시 삭제 필요 [info](https://animate.style/)
   - [x] Kakao Map: 카카오 맵 공식 문서  
-  - [x] SunBatang font: 산바탕체 적용 [info]()
+  - [x] Maruburi font: 마루부리체 적용 [info](https://hangeul.naver.com/maruproject_10)
+  - [x] ScrollTrigger: 스크롤 액션 적용 위해 필요 [info](https://greensock.com/)
   - [ ] web-hsare: 일단 적용해보고 전체 디자인 고려
   - [ ] sweetalert.js: 일단 적용해보고 전체 디자인 고려
  

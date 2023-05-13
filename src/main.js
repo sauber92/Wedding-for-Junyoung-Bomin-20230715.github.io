@@ -6,6 +6,8 @@ import * as directives from 'vuetify/directives'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import 'animate.css';
 
@@ -18,6 +20,8 @@ const vuetify = createVuetify({
 
 /* add icons to the library */
 library.add(faMagnifyingGlass)
+
+gsap.registerPlugin(ScrollTrigger)
 
 const app = createApp(App)
 app.use(vuetify)

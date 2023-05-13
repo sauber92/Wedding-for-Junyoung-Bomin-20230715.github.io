@@ -6,16 +6,11 @@
 <template>
   <div class="location" ref="startAnimation">
     <span class="title">오시는 길</span>
-    <div class="box">
-      <span class="icon">
-        <font-awesome-icon icon="fa-solid fa-magnifying-glass" size="xs"/>
-      </span>
-    </div>
-    <div class="search">
-      <h1 :class="{typing: isActive}">더컨벤션 잠실점</h1>
-    </div>
-    <div>
-      <div id="map" data-aos="fade" data-aos-delay="0" data-aos-duration="2000" data-aos-once="true"></div>
+    <div class="map">
+      <a class="map-click" :href="'https://map.kakao.com/?urlX=523433&urlY=1115645&urlLevel=3&itemId=17651361&q=%EB%8D%94%EC%BB%A8%EB%B2%A4%EC%85%98%20%EC%9E%A0%EC%8B%A4%EC%A0%90&map_type=TYPE_MAP'">
+        <span>약도 클릭시 카카오 지도로 이동</span>
+      </a>
+      <div id="map"></div>
     </div>
     <div class="container">
       <div class="container-address">
@@ -57,13 +52,6 @@ export default {
     };
   },
   mounted() {
-    const options = {
-      rootMargin: '10px',
-      threshold: 0.5, // 대상 엘리먼트가 뷰포트에 50% 이상 들어왔을 때 콜백 함수 호출
-    };
-    const observer = new IntersectionObserver(this.callback, options);
-    observer.observe(this.$refs.startAnimation);
-
     if (window.kakao && window.kakao.maps) {
       this.loadMap();
     } else {
@@ -71,19 +59,6 @@ export default {
     }
   },
   methods: {
-    callback(entries, observer) {// eslint-disable-line no-unused-vars
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // 대상 엘리먼트가 뷰포트에 진입한 경우
-          if (!this.isActive) {
-            this.isActive = true;
-          }
-        } else {
-          // 대상 엘리먼트가 뷰포트를 벗어난 경우
-          this.isActive = false;
-        }
-      });
-    },
     loadScript() {
       const script = document.createElement("script");
       script.src = "//dapi.kakao.com/v2/maps/sdk.js?appkey=1bd31ed62d4ca98a0aaa79dbe3d1dcda&autoload=false"; //
@@ -124,27 +99,43 @@ export default {
 
 .location {
   height: 100vh;
-  /* background-color: rgb(255, 235, 252); */
   position: relative;
   display: flex;
   justify-content: center;
 }
 
+.map-click {
+  position: absolute;
+  display: inline-block;
+  top: 6%;
+  left: 2%;
+  width: 96%;
+  height: 33%;
+  z-index: 10;
+}
+
+.map-click span {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  bottom: 1%;
+  width: 100%;
+  background-color: #f1efea;
+}
+
 #map {
   position: absolute;
   display: inline-block;
-  top: 15%;
+  top: 6%;
   left: 2%;
   width: 96%;
   height: 30%;
-  background-color: #5d493f;
 }
 
 .container {
   position: absolute;
   display: inline-block;
-  top: 50%;
-  /* background-color: red; */
+  top: 42%;
 }
 
 .container-address {
@@ -154,14 +145,14 @@ export default {
 }
 .container-address .tel {
   margin-top: 15px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   font-size: 0.8em;
   font-weight: 300;
   letter-spacing: 1px;
 }
 
 .container-trans {
-  margin-top: 20px;
+  margin-top: 55px;
   font-size: 1em;
   line-height: 1.8;
 }
@@ -179,48 +170,6 @@ export default {
   background-position: 100% 0;
 }
 
-.box {
-  position: absolute;
-  display: inline-block;
-  top: 6%;
-  width: 80%;
-  min-height: 2.5em;
-  background-color: #f1efea;
-  border-radius: 1.3em;
-  z-index: 0;
-}
-
-.search {
-  position: absolute;
-  top: 6.2%;
-  z-index: 1;
-}
-
-.box .icon {
-  position: absolute;
-  /* display: inline-block; */
-  top: 20%;
-  left: 8%;
-}
-
-.search h1 {
-  font-size: 1.2em;
-  font-weight: 300;
-}
-
-.typing {
-  display: inline-block;
-  overflow: hidden;
-  font-size: 1.2em;
-  white-space: nowrap;
-  margin: 0 auto;
-  border-right: .13em solid rgb(37, 37, 37);
-  letter-spacing: .15em;
-  animation:
-    typing 2s steps(30),
-    blink-caret .75s step-end infinite alternate;
-}
-
 @-webkit-keyframes highlight {
   to {
     background-position: 0 0;
@@ -232,19 +181,4 @@ export default {
     background-position: 0 0;
   }
 }
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: rgb(37, 37, 37); }
-}
-
 </style>

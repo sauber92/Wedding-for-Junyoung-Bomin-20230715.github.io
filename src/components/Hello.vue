@@ -7,9 +7,9 @@
     <!-- <img alt="hello" src="@/assets/mainveiw_0.gif" class="hello-img"> -->
     <div class="hello-container">
       <div class="box">
-        <p data-aos="fade" data-aos-delay="300" data-aos-duration="2000">안녕하세요.<br/>신랑 정준영, 신부 전보민입니다.</p>
+        <p class="msg1">안녕하세요.<br/>신랑 정준영, 신부 전보민입니다.</p>
         <div class="spacer" style="height: 40px"></div>
-        <p data-aos="fade" data-aos-delay="300" data-aos-duration="2000">하나님의 사랑 안에 하나되어<br/>뜨거운 여름의 시작점에서<br/>결혼의 첫 걸음을 내딛습니다.</p>
+        <p class="msg2">하나님의 사랑 안에 하나되어<br/>뜨거운 여름의 시작점에서<br/>결혼의 첫 걸음을 내딛습니다.</p>
       </div>
     </div>
   </div>

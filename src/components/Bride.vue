@@ -3,15 +3,15 @@
 <!-- 글자: 신랑 준영, 신부 보민 -->
 <!-- 글자효과: 스크롤에 따라 사진 위or오른쪽에 글자 나오게 -->
 <template>
-  <div class="groombride">
-    <img alt="bride" src="@/assets/bride.jpg" class="bride-img groombride-img" data-aos="fade" data-aos-delay="5000" data-aos-duration="5000">
-    <div class="bride-container groombride-container">
+  <div class="bride">
+    <img alt="bride" src="@/assets/bride.jpg" class="bride-img">
+    <div class="bride-container">
       <div class="parent">
-        <span data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
+        <span>
           <span class="name">전이원ㆍ양영옥</span><span>의 장녀</span>
         </span>
       </div>
-      <div class="child" data-aos="fade" data-aos-delay="300" data-aos-duration="2000">
+      <div class="child">
         <span>신부 </span><span class="name">전보민</span>
       </div>
     </div>
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'GroombrideCard',
+  name: 'BrideCard',
   props: {
 
   }
@@ -28,14 +28,14 @@ export default {
 </script>
 
 <style scoped>
-.groombride {
+.bride {
   position: relative;
   display: flex;
   justify-content: center;
   height: 100vh;
 }
 
-.groombride-img {
+.bride-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -44,7 +44,7 @@ export default {
   object-fit: cover;
   z-index: 1;
 }
-.groombride-container {
+.bride-container {
   position: absolute;
   top: 0;
   left: 0;
