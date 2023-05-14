@@ -15,7 +15,7 @@
                   class="card"
                   :src="items[i].img"
                   :lazy-src="items[i].img"
-                  @click="openDialog(items[i].img)"
+                  @click="openDialog(items[i].img, i)"
                 >
                   <template v-slot:placeholder>
                     <v-row class="fill-height ma-0" align="center" justify="center">
@@ -26,14 +26,24 @@
                 </v-img>
               </v-col>
             </v-row>
+            <!--  -->
             <v-dialog v-model="dialog" max-width="800">
               <v-card>
-                <v-img :src="dialogImg" max-height="600" />
-                <v-card-actions>
-                  <v-btn color="primary" text @click="closeDialog">Close</v-btn>
+                <v-carousel :start-index="carouselStartIndex" :show-arrows="false" hide-delimiters>
+                  <v-carousel-item
+                    v-for="(item,i) in items"
+                    :key="i"
+                    :src="item.img"
+                    cover
+                  ></v-carousel-item>
+                </v-carousel>
+                <v-card-actions class="xmark d-flex justify-end">
+                  <v-btn color="primary" text @click="closeDialog">X</v-btn>
                 </v-card-actions>
               </v-card>
             </v-dialog>
+            <!--  -->
+
           </v-container>
         </v-app>
     </div>  
@@ -47,34 +57,39 @@ export default {
     return {
       items: [
         {
+          id: 0,
+          popup: false,
+          img: require("../assets/carousel_item_0.jpeg")
+        },
+        {
           id: 1,
           popup: false,
-          img: require("../assets/bride.jpeg")
+          img: require("../assets/carousel_item_1.jpeg")
         },
         {
           id: 2,
           popup: false,
-          img: require("../assets/intro.jpg")
+          img: require("../assets/carousel_item_2.jpeg")
         },
         {
           id: 3,
           popup: false,
-          img: require("../assets/intro.jpg")
+          img: require("../assets/carousel_item_3.jpeg")
         },
         {
           id: 4,
           popup: false,
-          img: require("../assets/mainveiw_0.gif")
+          img: require("../assets/carousel_item_4.jpeg")
         },
         {
           id: 5,
           popup: false,
-          img: require("../assets/intro.jpg")
+          img: require("../assets/carousel_item_5.jpeg")
         },
         {
           id: 6,
           popup: false,
-          img: require("../assets/intro.jpg")
+          img: require("../assets/carousel_item_6.jpeg")
         },
         {
           id: 7,
@@ -84,22 +99,24 @@ export default {
         {
           id: 8,
           popup: false,
-          img: require("../assets/intro.jpg")
+          img: require("../assets/bride.jpeg")
         },
         {
           id: 9,
           popup: false,
-          img: require("../assets/intro.jpg")
+          img: require("../assets/groom.jpeg")
         }
       ],
       dialog: false,
-      dialogImg: ""
+      dialogImg: "",
+      carouselStartIndex: 4
     };
   },
   methods: {
-    openDialog(img) {
+    openDialog(img, index) {
       this.dialogImg = img;
       this.dialog = true;
+      this.carouselStartIndex = index;
     },
     closeDialog() {
       this.dialog = false;
@@ -109,23 +126,37 @@ export default {
 </script>
   
 <style scoped>
+.gallery {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
 .title {
   display: inline-block;
   height: 3.4%;
   border-bottom: solid 0.1em #5d493b;
 }
 
-.gallery {
-  position: relative;
-  display: flex;
-  justify-content: center;
+.fill-height {
+  background-color: aquamarine;
+  height: 96.6%;
+}
+
+.xmark {
+  position: absolute;
+  top: ca0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
 }
 
 /* 갤럭시 폴드 */
 @media screen and (max-device-width : 359px) {
   .gallery-container {
     position: absolute;
-    top: 5%;
+    /* top: 5%; */
     left: 0%;
     width: 100%;
   }
@@ -138,7 +169,7 @@ export default {
 @media screen and (min-device-width : 359px) and (max-device-width : 376px) {
   .gallery-container {
     position: absolute;
-    top: 2%;
+    /* top: 2%; */
     left: 10%;
     width: 80%;
   }
@@ -151,7 +182,7 @@ export default {
 @media screen and (min-device-width : 376px) and (max-device-width: 768px) {
   .gallery-container {
     position: absolute;
-    top: 2%;
+    /* top: 2%; */
     left: 0%;
     width: 100%;
   }
@@ -164,7 +195,7 @@ export default {
 @media screen and (min-device-width: 769px) and (max-device-width : 1024px) {
   .gallery-container {
     position: absolute;
-    top: 0;
+    /* top: 0; */
     left: 0%;
     width: 100%;
   }
@@ -177,7 +208,7 @@ export default {
 @media only screen and (min-device-width : 1024px) {
   .gallery-container {
     position: absolute;
-    top: 0;
+    /* top: 0; */
     left: 0%;
     width: 100%;
   }

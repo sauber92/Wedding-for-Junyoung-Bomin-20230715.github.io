@@ -98,6 +98,15 @@ export default {
         .from(".bride-img", { opacity: 0 })
         .from(".bride-container .child", { opacity: 0 })
 
+        gsap.timeline({ // DateCard
+          scrollTrigger: {
+            trigger: ".date",
+            start: "center center",
+            end: "bottom top",
+            pin: true,
+          }
+        })
+
         gsap.timeline({ // TimeCard
           scrollTrigger: {
             trigger: ".time",
