@@ -16,6 +16,7 @@
                   :src="item.img"
                   :lazy-src="item.img"
                   @click="openDialog(item.img, index)"
+                  height="93%"
                 >
                   <template v-slot:placeholder>
                     <v-row class="ma-0" align="center" justify="center">
@@ -140,10 +141,6 @@ export default {
   display: flex;
   justify-content: center;
   height: 100vh;
-}
-
-.gallery-container {
-  height: 95vh;
 }
 
 .title {

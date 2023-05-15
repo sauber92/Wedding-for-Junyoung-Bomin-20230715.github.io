@@ -5,34 +5,32 @@
 <!-- Maps API 사용 -->
 <template>
   <div class="location" ref="startAnimation">
-    <div class="location-container">
-      <span class="title">오시는 길</span>
-      <div class="map">
-        <a class="map-click" :href="'https://map.kakao.com/?urlX=523433&urlY=1115645&urlLevel=3&itemId=17651361&q=%EB%8D%94%EC%BB%A8%EB%B2%A4%EC%85%98%20%EC%9E%A0%EC%8B%A4%EC%A0%90&map_type=TYPE_MAP'">
-          <span>약도 클릭시 카카오 지도로 이동</span>
-        </a>
-        <div id="map"></div>
+    <span class="title">오시는 길</span>
+    <div class="map">
+      <a class="map-click" :href="'https://map.kakao.com/?urlX=523433&urlY=1115645&urlLevel=3&itemId=17651361&q=%EB%8D%94%EC%BB%A8%EB%B2%A4%EC%85%98%20%EC%9E%A0%EC%8B%A4%EC%A0%90&map_type=TYPE_MAP'">
+        <span>약도 클릭시 카카오 지도로 이동</span>
+      </a>
+      <div id="map"></div>
+    </div>
+    <div class="container">
+      <div class="container-address">
+        <p>서울특별시 송파구 올림픽로 319</p>
+        <p>더컨벤션 잠실점 <span :class="{mark: isActive}">3층 아모르홀</span></p>
+        <p class="tel">T. 02-418-5000</p>
       </div>
-      <div class="container">
-        <div class="container-address">
-          <p>서울특별시 송파구 올림픽로 319</p>
-          <p>더컨벤션 잠실점 <span :class="{mark: isActive}">3층 아모르홀</span></p>
-          <p class="tel">T. 02-418-5000</p>
-        </div>
-        <div class="container-trans">
-          <p class="transportation">지하철</p>
-          <p>8호선 잠실역 9번출구 / 도보 2분</p>
-          <p>2호선 잠실역 8번출구 / 도보 6분</p>
-        </div>
-        <div class="container-trans">
-          <p class="transportation">버스</p>
-          <p>잠실광역환승센터(지하) / 도보 14분</p>
-          <p>잠실역 9번출구 정류장 / 도보 2분</p>
-        </div>
-        <div class="container-trans">
-          <p class="transportation">주차</p>
-          <p>더 컨벤션 건물 내 주차</p>
-        </div>
+      <div class="container-trans">
+        <p class="transportation">지하철</p>
+        <p>8호선 잠실역 9번출구 / 도보 2분</p>
+        <p>2호선 잠실역 8번출구 / 도보 6분</p>
+      </div>
+      <div class="container-trans">
+        <p class="transportation">버스</p>
+        <p>잠실광역환승센터(지하) / 도보 14분</p>
+        <p>잠실역 9번출구 정류장 / 도보 2분</p>
+      </div>
+      <div class="container-trans">
+        <p class="transportation">주차</p>
+        <p>더 컨벤션 건물 내 주차</p>
       </div>
     </div>
   </div>
@@ -107,10 +105,6 @@ export default {
   justify-content: center;
 }
 
-.location-container {
-  height: 95vh;
-}
-
 .map-click {
   position: absolute;
   display: flex;
@@ -143,7 +137,7 @@ export default {
   position: absolute;
   display: inline-block;
   top: 45%;
-  height: 53%;
+  height: 50%;
 }
 
 .container-trans .transportation {
