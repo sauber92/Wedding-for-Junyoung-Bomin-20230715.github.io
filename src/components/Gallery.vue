@@ -31,7 +31,7 @@
               <div class="card-info">
                 <span> {{ carouselStartIndex + 1 }} / {{ items.length }} </span>
                 <v-btn class="xmark" text @click="closeDialog">
-                  <font-awesome-icon icon="fa-regular fa-circle-xmark" />
+                  <font-awesome-icon icon="fa-regular fa-circle-xmark" size="xl" />
                 </v-btn>
               </div>
               <v-card class="card-item">
@@ -142,15 +142,14 @@ export default {
   height: 100vh;
 }
 
+.gallery-container {
+  height: 95vh;
+}
+
 .title {
   display: inline-block;
   height: 3.4%;
   border-bottom: solid 0.1em #5d493b;
-}
-
-.v-layout--full-height {
-  background-color: aquamarine;
-  height: 90vh;
 }
 
 .xmark {
