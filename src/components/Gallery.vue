@@ -10,12 +10,12 @@
         <v-app class="fill-height">
           <v-container class="pa-3">
             <v-row>
-              <v-col v-for="i in 6" :key="items[i].id" color="grey lighten-3" flat cols="6" lg="4" sm="6">
+              <v-col v-for="(item, index) in filteredItems" :key="index" color="grey lighten-3" flat cols="6" lg="4" sm="6">
                 <v-img
                   class="card"
-                  :src="items[i].img"
-                  :lazy-src="items[i].img"
-                  @click="openDialog(items[i].img, i)"
+                  :src="item.img"
+                  :lazy-src="item.img"
+                  @click="openDialog(item.img, index)"
                 >
                   <template v-slot:placeholder>
                     <v-row class="fill-height ma-0" align="center" justify="center">
@@ -26,23 +26,26 @@
                 </v-img>
               </v-col>
             </v-row>
-            <!--  -->
+            <!--  Dialog Carousel -->
             <v-dialog v-model="dialog" max-width="800">
+              <div class="card-info">
+                <span color="grey-lighten-1"> {{ carouselStartIndex + 1 }} / 20</span>
+                <!-- <v-btn class="xmark" text @click="closeDialog">
+                  <font-awesome-icon icon="fa-regular fa-circle-xmark" />
+                </v-btn> -->
+              </div>
               <v-card>
-                <v-carousel :start-index="carouselStartIndex" :show-arrows="false" hide-delimiters>
+                <v-carousel v-model="carouselStartIndex" :show-arrows="false" hide-delimiters>
                   <v-carousel-item
-                    v-for="(item,i) in items"
-                    :key="i"
+                    v-for="(item, index) in items"
+                    :key="index"
                     :src="item.img"
                     cover
                   ></v-carousel-item>
                 </v-carousel>
-                <v-card-actions class="xmark d-flex justify-end">
-                  <v-btn color="primary" text @click="closeDialog">X</v-btn>
-                </v-card-actions>
               </v-card>
             </v-dialog>
-            <!--  -->
+            <!--  Dialog Carousel -->
 
           </v-container>
         </v-app>
@@ -109,8 +112,13 @@ export default {
       ],
       dialog: false,
       dialogImg: "",
-      carouselStartIndex: 4
+      carouselStartIndex: 0
     };
+  },
+  computed: {
+    filteredItems() {
+      return this.items.slice(0, 6); // 6개 item만 선별
+    }
   },
   methods: {
     openDialog(img, index) {
@@ -141,15 +149,20 @@ export default {
 
 .fill-height {
   background-color: aquamarine;
-  height: 96.6%;
+  height: 93%;
 }
 
 .xmark {
   position: absolute;
-  top: ca0;
-  left: 0;
   right: 0;
+  top: 0;
+  padding-bottom: -10px;
+  color: #BDBDBD;
   background-color: transparent;
+}
+
+.card-info {
+  margin-bottom: 1%;
 }
 
 /* 갤럭시 폴드 */
