@@ -7,7 +7,7 @@
   <div class="gallery">
     <div class="gallery-container">
       <span class="title">갤러리</span>
-        <v-app class="fill-height">
+        <v-app>
           <v-container class="pa-3">
             <v-row>
               <v-col v-for="(item, index) in filteredItems" :key="index" color="grey lighten-3" flat cols="6" lg="4" sm="6">
@@ -18,7 +18,7 @@
                   @click="openDialog(item.img, index)"
                 >
                   <template v-slot:placeholder>
-                    <v-row class="fill-height ma-0" align="center" justify="center">
+                    <v-row class="ma-0" align="center" justify="center">
                       <v-progress-circular indeterminate color="grey-lighten-5">
                       </v-progress-circular>
                     </v-row>
@@ -27,15 +27,15 @@
               </v-col>
             </v-row>
             <!--  Dialog Carousel -->
-            <v-dialog v-model="dialog" max-width="800">
+            <v-dialog v-model="dialog" fullscreen :scrim="false">
               <div class="card-info">
-                <span color="grey-lighten-1"> {{ carouselStartIndex + 1 }} / 20</span>
-                <!-- <v-btn class="xmark" text @click="closeDialog">
+                <span> {{ carouselStartIndex + 1 }} / {{ items.length }} </span>
+                <v-btn class="xmark" text @click="closeDialog">
                   <font-awesome-icon icon="fa-regular fa-circle-xmark" />
-                </v-btn> -->
+                </v-btn>
               </div>
-              <v-card>
-                <v-carousel v-model="carouselStartIndex" :show-arrows="false" hide-delimiters>
+              <v-card class="card-item">
+                <v-carousel class="carousel" v-model="carouselStartIndex" :show-arrows="false" hide-delimiters>
                   <v-carousel-item
                     v-for="(item, index) in items"
                     :key="index"
@@ -49,6 +49,7 @@
 
           </v-container>
         </v-app>
+        <div class="spacer"></div>
     </div>  
   </div>
 </template>
@@ -147,22 +148,51 @@ export default {
   border-bottom: solid 0.1em #5d493b;
 }
 
-.fill-height {
+.v-layout--full-height {
   background-color: aquamarine;
-  height: 93%;
+  height: 90vh;
 }
 
 .xmark {
   position: absolute;
   right: 0;
-  top: 0;
-  padding-bottom: -10px;
+  top: 10%;
   color: #BDBDBD;
   background-color: transparent;
 }
 
 .card-info {
-  margin-bottom: 1%;
+  position: relative;
+  display: flex;
+  color: #BDBDBD;
+  background-color: rgb(54, 54, 54);
+  z-index: 1;
+}
+
+.card-info span {
+  position: relative;
+  display: flex;
+  left: 5%;
+  top: 50%;
+}
+
+.card-item {
+  display: flex;
+  background-color: rgb(54, 54, 54);
+  z-index: 0;
+}
+
+.card-item .carousel {
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+.spacer {
+  position: absolute;
+  display: flex;
+  height: 10%;
+  bottom: 0;
+  background-color: red;
 }
 
 /* 갤럭시 폴드 */
