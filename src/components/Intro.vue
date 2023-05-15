@@ -69,6 +69,7 @@ export default {
 .intro {
   position: relative;
   display: flex;
+  color: #55504f;
   /* justify-content: center; */
 }
 

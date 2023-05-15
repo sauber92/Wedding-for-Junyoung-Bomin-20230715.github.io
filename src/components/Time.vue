@@ -66,6 +66,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
+  color: #55504f;
 }
 
 .container {

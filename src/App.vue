@@ -10,6 +10,7 @@
     <LocationCard class="section"/>
     <GalleryCard class="section"/>
     <ClosingCard class="section"/>
+    <FooterCard class="section"/>
   </div>
 </template>
 
@@ -28,6 +29,7 @@ import SearchCard from '@/components/Search.vue'
 import LocationCard from '@/components/Location.vue'
 import GalleryCard from '@/components/Gallery.vue'
 import ClosingCard from '@/components/Closing.vue'
+import FooterCard from '@/components/Footer.vue'
 
 export default {
   name: 'App',
@@ -42,6 +44,7 @@ export default {
     LocationCard,
     GalleryCard,
     ClosingCard,
+    FooterCard
   },
   data() {
     return {
@@ -66,8 +69,9 @@ export default {
         gsap.timeline({ // HelloCard
           scrollTrigger: {
             trigger: ".hello",
-            start: "center center",
-            end: "bottom top",
+            start: "top top",
+            end: "center top",
+            scrub: 3,
             pin: true,
           }
         })
@@ -77,32 +81,33 @@ export default {
         gsap.timeline({ // GroomCard
           scrollTrigger: {
             trigger: ".groom",
-            start: "center center",
-            end: "bottom top",
+            start: "top top",
+            end: "center top",
+            scrub: 3,
             pin: true,
           }
         })
         .from(".groom-container .parent", { opacity: 0 })
-        .from(".groom-img", { opacity: 0 })
         .from(".groom-container .child", { opacity: 0 })
 
         gsap.timeline({ // BridCard
           scrollTrigger: {
             trigger: ".bride",
-            start: "center center",
-            end: "bottom top",
+            start: "top top",
+            end: "center top",
+            scrub: 3,
             pin: true,
           }
         })
         .from(".bride-container .parent", { opacity: 0 })
-        .from(".bride-img", { opacity: 0 })
         .from(".bride-container .child", { opacity: 0 })
 
         gsap.timeline({ // DateCard
           scrollTrigger: {
             trigger: ".date",
-            start: "center center",
-            end: "bottom top",
+            start: "top top",
+            end: "center top",
+            scrub: 3,
             pin: true,
           }
         })
@@ -110,8 +115,9 @@ export default {
         gsap.timeline({ // TimeCard
           scrollTrigger: {
             trigger: ".time",
-            start: "center center",
-            end: "bottom top",
+            start: "top top",
+            end: "center top",
+            scrub: 3,
             pin: true,
           }
         })
@@ -120,8 +126,9 @@ export default {
         gsap.timeline({ // SearchCard
           scrollTrigger: {
             trigger: ".search",
-            start: "center center",
-            end: "bottom top",
+            start: "top top",
+            end: "center top",
+            scrub: 3,
             pin: true,
           }
         })
@@ -131,8 +138,9 @@ export default {
         gsap.timeline({ // LocationCard
           scrollTrigger: {
             trigger: ".location",
-            start: "center center",
-            end: "bottom top",
+            start: "top top",
+            end: "center top",
+            scrub: 3,
             pin: true,
           }
         })
@@ -143,12 +151,24 @@ export default {
         gsap.timeline({ // GalleryCard
           scrollTrigger: {
             trigger: ".gallery",
-            start: "center center",
-            end: "bottom top",
+            start: "top top",
+            end: "center top",
+            scrub: 3,
             pin: true,
           }
         })
         .from(".card", { opacity: 0 })
+
+        gsap.timeline({ // ClosingCard
+          scrollTrigger: {
+            trigger: ".closing",
+            start: "top top",
+            end: "center top",
+            scrub: 3,
+            pin: true,
+          }
+        })
+        .from(".closing .container", { opacity: 0 })
     }
   }
 }
@@ -173,6 +193,7 @@ export default {
   body {
     width: 100%;
     font-size: 14px;
+    color: #55504f;
   }
 }
 
@@ -181,6 +202,7 @@ export default {
   body {
     width: 600px;;
     font-size: 18px;
+    color: #55504f;
   }
 }
 

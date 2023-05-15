@@ -27,6 +27,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
+  color: #55504f;
   background-image: linear-gradient(to bottom, rgba(245, 235, 235, 0.979), rgb(255, 255, 255));
 }
 

@@ -8,7 +8,7 @@
     <div class="gallery-container">
       <span class="title">갤러리</span>
         <v-app>
-          <v-container class="pa-3">
+          <v-container grid-list-xs>
             <v-row>
               <v-col v-for="(item, index) in filteredItems" :key="index" color="grey lighten-3" flat cols="6" lg="4" sm="6">
                 <v-img
@@ -16,7 +16,7 @@
                   :src="item.img"
                   :lazy-src="item.img"
                   @click="openDialog(item.img, index)"
-                  height="93%"
+                  height="100%"
                 >
                   <template v-slot:placeholder>
                     <v-row class="ma-0" align="center" justify="center">
@@ -50,7 +50,6 @@
 
           </v-container>
         </v-app>
-        <div class="spacer"></div>
     </div>  
   </div>
 </template>
@@ -99,18 +98,24 @@ export default {
         {
           id: 7,
           popup: false,
-          img: require("../assets/intro.jpg")
+          img: require("../assets/carousel_item_7.jpeg")
         },
         {
           id: 8,
           popup: false,
-          img: require("../assets/bride.jpeg")
+          img: require("../assets/carousel_item_8.jpeg")
         },
         {
           id: 9,
           popup: false,
-          img: require("../assets/groom.jpeg")
-        }
+          img: require("../assets/carousel_item_9.jpeg")
+        },
+        {
+          id: 10,
+          popup: false,
+          img: require("../assets/carousel_item_10.jpeg")
+        },
+
       ],
       dialog: false,
       dialogImg: "",
@@ -183,14 +188,6 @@ export default {
   transform: translate(0%, -50%);
 }
 
-.spacer {
-  position: absolute;
-  display: flex;
-  height: 10%;
-  bottom: 0;
-  background-color: red;
-}
-
 /* 갤럭시 폴드 */
 @media screen and (max-device-width : 359px) {
   .gallery-container {
@@ -198,9 +195,6 @@ export default {
     /* top: 5%; */
     left: 0%;
     width: 100%;
-  }
-  .title {
-    background-color: red;
   }
 }
 
@@ -212,9 +206,6 @@ export default {
     left: 10%;
     width: 80%;
   }
-  .title {
-    background-color: yellow;
-  }
 }
 
 /* 모바일 버전 */
@@ -222,11 +213,8 @@ export default {
   .gallery-container {
     position: absolute;
     /* top: 2%; */
-    left: 0%;
-    width: 100%;
-  }
-  .title {
-    background-color: green;
+    left: 5%;
+    width: 90%;
   }
 }
 
@@ -238,9 +226,6 @@ export default {
     left: 0%;
     width: 100%;
   }
-  .title {
-    background-color: blue;
-  }
 }
 
 /* 아이패드 프로 */
@@ -250,9 +235,6 @@ export default {
     /* top: 0; */
     left: 0%;
     width: 100%;
-  }
-  .title {
-    background-color: purple;
   }
 }
 </style>

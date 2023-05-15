@@ -179,7 +179,7 @@ export default {
     letter-spacing: 1px;
   }
   .container-trans {
-    margin-top: 15%;
+    margin-top: 10%;
     font-size: 0.9em;
     line-height: 1.5;
   }
@@ -199,7 +199,7 @@ export default {
     letter-spacing: 1px;
   }
   .container-trans {
-    margin-top: 15%;
+    margin-top: 10%;
     font-size: 0.9em;
     line-height: 1.3;
   }
@@ -219,7 +219,7 @@ export default {
     letter-spacing: 1px;
   }
   .container-trans {
-    margin-top: 18%;
+    margin-top: 10%;
     font-size: 1em;
     line-height: 1.8;
   }
@@ -239,7 +239,7 @@ export default {
     letter-spacing: 1px;
   }
   .container-trans {
-    margin-top: 22%;
+    margin-top: 15%;
     font-size: 1em;
     line-height: 2;
   }
@@ -263,7 +263,7 @@ export default {
     letter-spacing: 1px;
   }
   .container-trans {
-    margin-top: 10%;
+    margin-top: 8%;
     font-size: 0.9em;
     line-height: 1.5;
   }

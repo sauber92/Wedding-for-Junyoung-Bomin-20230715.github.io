@@ -4,9 +4,22 @@
 <!-- 글자효과: TBD -->
 <template>
   <div class="closing">
-    <div class="closing-container">
-      <p>Develop by Junyoung, Design by Bomin</p>
-      <p>이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다.</p>
+    <div class="container">
+			<span class="title">마음 전하실 곳</span>
+      <div class="account-box groom">
+				<v-btn @click="toggleDiv">버튼</v-btn>
+				<v-slide-y-transition>
+					<div v-if="showDiv" class="animated-div">애니메이션으로 나타날 div</div>
+				</v-slide-y-transition>
+			</div>
+
+
+
+
+			<div class="account-box bride">
+			</div>
+			<div class="message">
+			</div>
     </div>
   </div>
 </template>
@@ -104,7 +117,17 @@ export default {
   name: 'ClosingCard',
   props: {
 
-  }
+  },
+	data() {
+		return {
+			showDiv: false
+		};
+	},
+	methods: {
+		toggleDiv() {
+			this.showDiv = !this.showDiv;
+		}
+	}
 }
 </script>
   
@@ -113,19 +136,56 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
-  height: 15vh;
-  background-color: rgb(151, 151, 151);
+  height: 100vh;
 }
 
-.closing-container {
-  font-weight: 500;
-  color: aliceblue;
+.container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
+
+.title {
+  display: inline-block;
+  height: 3.4%;
+  border-bottom: solid 0.1em #5d493b;
+}
+
+.account-box {
+	position: absolute;
+	display: flex;
+	width: 80%;
+	height: 10%;
+	left: 10%;
+}
+
+.groom {
+	top: 5%;
+	background-color: red;
+}
+
+.bride {
+	top: 16%;
+	background-color: red;
+}
+
+.message {
+	position: absolute;
+	display: flex;
+	width: 80%;
+	height: 40%;
+	left: 10%;
+	top: 30%;
+	background-color: yellow;
+}
+
+.animated-div {
+  background-color: #e0e0e0;
+  padding: 10px;
+}
+
 /*
 .account-content-icon-p {
     margin-bottom: 0px;

@@ -33,6 +33,7 @@ export default {
   display: flex;
   justify-content: center;
   height: 100vh;
+  color: #55504f;
 }
 
 .bride-img {
@@ -75,13 +76,13 @@ export default {
   top: 30%;
   left: 10%;
   transform: translate(-50%, -50%);
-  font-size: 1em;
+  font-size: 1.2em;
   writing-mode: vertical-lr;
   letter-spacing: 4px;
 }
 
 .child .name {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: 700;
 }
 
