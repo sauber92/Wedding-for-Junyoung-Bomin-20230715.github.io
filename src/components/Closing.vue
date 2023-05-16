@@ -6,20 +6,23 @@
   <div class="closing">
     <div class="container">
 			<span class="title">마음 전하실 곳</span>
+
       <div class="account-box groom">
-				<v-btn @click="toggleDiv">버튼</v-btn>
-				<v-slide-y-transition>
-					<div v-if="showDiv" class="animated-div">애니메이션으로 나타날 div</div>
-				</v-slide-y-transition>
+        <div class="wrapper">
+          <v-btn class="button" @click="toggleShow(1)">버튼 1</v-btn>
+          <div :class="{ 'hidden': !show1 }">버튼 1을 눌렀을 때 나오는 내용</div>
+        </div>
+      </div>
+      <div class="account-box bride">
+        <div class="wrapper">
+          <v-btn class="button" @click="toggleShow(2)">버튼 2</v-btn>
+          <div :class="{ 'hidden': !show2 }">버튼 2을 눌렀을 때 나오는 내용</div>
+        </div>
+      </div>
+
+      <div class="message">
 			</div>
 
-
-
-
-			<div class="account-box bride">
-			</div>
-			<div class="message">
-			</div>
     </div>
   </div>
 </template>
@@ -120,13 +123,24 @@ export default {
   },
 	data() {
 		return {
-			showDiv: false
+			showDiv: false,
+      show1: false,
+      show2: false
 		};
 	},
 	methods: {
 		toggleDiv() {
 			this.showDiv = !this.showDiv;
-		}
+		},
+    toggleShow(button) {
+      if (button === 1) {
+        this.show1 = !this.show1;
+        this.show2 = false;
+      } else if (button === 2) {
+        this.show1 = false;
+        this.show2 = !this.show2;
+      }
+    }
 	}
 }
 </script>
@@ -156,9 +170,19 @@ export default {
 .account-box {
 	position: absolute;
 	display: flex;
+  flex-direction: column;
+  align-items: center;
 	width: 80%;
-	height: 10%;
-	left: 10%;
+  height: 10%;
+  left: 10%;
+}
+
+.account-box .wrapper {
+  flex: 1;
+}
+
+.account-box .wrapper .button{
+	width: 100%;
 }
 
 .groom {
@@ -169,6 +193,10 @@ export default {
 .bride {
 	top: 16%;
 	background-color: red;
+}
+
+.hidden {
+  display: none;
 }
 
 .message {

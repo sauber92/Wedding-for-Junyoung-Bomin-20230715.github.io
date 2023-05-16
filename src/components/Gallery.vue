@@ -31,7 +31,7 @@
             <v-dialog v-model="dialog" fullscreen :scrim="false">
               <div class="card-info">
                 <span> {{ carouselStartIndex + 1 }} / {{ items.length }} </span>
-                <v-btn class="xmark" text @click="closeDialog">
+                <v-btn class="xmark" variant="plain" @click="closeDialog">
                   <font-awesome-icon icon="fa-regular fa-circle-xmark" size="xl" />
                 </v-btn>
               </div>

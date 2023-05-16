@@ -70,9 +70,9 @@ export default {
           scrollTrigger: {
             trigger: ".hello",
             start: "top top",
-            end: "center top",
-            scrub: 3,
-            pin: true,
+            end: "bottom top",
+            // scrub: 3,
+            // pin: true,
           }
         })
         .from(".msg1", { opacity: 0 })
@@ -82,8 +82,8 @@ export default {
           scrollTrigger: {
             trigger: ".groom",
             start: "top top",
-            end: "center top",
-            scrub: 3,
+            end: "bottom top",
+            scrub: 5,
             pin: true,
           }
         })
@@ -94,8 +94,8 @@ export default {
           scrollTrigger: {
             trigger: ".bride",
             start: "top top",
-            end: "center top",
-            scrub: 3,
+            end: "bottom top",
+            scrub: 5,
             pin: true,
           }
         })
@@ -106,7 +106,7 @@ export default {
           scrollTrigger: {
             trigger: ".date",
             start: "top top",
-            end: "center top",
+            end: "top bottom",
             scrub: 3,
             pin: true,
           }
@@ -116,7 +116,7 @@ export default {
           scrollTrigger: {
             trigger: ".time",
             start: "top top",
-            end: "center top",
+            end: "center center",
             scrub: 3,
             pin: true,
           }
@@ -127,7 +127,7 @@ export default {
           scrollTrigger: {
             trigger: ".search",
             start: "top top",
-            end: "center top",
+            end: "center center",
             scrub: 3,
             pin: true,
           }
@@ -152,23 +152,23 @@ export default {
           scrollTrigger: {
             trigger: ".gallery",
             start: "top top",
-            end: "center top",
+            end: "bottom bottom",
             scrub: 3,
             pin: true,
           }
         })
-        .from(".card", { opacity: 0 })
+        // .from(".card", { opacity: 0 })
 
         gsap.timeline({ // ClosingCard
           scrollTrigger: {
             trigger: ".closing",
             start: "top top",
-            end: "center top",
+            end: "bottom top",
             scrub: 3,
             pin: true,
           }
         })
-        .from(".closing .container", { opacity: 0 })
+        .from(".closing .account-box", { opacity: 0 })
     }
   }
 }
@@ -240,7 +240,7 @@ body {
   display: flex;
   justify-content: center;
   overflow-x: hidden;
-  overflow-y: auto!important;;
+  overflow-y: hidden !important;
   min-height: 100vh;
   min-height: -webkit-fill-available;
 }
