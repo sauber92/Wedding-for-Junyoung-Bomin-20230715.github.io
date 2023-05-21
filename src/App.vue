@@ -69,7 +69,7 @@ export default {
         gsap.timeline({ // HelloCard
           scrollTrigger: {
             trigger: ".hello",
-            start: "top top",
+            start: "top+=5px center",
             end: "bottom top",
             // scrub: 3,
             // pin: true,
@@ -81,10 +81,10 @@ export default {
         gsap.timeline({ // GroomCard
           scrollTrigger: {
             trigger: ".groom",
-            start: "top top",
+            start: "top+=5px center",
             end: "bottom top",
-            scrub: 5,
-            pin: true,
+            // scrub: 5,
+            // pin: true,
           }
         })
         .from(".groom-container .parent", { opacity: 0 })
@@ -93,10 +93,10 @@ export default {
         gsap.timeline({ // BridCard
           scrollTrigger: {
             trigger: ".bride",
-            start: "top top",
+            start: "top+=5px center",
             end: "bottom top",
-            scrub: 5,
-            pin: true,
+            // scrub: 5,
+            // pin: true,
           }
         })
         .from(".bride-container .parent", { opacity: 0 })
@@ -105,20 +105,20 @@ export default {
         gsap.timeline({ // DateCard
           scrollTrigger: {
             trigger: ".date",
-            start: "top top",
+            start: "top center",
             end: "top bottom",
-            scrub: 3,
-            pin: true,
+            // scrub: 3,
+            // pin: true,
           }
         })
 
         gsap.timeline({ // TimeCard
           scrollTrigger: {
             trigger: ".time",
-            start: "top top",
+            start: "top center",
             end: "center center",
-            scrub: 3,
-            pin: true,
+            // scrub: 3,
+            // pin: true,
           }
         })
         .from(".time .container", { opacity: 0 })
@@ -126,10 +126,10 @@ export default {
         gsap.timeline({ // SearchCard
           scrollTrigger: {
             trigger: ".search",
-            start: "top top",
+            start: "top center",
             end: "center center",
-            scrub: 3,
-            pin: true,
+            // scrub: 3,
+            // pin: true,
           }
         })
         .from(".search-box", { opacity: 0 })
@@ -138,37 +138,15 @@ export default {
         gsap.timeline({ // LocationCard
           scrollTrigger: {
             trigger: ".location",
-            start: "top top",
+            start: "top+=5px center",
             end: "center top",
-            scrub: 3,
-            pin: true,
+            // scrub: 3,
+            // pin: true,
           }
         })
         .from(".title", { opacity: 0 })
         .from(".map", { opacity: 0 })
         .from(".location .container", { opacity: 0 })
-
-        gsap.timeline({ // GalleryCard
-          scrollTrigger: {
-            trigger: ".gallery",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 3,
-            pin: true,
-          }
-        })
-        // .from(".card", { opacity: 0 })
-
-        gsap.timeline({ // ClosingCard
-          scrollTrigger: {
-            trigger: ".closing",
-            start: "top top",
-            end: "bottom top",
-            scrub: 3,
-            pin: true,
-          }
-        })
-        .from(".closing .account-box", { opacity: 0 })
     }
   }
 }
