@@ -6,21 +6,42 @@
   <div class="closing">
     <div class="container">
 			<span class="title">마음 전하실 곳</span>
-
       <div class="account-box groom">
         <div class="wrapper">
-          <v-btn class="button" @click="toggleShow(1)">버튼 1</v-btn>
-          <div :class="{ 'hidden': !show1 }">버튼 1을 눌렀을 때 나오는 내용</div>
+          <v-btn elevation="0" class="button" @click="toggleShow(1)">
+            신랑 측 마음 전하실 곳
+            <span class="icon">
+              <font-awesome-icon icon="fa-solid fa-angle-down" />
+            </span>
+          </v-btn>
+          <div :class="{ 'hidden': !show1, 'family': true }">
+            <div class="account">
+              <div class="test v-col-8 ma-0 pa-0">
+                <div class="v-col-4 position">신랑</div>
+                <div class="v-col-auto">정준영</div>
+                <div class="v-col-4 position">국민은행</div>
+                <div class="v-col-auto">94726400957</div>
+              </div>
+              <div class="test2 v-col-4 ma-0 pa-0">
+                <v-btn>계좌 복사하기</v-btn>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="account-box bride">
+      <div :class="{ 'account-box': true, 'bride': true, 'slide1': show1}">
         <div class="wrapper">
-          <v-btn class="button" @click="toggleShow(2)">버튼 2</v-btn>
-          <div :class="{ 'hidden': !show2 }">버튼 2을 눌렀을 때 나오는 내용</div>
+          <v-btn elevation="0" class="button" @click="toggleShow(2)">
+            신부 측 마음 전하실 곳
+            <span class="icon">
+              <font-awesome-icon icon="fa-solid fa-angle-down" />
+            </span>
+          </v-btn>
+          <div :class="{ 'hidden': !show2, 'family': true }">버튼 2을 눌렀을 때 나오는 내용</div>
         </div>
       </div>
 
-      <div class="message">
+      <div :class="{'message': true, 'slide1': show1, 'slide2': show2}">
 			</div>
 
     </div>
@@ -173,30 +194,44 @@ export default {
   flex-direction: column;
   align-items: center;
 	width: 80%;
-  height: 10%;
+  height: 7%;
   left: 10%;
 }
 
 .account-box .wrapper {
   flex: 1;
-}
-
-.account-box .wrapper .button{
 	width: 100%;
 }
 
+.account-box .wrapper .button{
+  width: 100%;
+  height: 3em;
+  background-color: #f1efea;
+  border-radius: 8px;
+}
+
+.account-box .wrapper .icon {
+  margin-left: 20px;
+}
+
+.account-box .wrapper .family {
+  background-color: grey;
+  margin-bottom: 10px;
+  z-index: 1;
+}
+
 .groom {
-	top: 5%;
-	background-color: red;
+	top: 6%;
 }
 
 .bride {
-	top: 16%;
-	background-color: red;
+	top: 14%;
 }
 
 .hidden {
   display: none;
+	padding: 10px;
+  background-color: #00ff00;
 }
 
 .message {
@@ -212,6 +247,20 @@ export default {
 .animated-div {
   background-color: #e0e0e0;
   padding: 10px;
+}
+
+.slide1 {
+  transform: translateY(200%);
+}
+
+.test2 {
+  background-color: #0000ff;
+}
+.test {
+  background-color: #00ff00;
+}
+.position {
+  background-color: red;
 }
 
 /*
