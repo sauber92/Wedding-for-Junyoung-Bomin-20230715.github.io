@@ -9,11 +9,11 @@ import { faMagnifyingGlass, faAngleDown } from '@fortawesome/free-solid-svg-icon
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SlideUpDown from 'vue-slide-up-down'
 
 import 'animate.css';
 
 import App from './App'
-
 
 const vuetify = createVuetify({
   components,
@@ -27,5 +27,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 const app = createApp(App)
 app.use(vuetify)
+app.component('slide-up-down', SlideUpDown)
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.mount('#app')

@@ -8,13 +8,13 @@
 			<span class="title">마음 전하실 곳</span>
       <div class="account-box groom">
         <div class="wrapper">
-          <v-btn elevation="0" class="button" @click="toggleShow(1)">
+          <v-btn elevation="0" class="button" @click="toggle">
             신랑 측 마음 전하실 곳
             <span class="icon">
               <font-awesome-icon icon="fa-solid fa-angle-down" />
             </span>
           </v-btn>
-          <div :class="{ 'hidden': !show1, 'family': true }">
+          <!-- <div :class="{ 'hidden': !show1, 'family': true }">
             <div class="account">
               <div class="test v-col-8 ma-0 pa-0">
                 <div class="v-col-4 position">신랑</div>
@@ -26,7 +26,20 @@
                 <v-btn>계좌 복사하기</v-btn>
               </div>
             </div>
-          </div>
+          </div> -->
+          <slide-up-down :active="active" >
+            <div class="account">
+              <div class="test v-col-8 ma-0 pa-0">
+                <div class="v-col-4 position">신랑</div>
+                <div class="v-col-auto">정준영</div>
+                <div class="v-col-4 position">국민은행</div>
+                <div class="v-col-auto">94726400957</div>
+              </div>
+              <div class="test2 v-col-4 ma-0 pa-0">
+                <v-btn>계좌 복사하기</v-btn>
+              </div>
+            </div>
+          </slide-up-down>
         </div>
       </div>
       <div :class="{ 'account-box': true, 'bride': true, 'slide1': show1}">
@@ -146,10 +159,14 @@ export default {
 		return {
 			showDiv: false,
       show1: false,
-      show2: false
+      show2: false,
+      active: true
 		};
 	},
 	methods: {
+    toggle() {
+      this.active = !this.active;
+    },
 		toggleDiv() {
 			this.showDiv = !this.showDiv;
 		},

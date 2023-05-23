@@ -85,7 +85,6 @@ export default {
 
 .intro-container {
   position: absolute;
-  
   width: max-content;
   z-index: 2;
   text-align: left;
@@ -102,6 +101,7 @@ export default {
 .vertical-text {
   writing-mode: vertical-lr;
   letter-spacing: 4px;
+  word-break: keep-all;
 }
 
 .wedding-date {

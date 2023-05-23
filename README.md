@@ -9,14 +9,15 @@
   - [x] Kakao Map: 카카오 맵 공식 문서  
   - [x] Maruburi font: 마루부리체 적용 [info](https://hangeul.naver.com/maruproject_10)
   - [x] ScrollTrigger: 스크롤 액션 적용 위해 필요 [info](https://greensock.com/)
+  - [x] vue-slide-up-down: jQuery의 SlideUp/SlideDown과 같은 효과 [info](https://github.com/danieldiekmeier/vue-slide-up-down)
   - [ ] web-hsare: 일단 적용해보고 전체 디자인 고려
   - [ ] sweetalert.js: 일단 적용해보고 전체 디자인 고려
  
-2. 엑셀 파싱 프로그램
-  - [ ] 손님 리스트 작성
-  - [ ] 이름 / 조사 / 인삿말 등 구분 필요
-  - [ ] 엑셀 파싱 프로그램 기능: 이름 / 조사 / 인삿말 등을 쿼리로 사용하는 URL 생성 및 QR 코드 생성 (Python 사용?)
-    [x] QR 생성 [github](https://github.com/sauber92/heart_qrcode_generator)
+2. 엑셀 파싱 프로그램 [github](https://github.com/sauber92/heart_qrcode_generator)
+  - [x] 손님 리스트 작성
+  - [x] 이름 / 조사 구분 필요
+  - [x] 엑셀 파싱 프로그램 기능: 이름 / 조사 쿼리로 사용하는 URL 생성 및 QR 코드 생성
+  - [x] QR 생성 
     
 3. 테스트 완료
   - [ ] 아이폰 12
