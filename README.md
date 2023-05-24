@@ -5,13 +5,11 @@
 1. 라이브러리 적용  
   - [x] aos.js: Animation On Scroll - 스크롤 애니메이션 적용에 필요 [info](https://michalsnik.github.io/aos/)
   - [x] fontawesome: 아이콘 사용 [info](https://fontawesome.com/)
-  - [x] animate.css: 사용 안 할 시 삭제 필요 [info](https://animate.style/)
   - [x] Kakao Map: 카카오 맵 공식 문서  
   - [x] Maruburi font: 마루부리체 적용 [info](https://hangeul.naver.com/maruproject_10)
   - [x] ScrollTrigger: 스크롤 액션 적용 위해 필요 [info](https://greensock.com/)
-  - [x] vue-slide-up-down: jQuery의 SlideUp/SlideDown과 같은 효과 [info](https://github.com/danieldiekmeier/vue-slide-up-down)
+  - [x] vue3-slide-up-down: jQuery의 SlideUp/SlideDown과 같은 효과 [info](https://github.com/southcoastweb/vue3-slide-up-down)
   - [ ] web-hsare: 일단 적용해보고 전체 디자인 고려
-  - [ ] sweetalert.js: 일단 적용해보고 전체 디자인 고려
  
 2. 엑셀 파싱 프로그램 [github](https://github.com/sauber92/heart_qrcode_generator)
   - [x] 손님 리스트 작성
