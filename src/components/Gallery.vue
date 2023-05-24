@@ -115,6 +115,16 @@ export default {
           popup: false,
           img: require("../assets/carousel_item_10.jpeg")
         },
+        {
+          id: 11,
+          popup: false,
+          img: require("../assets/carousel_item_11.jpeg")
+        },
+        {
+          id: 12,
+          popup: false,
+          img: require("../assets/carousel_item_12.jpeg")
+        },
 
       ],
       dialog: false,
