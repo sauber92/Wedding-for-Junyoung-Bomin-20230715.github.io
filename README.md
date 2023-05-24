@@ -9,7 +9,7 @@
   - [x] Maruburi font: 마루부리체 적용 [info](https://hangeul.naver.com/maruproject_10)
   - [x] ScrollTrigger: 스크롤 액션 적용 위해 필요 [info](https://greensock.com/)
   - [x] vue3-slide-up-down: jQuery의 SlideUp/SlideDown과 같은 효과 [info](https://github.com/southcoastweb/vue3-slide-up-down)
-  - [ ] web-hsare: 일단 적용해보고 전체 디자인 고려
+  - [x] web-hsare: 일단 적용해보고 전체 디자인 고려
  
 2. 엑셀 파싱 프로그램 [github](https://github.com/sauber92/heart_qrcode_generator)
   - [x] 손님 리스트 작성

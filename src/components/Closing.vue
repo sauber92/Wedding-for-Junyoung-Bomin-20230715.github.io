@@ -28,12 +28,12 @@
                 </v-row>
               </v-col>
               <v-col cols="5" class="col">
-                <v-btn class="copy-btn" variant="tonal" size="small" @click="copySelectedMember(member)">
+                <v-btn class="copy-btn" variant="tonal" size="small" color="brown-lighten-1" @click="copySelectedMember(member)">
                   <font-awesome-icon icon="fa-regular fa-copy" />
                   계좌 복사하기
                 </v-btn>
-                <v-snackbar v-model="snackbar" :timeout="timeout" color="primary" rounded="pill">
-                  <strong>{{ selectedMember.name }}</strong>님의 계좌를 복사했습니다.
+                <v-snackbar v-model="snackbar" :timeout="timeout" variant="flat" color="brown-lighten-4" rounded="pill">
+                  <span class="snackbar-content"><strong>{{ selectedMember.name }}</strong>님의 계좌를 복사했습니다.</span>
                 </v-snackbar>
               </v-col>
             </v-row>
@@ -62,12 +62,12 @@
                 </v-row>
               </v-col>
               <v-col cols="5" class="col">
-                <v-btn class="copy-btn" variant="tonal" size="small" @click="copySelectedMember(member)">
+                <v-btn class="copy-btn" variant="tonal" size="small" color="brown-lighten-1" @click="copySelectedMember(member)">
                   <font-awesome-icon icon="fa-regular fa-copy" />
                   계좌 복사하기
                 </v-btn>
-                <v-snackbar v-model="snackbar" :timeout="timeout" color="primary" rounded="pill">
-                  <strong>{{ selectedMember.name }}</strong>님의 계좌를 복사했습니다.
+                <v-snackbar v-model="snackbar" :timeout="timeout" variant="flat" color="brown-lighten-4" rounded="pill">
+                  <span class="snackbar-content"><strong>{{ selectedMember.name }}</strong>님의 계좌를 복사했습니다.</span>
                 </v-snackbar>
               </v-col>
             </v-row>
@@ -86,7 +86,7 @@
 			</div>
 
       <div :class="{'share': true, 'slide-up': !(show1|show2), 'slide-down-share': show1|show2}">
-        <v-btn variant="tonal" rounded="pill" @click="share">
+        <v-btn variant="flat" rounded="pill" color="brown-lighten-4" @click="share">
           <font-awesome-icon icon="fa-regular fa-share-from-square" class="icon" />
           청접장 공유하기
         </v-btn>
@@ -145,9 +145,9 @@ export default {
       if (navigator.share) {
         try {
           await navigator.share({
-            title: 'Shared Title',
-            text: 'Shared Text',
-            url: 'https://example.com'
+            title: '준영♥보민 결혼합니다',
+            text: '2022년 7월 15일 오전 11시',
+            url: 'https://wedding-for-junyoung-bomin-20230715.github.io/'
           });
           console.log('Shared successfully!');
         } catch (error) {
@@ -184,7 +184,7 @@ export default {
 
 .title {
   display: inline-block;
-  height: 3.4%;
+  height: 2em;
   border-bottom: solid 0.1em #5d493b;
 }
 
@@ -271,6 +271,12 @@ export default {
 .family .copy-btn {
   display: -webkit-flex; /* Safari */
   -webkit-justify-content: center; /* Safari 6.1+ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.snackbar-content {
   display: flex;
   justify-content: center;
   align-items: center;
