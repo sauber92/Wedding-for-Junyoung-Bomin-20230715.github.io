@@ -114,7 +114,7 @@ export default {
           { position: '어머님', name: '유재희', bank: '국민은행', account: '01089287034'},
       ],
       family2: [
-          { position: '신부', name: '전보민', bank: '국민은행', account: '910-9881-8509'},
+          { position: '신부', name: '전보민', bank: '국민은행', account: '91098818509'},
           { position: '아버님', name: '전이원', bank: '국민은행', account: '94726400957'},
           { position: '어머님', name: '양영옥', bank: '국민은행', account: '94726400957'},
       ]

@@ -93,7 +93,7 @@ export default {
 .intro-container span {
   object-fit: contain;
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: normal;
   color: #242424;
 }
