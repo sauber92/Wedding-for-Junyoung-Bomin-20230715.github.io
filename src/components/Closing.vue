@@ -3,46 +3,45 @@
 <!-- 글자: TBD, 쿼리스트링 이용 -->
 <!-- 글자효과: TBD -->
 <template>
-  <div class="closing">
+  <div :class="{'closing':true, 'closing-change-height': show1|show2}">
     <div class="container">
 			<span class="title">마음 전하실 곳</span>
-      <div class="account-box groom">
+      
+      <div :class="{'account-box': true, 'groom': true}">
         <div class="wrapper">
-          <v-btn elevation="0" class="button" @click="toggle">
+          <v-btn elevation="0" class="button" @click="toggleShow(1)">
             신랑 측 마음 전하실 곳
             <span class="icon">
               <font-awesome-icon icon="fa-solid fa-angle-down" />
             </span>
           </v-btn>
-          <!-- <div :class="{ 'hidden': !show1, 'family': true }">
-            <div class="account">
-              <div class="test v-col-8 ma-0 pa-0">
-                <div class="v-col-4 position">신랑</div>
-                <div class="v-col-auto">정준영</div>
-                <div class="v-col-4 position">국민은행</div>
-                <div class="v-col-auto">94726400957</div>
-              </div>
-              <div class="test2 v-col-4 ma-0 pa-0">
-                <v-btn>계좌 복사하기</v-btn>
-              </div>
-            </div>
-          </div> -->
-          <slide-up-down :active="active" >
-            <div class="account">
-              <div class="test v-col-8 ma-0 pa-0">
-                <div class="v-col-4 position">신랑</div>
-                <div class="v-col-auto">정준영</div>
-                <div class="v-col-4 position">국민은행</div>
-                <div class="v-col-auto">94726400957</div>
-              </div>
-              <div class="test2 v-col-4 ma-0 pa-0">
-                <v-btn>계좌 복사하기</v-btn>
-              </div>
-            </div>
-          </slide-up-down>
+          <vue-slide-up-down v-model="show1" class="family">
+            <v-row v-for="(member, index) in family1" :key="index" class="row" justify="center">
+              <v-col cols="7" class="col">
+                <v-row>
+                  <v-col cols="5" class="v-col-4 col1">{{ member.position }}</v-col>
+                  <v-col cols="7" class="v-col-4 col2">{{ member.name }}</v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="5" class="v-col-4 col1">{{ member.bank }}</v-col>
+                  <v-col cols="7" class="v-col-4 col2">{{ member.account }}</v-col>
+                </v-row>
+              </v-col>
+              <v-col cols="5" class="col">
+                <v-btn class="copy-btn" variant="tonal" size="small" @click="copySelectedMember(member)">
+                  <font-awesome-icon icon="fa-regular fa-copy" />
+                  계좌 복사하기
+                </v-btn>
+                <v-snackbar v-model="snackbar" :timeout="timeout" color="primary" rounded="pill">
+                  <strong>{{ selectedMember.name }}</strong>님의 계좌를 복사했습니다.
+                </v-snackbar>
+              </v-col>
+            </v-row>
+          </vue-slide-up-down>
         </div>
       </div>
-      <div :class="{ 'account-box': true, 'bride': true, 'slide1': show1}">
+
+      <div :class="{'account-box': true, 'bride': true, 'slide-up': !show1, 'slide-down': show1}">
         <div class="wrapper">
           <v-btn elevation="0" class="button" @click="toggleShow(2)">
             신부 측 마음 전하실 곳
@@ -50,126 +49,76 @@
               <font-awesome-icon icon="fa-solid fa-angle-down" />
             </span>
           </v-btn>
-          <div :class="{ 'hidden': !show2, 'family': true }">버튼 2을 눌렀을 때 나오는 내용</div>
+          <vue-slide-up-down v-model="show2" class="family">
+            <v-row v-for="(member, index) in family2" :key="index" class="row" justify="center">
+              <v-col cols="7" class="col">
+                <v-row>
+                  <v-col cols="5" class="v-col-4 col1">{{ member.position }}</v-col>
+                  <v-col cols="7" class="v-col-4 col2">{{ member.name }}</v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="5" class="v-col-4 col1">{{ member.bank }}</v-col>
+                  <v-col cols="7" class="v-col-4 col2">{{ member.account }}</v-col>
+                </v-row>
+              </v-col>
+              <v-col cols="5" class="col">
+                <v-btn class="copy-btn" variant="tonal" size="small" @click="copySelectedMember(member)">
+                  <font-awesome-icon icon="fa-regular fa-copy" />
+                  계좌 복사하기
+                </v-btn>
+                <v-snackbar v-model="snackbar" :timeout="timeout" color="primary" rounded="pill">
+                  <strong>{{ selectedMember.name }}</strong>님의 계좌를 복사했습니다.
+                </v-snackbar>
+              </v-col>
+            </v-row>
+          </vue-slide-up-down>
         </div>
       </div>
 
-      <div :class="{'message': true, 'slide1': show1, 'slide2': show2}">
+      <div :class="{'message': true, 'slide-up': !(show1|show2), 'slide-down': show1|show2}">
+        <p>
+          평생의 짝이 되어<br/>
+          믿음의 가정을 이루겠습니다.<br/>
+          저희의 길을 축복해주시고<br/>
+          오셔서 예쁜 모습 많이 담아주세요.<br/><br/>
+          준영ㆍ보민 올림
+        </p>
 			</div>
+
+      <div :class="{'share': true, 'slide-up': !(show1|show2), 'slide-down-share': show1|show2}">
+        <v-btn variant="tonal" rounded="pill" @click="share">
+          <font-awesome-icon icon="fa-regular fa-share-from-square" class="icon" />
+          청접장 공유하기
+        </v-btn>
+      </div>
 
     </div>
   </div>
 </template>
-  
-  <!-- <div> -->
-        <!-- <button class="account-btn-groomfamily" id="materialButton" type="button" aria-expanded="false"> -->
-            <!-- <span>신랑측 계좌번호</span> -->
-            <!-- <span class="account-cursor-span"> -->
-                <!-- <span class="material-symbols-rounded custom-material-icon" id="groomExpandBtn">expand_more</span> -->
-                
-            <!-- </span> -->
-        <!-- </button> -->
-  <!-- </div> -->
 
-    <!-- <div class="account-box-groomfamily hidden" id="accountBox">
-      <div class="account-content-style">
-          <div class="account-content-family" id="groomFamily">
-              <div class="account-content-family-block">
-                  <div class="account-content-role">신랑</div>
-                  <div class="account-content-name">정준영</div>
-                  <div class="account-content-role">국민은행</div>
-                  <div class="account-content-name"><a class="account-num-0">94726400957</a></div>
-              </div>
-              <div class="account-content-icon">
-                  <button type="button" class="account-content-icon-btn">
-                      <svg viewBox="0 0 48 48" class="account-content-icon-svg">
-                          <path
-                              fill="currentColor"
-                              class="kakao-logo_svg__st0"
-                              d="M21.9 0C9.8 0 0 7.8 0 17.3 0 23.5 4.1 28.9 10.2 32l-2.1 7.7c-.1.2 0 .5.2.7.1.1.3.2.4.2.1 0 .3-.1.4-.1l8.9-6c1.3.2 2.6.3 4 .3 12.1 0 21.9-7.8 21.9-17.3 0-9.7-9.8-17.5-22-17.5z"
-                          ></path>
-                      </svg>
-                      <p class="account-content-icon-p">카카오페이</p>
-                  </button>
-                  <button type="button" class="account-content-icon-btn copy-btn-0">
-                      <span class="material-icons md-18 account-content-name">content_paste</span>
-                      <p class="account-content-icon-p">계좌 복사하기</p>
-                  </button>
-              </div>
-          </div>
-          <hr class="account-content-hr">
-          <div class="account-content-family" id="groomFamily">
-              <div class="account-content-family-block">
-                  <div class="account-content-role">아버님</div>
-                  <div class="account-content-name">정진열</div>
-                  <div class="account-content-role">국민은행</div>
-                  <div class="account-content-name"><a class="account-num-1">000-000-000000</a></div>
-              </div>
-              <div class="account-content-icon">
-                  <button type="button" class="account-content-icon-btn">
-                      <svg viewBox="0 0 48 48" class="account-content-icon-svg">
-                          <path
-                              fill="currentColor"
-                              class="kakao-logo_svg__st0"
-                              d="M21.9 0C9.8 0 0 7.8 0 17.3 0 23.5 4.1 28.9 10.2 32l-2.1 7.7c-.1.2 0 .5.2.7.1.1.3.2.4.2.1 0 .3-.1.4-.1l8.9-6c1.3.2 2.6.3 4 .3 12.1 0 21.9-7.8 21.9-17.3 0-9.7-9.8-17.5-22-17.5z"
-                          ></path>
-                      </svg>
-                      <p class="account-content-icon-p">카카오페이</p>
-                  </button>
-                  <button type="button" class="account-content-icon-btn copy-btn-1">
-                      <span class="material-icons md-18 account-content-name">content_paste</span>
-                      <p class="account-content-icon-p">계좌 복사하기</p>
-                  </button>
-              </div>
-          </div>
-          <hr class="account-content-hr">
-          <div class="account-content-family" id="groomFamily">
-              <div class="account-content-family-block">
-                  <div class="account-content-role">어머님</div>
-                  <div class="account-content-name">유재희</div>
-                  <div class="account-content-role">국민은행</div>
-                  <div class="account-content-name"><a class="account-num-2">000-000-000000</a></div>
-              </div>
-              <div class="account-content-icon">
-                  <button type="button" class="account-content-icon-btn">
-                      <svg viewBox="0 0 48 48" class="account-content-icon-svg">
-                          <path
-                              fill="currentColor"
-                              class="kakao-logo_svg__st0"
-                              d="M21.9 0C9.8 0 0 7.8 0 17.3 0 23.5 4.1 28.9 10.2 32l-2.1 7.7c-.1.2 0 .5.2.7.1.1.3.2.4.2.1 0 .3-.1.4-.1l8.9-6c1.3.2 2.6.3 4 .3 12.1 0 21.9-7.8 21.9-17.3 0-9.7-9.8-17.5-22-17.5z"
-                          ></path>
-                      </svg>
-                      <p class="account-content-icon-p">카카오페이</p>
-                  </button>
-                  <button type="button" class="account-content-icon-btn copy-btn-2">
-                      <span class="material-icons md-18 account-content-name">content_paste</span>
-                      <p class="account-content-icon-p">계좌 복사하기</p>
-                  </button>
-              </div>
-          </div>
-      </div>
-  </div> -->
 <script>
 export default {
   name: 'ClosingCard',
-  props: {
-
-  },
 	data() {
 		return {
-			showDiv: false,
       show1: false,
       show2: false,
-      active: true
+      snackbar: false,
+      timeout: 1500,
+      selectedMember: {name: '', account: ''},
+      family1: [
+          { position: '신랑', name: '정준영', bank: '국민은행', account: '94726400957'},
+          { position: '아버님', name: '정진열', bank: '국민은행', account: '01048084682'},
+          { position: '어머님', name: '유재희', bank: '국민은행', account: '01089287034'},
+      ],
+      family2: [
+          { position: '신부', name: '전보민', bank: '국민은행', account: '01098818509'},
+          { position: '아버님', name: '전이원', bank: '국민은행', account: '94726400957'},
+          { position: '어머님', name: '양영옥', bank: '국민은행', account: '94726400957'},
+      ]
 		};
 	},
 	methods: {
-    toggle() {
-      this.active = !this.active;
-    },
-		toggleDiv() {
-			this.showDiv = !this.showDiv;
-		},
     toggleShow(button) {
       if (button === 1) {
         this.show1 = !this.show1;
@@ -177,6 +126,35 @@ export default {
       } else if (button === 2) {
         this.show1 = false;
         this.show2 = !this.show2;
+      }
+    },
+    copySelectedMember(member) {
+      const textarea = document.createElement('textarea');
+      textarea.value = member.account;
+      document.body.appendChild(textarea);
+      textarea.select();
+      textarea.setSelectionRange(0, 9999);
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+
+      this.selectedMember.name = member.name;
+      this.selectedMember.account = member.account;
+      this.snackbar = true;
+    },
+    async share() {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'Shared Title',
+            text: 'Shared Text',
+            url: 'https://example.com'
+          });
+          console.log('Shared successfully!');
+        } catch (error) {
+          console.error('Error sharing:', error);
+        }
+      } else {
+        console.log('Web Share API not supported.');
       }
     }
 	}
@@ -188,7 +166,12 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 40em;
+}
+
+.closing-change-height {
+  transition: transform 0.5s ease;
+  height: 65em;
 }
 
 .container {
@@ -210,9 +193,9 @@ export default {
 	display: flex;
   flex-direction: column;
   align-items: center;
-	width: 80%;
+	width: 90%;
   height: 7%;
-  left: 10%;
+  left: 5%;
 }
 
 .account-box .wrapper {
@@ -228,76 +211,101 @@ export default {
 }
 
 .account-box .wrapper .icon {
-  margin-left: 20px;
+  position: absolute;
+  right: 10%;
 }
 
 .account-box .wrapper .family {
-  background-color: grey;
+  position: absolute;
+  width: 90%;
+  left: 5%;
   margin-bottom: 10px;
-  z-index: 1;
+  font-size: 0.9em;
 }
 
 .groom {
-	top: 6%;
+	top: 4em;
 }
 
 .bride {
-	top: 14%;
+	top: 7.5em;
 }
 
-.hidden {
-  display: none;
-	padding: 10px;
-  background-color: #00ff00;
+.slide-up {
+  transition: transform 0.5s ease;
+  transform: translateY(0);
+}
+
+.slide-down {
+  transition: transform 0.5s ease;
+  transform: translateY(21em);
+}
+
+.slide-down-share {
+  transition: transform 0.5s ease;
+  transform: translateY(25em);
+}
+
+.family .row {
+  /* background-color: yellow; */
+  display: -webkit-flex; /* Safari */
+  -webkit-justify-content: center; /* Safari 6.1+ */
+  display: flex;
+  height: 8em;
+  justify-content: center;
+  border-bottom: solid 0.1em #b9a18f;
+}
+
+.family .row .col {
+  align-self: center;
+}
+
+.family .col .col1 {
+  text-align: right;
+}
+
+.family .col .col2 {
+  text-align: left;
+}
+
+.family .copy-btn {
+  display: -webkit-flex; /* Safari */
+  -webkit-justify-content: center; /* Safari 6.1+ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .message {
 	position: absolute;
-	display: flex;
-	width: 80%;
+  display: flex;
+	width: 90%;
 	height: 40%;
-	left: 10%;
-	top: 30%;
-	background-color: yellow;
+	left: 5%;
+	top: 12em;
+	/* background-color: yellow; */
 }
 
-.animated-div {
-  background-color: #e0e0e0;
-  padding: 10px;
+.message p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.slide1 {
-  transform: translateY(200%);
+.share {
+  position: absolute;
+  display: flex;
+  top: 32em;
+  width: 100%;
+  display: -webkit-flex; /* Safari */
+  -webkit-justify-content: center; /* Safari 6.1+ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.test2 {
-  background-color: #0000ff;
+.share .icon {
+  margin-right: 10px;
 }
-.test {
-  background-color: #00ff00;
-}
-.position {
-  background-color: red;
-}
-
-/*
-.account-content-icon-p {
-    margin-bottom: 0px;
-    font-size: 0.625em;
-    line-height: 0.75em;
-}
-
-.account-content-hr {
-    margin-top: 0.75em;
-    margin-bottom: 0.75em;
-    --tw-border-opacity: 1;
-    border-color: rgba(229, 229, 229, var(--tw-border-opacity));
-}
-
-.swal-button {
-    padding: 7px 19px;
-    border-radius: 2px;
-    font-size: 12px;
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
-} */
 </style>

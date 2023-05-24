@@ -6,12 +6,10 @@ import * as directives from 'vuetify/directives'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faMagnifyingGlass, faAngleDown } from '@fortawesome/free-solid-svg-icons'
-import { faCircleXmark } from '@fortawesome/free-regular-svg-icons'
+import { faCircleXmark, faCopy, faShareFromSquare } from '@fortawesome/free-regular-svg-icons'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import SlideUpDown from 'vue-slide-up-down'
-
-import 'animate.css';
+import { Vue3SlideUpDown } from 'vue3-slide-up-down'
 
 import App from './App'
 
@@ -21,12 +19,12 @@ const vuetify = createVuetify({
 })
 
 /* add icons to the library */
-library.add(faMagnifyingGlass, faCircleXmark, faAngleDown)
+library.add(faMagnifyingGlass, faCircleXmark, faAngleDown, faCopy, faShareFromSquare)
 
 gsap.registerPlugin(ScrollTrigger)
 
 const app = createApp(App)
 app.use(vuetify)
-app.component('slide-up-down', SlideUpDown)
 app.component('font-awesome-icon', FontAwesomeIcon)
+app.component('vue-slide-up-down', Vue3SlideUpDown)
 app.mount('#app')
