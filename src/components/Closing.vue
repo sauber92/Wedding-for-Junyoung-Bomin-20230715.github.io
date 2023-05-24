@@ -12,24 +12,25 @@
           <v-btn elevation="0" class="button" @click="toggleShow(1)">
             신랑 측 마음 전하실 곳
             <span class="icon">
-              <font-awesome-icon icon="fa-solid fa-angle-down" />
+              <font-awesome-icon v-if="!show1" icon="fa-solid fa-angle-down" />
+              <font-awesome-icon v-if="show1" icon="fa-solid fa-angle-up" />
             </span>
           </v-btn>
           <vue-slide-up-down v-model="show1" class="family">
             <v-row v-for="(member, index) in family1" :key="index" class="row" justify="center">
               <v-col cols="7" class="col">
                 <v-row>
-                  <v-col cols="5" class="v-col-4 col1">{{ member.position }}</v-col>
-                  <v-col cols="7" class="v-col-4 col2">{{ member.name }}</v-col>
+                  <v-col cols="5" class="v-col-4 pt-1 pb-1 col1">{{ member.position }}</v-col>
+                  <v-col cols="7" class="v-col-4 pt-1 pb-1 col2">{{ member.name }}</v-col>
                 </v-row>
                 <v-row>
-                  <v-col cols="5" class="v-col-4 col1">{{ member.bank }}</v-col>
-                  <v-col cols="7" class="v-col-4 col2">{{ member.account }}</v-col>
+                  <v-col cols="5" class="v-col-4 pt-1 pb-1 col1">{{ member.bank }}</v-col>
+                  <v-col cols="7" class="v-col-4 pt-1 pb-1 col2">{{ member.account }}</v-col>
                 </v-row>
               </v-col>
               <v-col cols="5" class="col">
-                <v-btn class="copy-btn" variant="tonal" size="small" color="brown-lighten-1" @click="copySelectedMember(member)">
-                  <font-awesome-icon icon="fa-regular fa-copy" />
+                <v-btn class="copy-btn" variant="flat" size="small" color="#f1efea" @click="copySelectedMember(member)">
+                  <font-awesome-icon class="copy-icon" icon="fa-regular fa-copy"/>
                   계좌 복사하기
                 </v-btn>
                 <v-snackbar v-model="snackbar" :timeout="timeout" variant="flat" color="brown-lighten-4" rounded="pill">
@@ -46,24 +47,25 @@
           <v-btn elevation="0" class="button" @click="toggleShow(2)">
             신부 측 마음 전하실 곳
             <span class="icon">
-              <font-awesome-icon icon="fa-solid fa-angle-down" />
+              <font-awesome-icon v-if="!show2" icon="fa-solid fa-angle-down" />
+              <font-awesome-icon v-if="show2" icon="fa-solid fa-angle-up" />
             </span>
           </v-btn>
           <vue-slide-up-down v-model="show2" class="family">
             <v-row v-for="(member, index) in family2" :key="index" class="row" justify="center">
               <v-col cols="7" class="col">
                 <v-row>
-                  <v-col cols="5" class="v-col-4 col1">{{ member.position }}</v-col>
-                  <v-col cols="7" class="v-col-4 col2">{{ member.name }}</v-col>
+                  <v-col cols="5" class="v-col-4 pt-1 pb-1 col1">{{ member.position }}</v-col>
+                  <v-col cols="7" class="v-col-4 pt-1 pb-1 col2">{{ member.name }}</v-col>
                 </v-row>
                 <v-row>
-                  <v-col cols="5" class="v-col-4 col1">{{ member.bank }}</v-col>
-                  <v-col cols="7" class="v-col-4 col2">{{ member.account }}</v-col>
+                  <v-col cols="5" class="v-col-4 pt-1 pb-1 col1">{{ member.bank }}</v-col>
+                  <v-col cols="7" class="v-col-4 pt-1 pb-1 col2">{{ member.account }}</v-col>
                 </v-row>
               </v-col>
               <v-col cols="5" class="col">
-                <v-btn class="copy-btn" variant="tonal" size="small" color="brown-lighten-1" @click="copySelectedMember(member)">
-                  <font-awesome-icon icon="fa-regular fa-copy" />
+                <v-btn class="copy-btn" variant="flat" size="small" color="#f1efea" @click="copySelectedMember(member)">
+                  <font-awesome-icon class="copy-icon" icon="fa-regular fa-copy" />
                   계좌 복사하기
                 </v-btn>
                 <v-snackbar v-model="snackbar" :timeout="timeout" variant="flat" color="brown-lighten-4" rounded="pill">
@@ -86,7 +88,7 @@
 			</div>
 
       <div :class="{'share': true, 'slide-up': !(show1|show2), 'slide-down-share': show1|show2}">
-        <v-btn variant="flat" rounded="pill" color="brown-lighten-4" @click="share">
+        <v-btn variant="flat" rounded="pill" color="#f1efea" @click="share">
           <font-awesome-icon icon="fa-regular fa-share-from-square" class="icon" />
           청접장 공유하기
         </v-btn>
@@ -112,7 +114,7 @@ export default {
           { position: '어머님', name: '유재희', bank: '국민은행', account: '01089287034'},
       ],
       family2: [
-          { position: '신부', name: '전보민', bank: '국민은행', account: '01098818509'},
+          { position: '신부', name: '전보민', bank: '국민은행', account: '910-9881-8509'},
           { position: '아버님', name: '전이원', bank: '국민은행', account: '94726400957'},
           { position: '어머님', name: '양영옥', bank: '국민은행', account: '94726400957'},
       ]
@@ -186,6 +188,7 @@ export default {
   display: inline-block;
   height: 2em;
   border-bottom: solid 0.1em #5d493b;
+  color: #5d493b;
 }
 
 .account-box {
@@ -213,6 +216,7 @@ export default {
 .account-box .wrapper .icon {
   position: absolute;
   right: 10%;
+  color: #5d493b;
 }
 
 .account-box .wrapper .family {
@@ -247,7 +251,6 @@ export default {
 }
 
 .family .row {
-  /* background-color: yellow; */
   display: -webkit-flex; /* Safari */
   -webkit-justify-content: center; /* Safari 6.1+ */
   display: flex;
@@ -262,6 +265,8 @@ export default {
 
 .family .col .col1 {
   text-align: right;
+  font-weight: 500;
+  color: #afa097;
 }
 
 .family .col .col2 {
@@ -272,8 +277,14 @@ export default {
   display: -webkit-flex; /* Safari */
   -webkit-justify-content: center; /* Safari 6.1+ */
   display: flex;
+  min-height: 2.5em;
   justify-content: center;
+  color: #5d493b;
   align-items: center;
+}
+
+.family .copy-icon {
+  margin-right: 0.4em;
 }
 
 .snackbar-content {
@@ -296,7 +307,10 @@ export default {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
   transform: translate(-50%, -50%);
+  line-height: 1.88;
+  letter-spacing: normal;
 }
 
 .share {
@@ -309,9 +323,11 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #5d493b;
 }
 
 .share .icon {
   margin-right: 10px;
+  color: #5d493b;
 }
 </style>

@@ -99,7 +99,7 @@ export default {
 }
 
 .location {
-  height: 100vh;
+  height: 110vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -142,6 +142,7 @@ export default {
 
 .container-trans .transportation {
   color: #5d493b;
+  font-weight: 600;
 }
 
 .mark {

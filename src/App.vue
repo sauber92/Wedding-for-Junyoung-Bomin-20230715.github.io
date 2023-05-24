@@ -61,7 +61,6 @@ export default {
     AOS.refresh(true)
   },
   mounted() {
-    // this.footerHeight = this.$refs.footerRef.$el.clientHeight;
     this.scrollAnimation();
   },
   methods: {
@@ -71,8 +70,6 @@ export default {
             trigger: ".hello",
             start: "top+=5px center",
             end: "bottom top",
-            // scrub: 3,
-            // pin: true,
           }
         })
         .from(".msg1", { opacity: 0 })
@@ -83,8 +80,6 @@ export default {
             trigger: ".groom",
             start: "top+=5px center",
             end: "bottom top",
-            // scrub: 5,
-            // pin: true,
           }
         })
         .from(".groom-container .parent", { opacity: 0 })
@@ -95,8 +90,6 @@ export default {
             trigger: ".bride",
             start: "top+=5px center",
             end: "bottom top",
-            // scrub: 5,
-            // pin: true,
           }
         })
         .from(".bride-container .parent", { opacity: 0 })
@@ -107,8 +100,6 @@ export default {
             trigger: ".date",
             start: "top center",
             end: "top bottom",
-            // scrub: 3,
-            // pin: true,
           }
         })
 
@@ -117,8 +108,6 @@ export default {
             trigger: ".time",
             start: "top center",
             end: "center center",
-            // scrub: 3,
-            // pin: true,
           }
         })
         .from(".time .container", { opacity: 0 })
@@ -128,8 +117,6 @@ export default {
             trigger: ".search",
             start: "top center",
             end: "center center",
-            // scrub: 3,
-            // pin: true,
           }
         })
         .from(".search-box", { opacity: 0 })
@@ -140,8 +127,6 @@ export default {
             trigger: ".location",
             start: "top+=5px center",
             end: "center top",
-            // scrub: 3,
-            // pin: true,
           }
         })
         .from(".title", { opacity: 0 })
@@ -171,7 +156,7 @@ export default {
   body {
     width: 100%;
     font-size: 14px;
-    color: #55504f;
+    color: #221815;
   }
 }
 
@@ -180,16 +165,16 @@ export default {
   body {
     width: 600px;;
     font-size: 18px;
-    color: #55504f;
+    color: #221815;
   }
 }
 
 html {
   animation: blur .7s ease-out ;
-  /* font-family: 'SunBatang-Light'; */
-  font-family: 'MaruBuri-Regular';
-  /* --mdc-typography-font-family: 'SunBatang-Light'; */
-  --mdc-typography-font-family: 'MaruBuri-Regular';
+  font-family: 'SunBatang-Light';
+  /* font-family: 'MaruBuri-Regular'; */
+  --mdc-typography-font-family: 'SunBatang-Light';
+  /* --mdc-typography-font-family: 'MaruBuri-Regular'; */
   line-height: 1.15;
   overscroll-behavior-x: none;
   -webkit-text-size-adjust: 100%;
@@ -210,11 +195,11 @@ body {
   background-color: rgb(189, 189, 189);
   margin: 0 auto;
   padding: 0;
-  /* font-family: 'SunBatang-Light'; */
-  font-family: 'MaruBuri-Regular';
+  font-family: 'SunBatang-Light';
+  /* font-family: 'MaruBuri-Regular'; */
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #221815;
   display: flex;
   justify-content: center;
   overflow-x: hidden;
@@ -251,12 +236,12 @@ button, select {
 
 #app {
   background-color: #FFFFFFFF;
-  /* font-family: 'SunBatang-Light'; */
-  font-family: 'MaruBuri-Regular';
+  font-family: 'SunBatang-Light';
+  /* font-family: 'MaruBuri-Regular'; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #221815;
   width: 100%;
   margin: 0 auto;
 }

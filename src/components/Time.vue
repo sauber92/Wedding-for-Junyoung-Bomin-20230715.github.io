@@ -22,7 +22,7 @@ export default {
   mounted() {
     const options = {
       rootMargin: '100px',
-      threshold: 1, // 대상 엘리먼트가 뷰포트에 50% 이상 들어왔을 때 콜백 함수 호출
+      threshold: 1, // 대상 엘리먼트가 뷰포트에 100% 이상 들어왔을 때 콜백 함수 호출
     };
     const observer = new IntersectionObserver(this.callback, options);
     observer.observe(this.$refs.startCount);
@@ -37,7 +37,7 @@ export default {
             const [targetHour, targetMinute] = this.targetTime.split(':').map(Number);
             
             let nextHour = currentHour;
-            let nextMinute = currentMinute + 1;
+            let nextMinute = currentMinute + 2;
             if (nextMinute >= 60) {
               nextHour += 1;
               nextMinute = 0;
@@ -62,7 +62,6 @@ export default {
 
 <style scoped>
 .time {
-  /* background-color: rgb(194, 255, 199); */
   position: relative;
   display: flex;
   justify-content: center;
@@ -80,14 +79,11 @@ export default {
 }
 
 .am {
-  /* position: absolute; */
-  /* background-color: red; */
   margin-right: 5px;
   margin-bottom: 25px;
 }
 
 .count {
-  /* position: absolute; */
   display: inline-block;
 }
 

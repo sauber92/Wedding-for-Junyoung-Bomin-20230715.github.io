@@ -155,13 +155,14 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
-  /* height: 100vh; */
+  height: 110vh;
 }
 
 .title {
   display: inline-block;
   height: 3.4%;
   border-bottom: solid 0.1em #5d493b;
+  color: #5d493b;
 }
 
 .xmark {

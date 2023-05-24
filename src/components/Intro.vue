@@ -99,7 +99,7 @@ export default {
 }
 
 .vertical-text {
-  writing-mode: vertical-lr;
+  /* writing-mode: vertical-lr; */
   letter-spacing: 4px;
   word-break: keep-all;
 }

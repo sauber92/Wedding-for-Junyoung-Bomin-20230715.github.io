@@ -73,11 +73,12 @@ export default {
 
 .child {
   position: absolute;
-  top: 30%;
-  left: 10%;
-  transform: translate(-50%, -50%);
+  top: 10%;
+  width: 100%;
+  /* left: 50%;
+  transform: translate(-50%, -50%); */
   font-size: 1.2em;
-  writing-mode: vertical-lr;
+  /* writing-mode: vertical-lr; */
   letter-spacing: 4px;
 }
 
@@ -100,7 +101,8 @@ export default {
   }
   .child {
     font-size: 0.9em;
-    left: 10%;
+    /* left: 10%; */
+    top: 12%;
   }
   .child .name {
     font-size: 1.0em;
@@ -125,9 +127,9 @@ export default {
   .parent {
     top: 8%;
   }
-  .child {
+  /* .child {
     left: 12%;
-  }
+  } */
 }
 
 /* 데스크탑 버전 */

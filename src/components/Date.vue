@@ -134,7 +134,7 @@ export default {
   position: absolute;
   display: flex;
   bottom: 42%;
-  right: 28%;
+  right: 25%;
   align-items: flex-end;
   color: #55504f;
 }
@@ -165,7 +165,7 @@ export default {
   }
   .font-day {
     bottom: 40%;
-    right: 23%;
+    right: 20%;
   }
 }
 

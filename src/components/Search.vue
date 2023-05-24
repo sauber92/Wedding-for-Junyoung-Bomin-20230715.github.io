@@ -54,7 +54,7 @@ export default {
   
 <style scoped>
 .search {
-  height: 100vh;
+  height: 10em;
   position: relative;
   display: flex;
   justify-content: center;
@@ -73,16 +73,17 @@ export default {
 
 .search-txt {
   position: absolute;
-  top: 50.5%;
+  top: 52.5%;
+  color: #5d493b;
   letter-spacing: .15em;
   z-index: 1;
 }
 
 .search-box .icon {
   position: absolute;
-  /* display: inline-block; */
   top: 20%;
   left: 8%;
+  color: #5d493b;
 }
 
 .search-txt h1 {
@@ -96,7 +97,7 @@ export default {
   font-size: 1.2em;
   white-space: nowrap;
   margin: 0 auto;
-  border-right: .13em solid rgb(37, 37, 37);
+  border-right: .13em solid rgb(36, 29, 23);
   letter-spacing: .15em;
   animation:
     typing 2s steps(30),
@@ -114,6 +115,6 @@ export default {
 
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: rgb(37, 37, 37); }
+  50% { border-color: rgb(36, 29, 23); }
 }
   </style>
