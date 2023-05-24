@@ -41,7 +41,7 @@
                     v-for="(item, index) in items"
                     :key="index"
                     :src="item.img"
-                    cover
+                    contains
                   ></v-carousel-item>
                 </v-carousel>
               </v-card>
