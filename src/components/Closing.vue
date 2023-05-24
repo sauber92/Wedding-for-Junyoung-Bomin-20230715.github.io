@@ -146,7 +146,7 @@ export default {
         try {
           await navigator.share({
             title: '준영♥보민 결혼합니다',
-            text: '2022년 7월 15일 오전 11시',
+            text: '',
             url: 'https://wedding-for-junyoung-bomin-20230715.github.io/'
           });
           console.log('Shared successfully!');
@@ -166,12 +166,12 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
-  height: 40em;
+  height: 43em;
 }
 
 .closing-change-height {
   transition: transform 0.5s ease;
-  height: 65em;
+  height: 70em;
 }
 
 .container {
@@ -243,7 +243,7 @@ export default {
 
 .slide-down-share {
   transition: transform 0.5s ease;
-  transform: translateY(25em);
+  transform: translateY(28em);
 }
 
 .family .row {
@@ -288,7 +288,7 @@ export default {
 	width: 90%;
 	height: 40%;
 	left: 5%;
-	top: 12em;
+	top: 15em;
 	/* background-color: yellow; */
 }
 
@@ -302,7 +302,7 @@ export default {
 .share {
   position: absolute;
   display: flex;
-  top: 32em;
+  top: 35em;
   width: 100%;
   display: -webkit-flex; /* Safari */
   -webkit-justify-content: center; /* Safari 6.1+ */
