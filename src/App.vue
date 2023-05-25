@@ -1,5 +1,10 @@
 <template>
-  <div>
+  <div class="alert" v-if="isScreenHeightTooSmall">
+    <p>죄송합니다.</p>
+    <p>기기 화면의 세로 길이가 너무 작습니다.</p>
+    <p>화면을 전환하시거나 다른 기기를 이용해주세요.</p>
+  </div>
+  <div v-if="!isScreenHeightTooSmall">
     <IntroCard class="section"/>
     <HelloCard class="section"/>
     <GroomCard class="section"/>
@@ -48,8 +53,7 @@ export default {
   },
   data() {
     return {
-      windowHeight: window.innerHeight,
-      footerHeight: 0
+      screenHeightThreshold: 600 // 세로 길이 임계값
     }
   },
   beforeMount() {
@@ -62,6 +66,11 @@ export default {
   },
   mounted() {
     this.scrollAnimation();
+  },
+  computed: {
+    isScreenHeightTooSmall() {
+      return window.innerHeight < this.screenHeightThreshold;
+    }
   },
   methods: {
       scrollAnimation() {
@@ -208,6 +217,19 @@ body {
   min-height: -webkit-fill-available;
 }
 
+@media (max-width: 600px) {
+  body {
+    transform: rotate(90deg);
+    transform-origin: left top;
+    width: 100vh;
+    height: 100vw;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
 img {
   width:100%
 }
@@ -260,5 +282,11 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.alert {
+  height: 100vh;
+  padding-top: 15%;
+  background-color: rgb(255, 208, 187);
 }
 </style>

@@ -10,7 +10,7 @@
         <v-app>
           <v-container grid-list-xs>
             <v-row>
-              <v-col v-for="(item, index) in filteredItems" :key="index" color="grey lighten-3" flat cols="6" lg="4" sm="6">
+              <v-col v-for="(item, index) in filteredItems" :key="index" color="grey lighten-3" flat cols="6" lg="6" sm="6">
                 <v-img
                   class="card"
                   :src="item.img"
@@ -261,21 +261,37 @@ export default {
 
 /* 아이폰 SE */
 @media screen and (min-device-width : 359px) and (max-device-width : 376px) {
+  .gallery {
+    height: 120vh;
+  }
   .gallery-container {
     position: absolute;
     /* top: 2%; */
-    left: 10%;
-    width: 80%;
+    left: 0%;
+    width: 100%;
   }
 }
 
 /* 모바일 버전 */
-@media screen and (min-device-width : 376px) and (max-device-width: 768px) {
+@media screen and (min-device-width : 376px) and (max-device-width: 767px) {
   .gallery-container {
     position: absolute;
     /* top: 2%; */
-    left: 5%;
-    width: 90%;
+    left: 0%;
+    width: 100%;
+  }
+}
+
+/* 아이패드 미니 버전 */
+@media screen and (min-device-width : 768px) and (max-device-width: 769px) {
+  .gallery {
+    height: 160vh;
+  }
+  .gallery-container {
+    position: absolute;
+    /* top: 2%; */
+    left: 0%;
+    width: 100%;
   }
 }
 
@@ -291,6 +307,9 @@ export default {
 
 /* 아이패드 프로 */
 @media only screen and (min-device-width : 1024px) {
+  .gallery {
+    height: 150vh;
+  }
   .gallery-container {
     position: absolute;
     /* top: 0; */
