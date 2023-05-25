@@ -4,7 +4,7 @@
 <!-- 글자효과: 스크롤에 따라 사진 위or오른쪽에 글자 나오게 -->
 <template>
   <div class="groom">
-    <img alt="groom" src="@/assets/groom.jpeg" class="groom-img">
+    <img alt="groom" src="@/assets/groom.jpg" class="groom-img">
     <div class="groom-container">
       <div class="parent">
         <span>
@@ -36,10 +36,10 @@ export default {
 .groom-img {
   position: absolute;
   top: 0;
-  left: -10%;
+  left: 0%;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: 40% 45%;
   z-index: 1;
 }
@@ -56,7 +56,7 @@ export default {
 .parent {
   position: absolute;
   display: flex;
-  top: 15%;
+  top: 5%;
   right: 11%;
   width: max-content;
   font-size: 1em;
@@ -71,7 +71,7 @@ export default {
 .child {
   position: absolute;
   width: max-content;
-  top: 19%;
+  top: 10%;
   right: 11%;
   font-size: 1.2em;
   letter-spacing: 4px;
@@ -89,14 +89,14 @@ export default {
   }
   .parent {
     font-size: 0.9em;
-    top: 33%;
+    top: 10%;
   }
   .parent .name {
     font-size: 1.0em;
   }
   .child {
     font-size: 0.9em;
-    top: 37%;
+    top: 15%;
   }
   .child .name {
     font-size: 1.0em;
@@ -109,10 +109,10 @@ export default {
     object-position: 40% 80%;
   }
   .parent {
-    top: 20%;
+    top: 3%;
   }
   .child {
-    top: 26%;
+    top: 8%;
   }
 }
 
@@ -122,10 +122,10 @@ export default {
     object-position: 40% 80%;
   }
   .parent {
-    top: 31%;
+    top: 10%;
   }
   .child {
-    top: 35%;
+    top: 15%;
   }
 }
 

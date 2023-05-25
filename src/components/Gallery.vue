@@ -317,4 +317,17 @@ export default {
     width: 100%;
   }
 }
+
+/* 아이패드 (가로) */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+  .gallery {
+    height: 180vh;
+  }
+  .gallery-container {
+    position: absolute;
+    /* top: 0; */
+    left: 0%;
+    width: 100%;
+  }
+}
 </style>
