@@ -217,19 +217,6 @@ body {
   min-height: -webkit-fill-available;
 }
 
-@media (max-width: 600px) {
-  body {
-    transform: rotate(90deg);
-    transform-origin: left top;
-    width: 100vh;
-    height: 100vw;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-}
-
 img {
   width:100%
 }
