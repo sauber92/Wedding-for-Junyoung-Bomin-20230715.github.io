@@ -39,10 +39,10 @@ export default {
 .bride-img {
   position: absolute;
   top: 0;
-  left: 0;
+  right: -10%;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: 80% 80%;
   z-index: 1;
 }
@@ -58,10 +58,9 @@ export default {
 
 .parent {
   position: absolute;
-  top: 5%;
-  left: 50%;
+  top: 15%;
+  left: 12%;
   width: max-content;
-  transform: translate(-50%, -50%);
   font-size: 1em;
   line-height: 2;
   letter-spacing : 4px;
@@ -73,12 +72,10 @@ export default {
 
 .child {
   position: absolute;
-  top: 10%;
-  width: 100%;
-  /* left: 50%;
-  transform: translate(-50%, -50%); */
+  width: max-content;
+  top: 19%;
+  left: 12%;
   font-size: 1.2em;
-  /* writing-mode: vertical-lr; */
   letter-spacing: 4px;
 }
 
@@ -94,15 +91,14 @@ export default {
   }
   .parent {
     font-size: 0.9em;
-    top: 10%;
+    top: 33%;
   }
   .parent .name {
     font-size: 1.0em;
   }
   .child {
     font-size: 0.9em;
-    /* left: 10%; */
-    top: 12%;
+    top: 37%;
   }
   .child .name {
     font-size: 1.0em;
@@ -115,7 +111,10 @@ export default {
     object-position: 80% 80%;
   }
   .parent {
-    top: 8%;
+    top: 20%;
+  }
+  .child {
+    top: 26%;
   }
 }
 
@@ -125,11 +124,11 @@ export default {
     object-position: 80% 80%;
   }
   .parent {
-    top: 8%;
+    top: 31%;
   }
-  /* .child {
-    left: 12%;
-  } */
+  .child {
+    top: 35%;
+  }
 }
 
 /* 데스크탑 버전 */

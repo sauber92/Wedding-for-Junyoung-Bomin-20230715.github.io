@@ -88,6 +88,9 @@ export default {
   width: max-content;
   z-index: 2;
   text-align: left;
+  width: 50%;
+  left: 0;
+  top: 7%;
 }
 
 .intro-container span {
@@ -114,7 +117,6 @@ export default {
 /* 모바일 버전 */
 @media screen and (max-width: 768px) {
   .intro-container {
-    top: 7%;
     left: 14%;
   }
   .intro-container span {
@@ -125,8 +127,7 @@ export default {
 /* 데스크탑 버전 */
 @media screen and (min-width: 769px) {
   .intro-container {
-    top: 7%;
-    left: 15%;
+    left: 8%;
   }
   .intro-container span {
     font-size: 26px;
