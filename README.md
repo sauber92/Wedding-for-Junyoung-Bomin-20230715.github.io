@@ -25,8 +25,5 @@
 
 *2023.05.24*  
 
-  - [ ] 카카오톡 url로 웹페이지 열었을 경우, Gallery와 Closing 충돌
-  - [ ] Gallery 사진 크기가 다 다름
-  - [ ] Gallery 사진 순서
   - [ ] OpenGraph 이미지 지정해서 docs 폴더 위치
   - [ ] Intro 이미지 수정

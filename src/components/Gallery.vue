@@ -60,70 +60,120 @@ export default {
   data() {
     return {
       items: [
-        {
-          id: 0,
-          popup: false,
-          img: require("../assets/carousel_item_0.jpeg")
-        },
+        // {
+        //   id: 0,
+        //   popup: false,
+        //   img: require("../assets/carousel/1.jpg")
+        // },
         {
           id: 1,
           popup: false,
-          img: require("../assets/carousel_item_1.jpeg")
+          img: require("../assets/carousel/1.jpg")
         },
         {
           id: 2,
           popup: false,
-          img: require("../assets/carousel_item_2.jpeg")
+          img: require("../assets/carousel/2.jpg")
         },
         {
           id: 3,
           popup: false,
-          img: require("../assets/carousel_item_3.jpeg")
+          img: require("../assets/carousel/3.jpg")
         },
         {
           id: 4,
           popup: false,
-          img: require("../assets/carousel_item_4.jpeg")
+          img: require("../assets/carousel/4.jpg")
         },
         {
           id: 5,
           popup: false,
-          img: require("../assets/carousel_item_5.jpeg")
+          img: require("../assets/carousel/5.jpg")
         },
         {
           id: 6,
           popup: false,
-          img: require("../assets/carousel_item_6.jpeg")
+          img: require("../assets/carousel/6.jpg")
         },
         {
           id: 7,
           popup: false,
-          img: require("../assets/carousel_item_7.jpeg")
+          img: require("../assets/carousel/7.jpg")
         },
         {
           id: 8,
           popup: false,
-          img: require("../assets/carousel_item_8.jpeg")
+          img: require("../assets/carousel/8.jpg")
         },
         {
           id: 9,
           popup: false,
-          img: require("../assets/carousel_item_9.jpeg")
+          img: require("../assets/carousel/9.jpg")
         },
         {
           id: 10,
           popup: false,
-          img: require("../assets/carousel_item_10.jpeg")
+          img: require("../assets/carousel/10.jpg")
         },
         {
           id: 11,
           popup: false,
-          img: require("../assets/carousel_item_11.jpeg")
+          img: require("../assets/carousel/11.jpg")
         },
         {
           id: 12,
           popup: false,
-          img: require("../assets/carousel_item_12.jpeg")
+          img: require("../assets/carousel/12.jpg")
+        },
+        {
+          id: 13,
+          popup: false,
+          img: require("../assets/carousel/13.jpg")
+        },
+        {
+          id: 14,
+          popup: false,
+          img: require("../assets/carousel/14.jpg")
+        },
+        {
+          id: 15,
+          popup: false,
+          img: require("../assets/carousel/15.jpg")
+        },
+        {
+          id: 16,
+          popup: false,
+          img: require("../assets/carousel/16.jpg")
+        },
+        {
+          id: 17,
+          popup: false,
+          img: require("../assets/carousel/17.jpg")
+        },
+        {
+          id: 18,
+          popup: false,
+          img: require("../assets/carousel/18.jpg")
+        },
+        {
+          id: 19,
+          popup: false,
+          img: require("../assets/carousel/19.jpg")
+        },
+        {
+          id: 20,
+          popup: false,
+          img: require("../assets/carousel/20.jpg")
+        },
+        {
+          id: 21,
+          popup: false,
+          img: require("../assets/carousel/21.jpg")
+        },
+        {
+          id: 22,
+          popup: false,
+          img: require("../assets/carousel/22.jpg")
         },
 
       ],
