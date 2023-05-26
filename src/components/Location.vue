@@ -99,7 +99,7 @@ export default {
 }
 
 .location {
-  height: calc(var(--vh) * 110);
+  height: calc(var(--vh) * 120);
   position: relative;
   display: flex;
   justify-content: center;

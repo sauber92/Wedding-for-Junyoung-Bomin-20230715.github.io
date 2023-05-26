@@ -29,7 +29,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
-  height: calc(var(--vh) * 100);
+  height: calc(var(--vh) * 120);
   color: #55504f;
 }
 
