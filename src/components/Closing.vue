@@ -111,7 +111,7 @@ export default {
       family1: [
           { position: '신랑', name: '정준영', bank: '국민은행', account: '94726400957'},
           { position: '아버님', name: '정진열', bank: '국민은행', account: '075210246411'},
-          { position: '어머님', name: '유재희(아버님계좌)', bank: '국민은행', account: '075210246411'},
+          { position: '어머님', name: '유재희(정진열)', bank: '국민은행', account: '075210246411'},
       ],
       family2: [
           { position: '신부', name: '전보민', bank: '국민은행', account: '91098818509'},
@@ -276,7 +276,7 @@ export default {
 }
 
 .family .size-change {
-  font-size: 0.5em;
+  font-size: 0.7em;
 }
 
 .family .copy-btn {
