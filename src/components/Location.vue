@@ -140,6 +140,11 @@ export default {
   height: 50%;
 }
 
+.container-address {
+  color: #55504f;
+  font-weight: 600;
+}
+
 .container-trans .transportation {
   color: #5d493b;
   font-weight: 600;
@@ -171,7 +176,6 @@ export default {
   .container-address {
     margin-top: 8%;
     font-size: 1.1em;
-    font-weight: 600;
   }
   .container-address .tel {
     margin-top: 8%;
@@ -192,7 +196,6 @@ export default {
   .container-address {
     margin-top: 10%;
     font-size: 1.2em;
-    font-weight: 600;
   }
   .container-address .tel {
     margin-top: 10%;
@@ -213,7 +216,6 @@ export default {
   .container-address {
     margin-top: 10%;
     font-size: 1.2em;
-    font-weight: 600;
   }
   .container-address .tel {
     margin-top: 8%;
@@ -234,7 +236,6 @@ export default {
   .container-address {
     margin-top: 10%;
     font-size: 1.2em;
-    font-weight: 600;
   }
   .container-address .tel {
     margin-top: 8%;
@@ -259,7 +260,6 @@ export default {
   .container-address {
     margin-top: 3%;
     font-size: 1.2em;
-    font-weight: 600;
   }
   .container-address .tel {
     margin-top: 5%;
