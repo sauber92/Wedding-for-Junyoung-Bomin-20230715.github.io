@@ -57,7 +57,7 @@ export default {
   position: absolute;
   display: flex;
   top: 5%;
-  right: 6%;
+  right: 11%;
   width: max-content;
   font-size: 1em;
   line-height: 2;
