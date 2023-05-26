@@ -273,7 +273,7 @@ export default {
 /* 아이패드 (가로) */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
   .location {
-    height: calc(var(--vh) * 130);
+    height: calc(var(--vh) * 160);
   }
 }
 </style>
