@@ -251,6 +251,9 @@ export default {
 
 /* 갤럭시 폴드 */
 @media screen and (max-device-width : 359px) {
+  .gallery {
+    height: 130vh;
+  }
   .gallery-container {
     position: absolute;
     /* top: 5%; */
@@ -262,7 +265,7 @@ export default {
 /* 아이폰 SE */
 @media screen and (min-device-width : 359px) and (max-device-width : 376px) {
   .gallery {
-    height: 120vh;
+    height: 130vh;
   }
   .gallery-container {
     position: absolute;
@@ -274,6 +277,9 @@ export default {
 
 /* 모바일 버전 */
 @media screen and (min-device-width : 376px) and (max-device-width: 767px) {
+  .gallery {
+    height: 130vh;
+  }
   .gallery-container {
     position: absolute;
     /* top: 2%; */

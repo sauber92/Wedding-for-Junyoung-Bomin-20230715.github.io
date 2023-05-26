@@ -269,4 +269,11 @@ export default {
     line-height: 1.5;
   }
 }
+
+/* 아이패드 (가로) */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+  .location {
+    height: 130vh;
+  }
+}
 </style>
