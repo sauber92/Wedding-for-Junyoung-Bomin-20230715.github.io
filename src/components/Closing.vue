@@ -277,6 +277,7 @@ export default {
 
 .family .size-change {
   font-size: 0.7em;
+  margin-top: 0.15em;
 }
 
 .family .copy-btn {
