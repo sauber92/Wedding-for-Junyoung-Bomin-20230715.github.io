@@ -66,6 +66,7 @@ export default {
   },
   mounted() {
     this.scrollAnimation();
+    this.setScreenSize();
   },
   computed: {
     isScreenHeightTooSmall() {
@@ -73,6 +74,10 @@ export default {
     }
   },
   methods: {
+      setScreenSize() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      },
       scrollAnimation() {
         gsap.timeline({ // HelloCard
           scrollTrigger: {
@@ -178,6 +183,10 @@ export default {
   }
 }
 
+:root {
+  --vh: 1vh;
+}
+
 html {
   animation: blur .7s ease-out ;
   font-family: 'SunBatang-Light';
@@ -213,7 +222,7 @@ body {
   justify-content: center;
   overflow-x: hidden;
   overflow-y: hidden !important;
-  min-height: 100vh;
+  min-height: calc(var(--vh) * 100);
   min-height: -webkit-fill-available;
 }
 
@@ -256,7 +265,7 @@ button, select {
 }
 
 .section {
-  height: 100vh;
+  height: calc(var(--vh) * 100);
   display: flex;
   justify-content: center;
 }
@@ -272,7 +281,7 @@ footer {
 }
 
 .alert {
-  height: 100vh;
+  height: calc(var(--vh) * 100);
   padding-top: 15%;
   background-color: rgb(255, 208, 187);
 }

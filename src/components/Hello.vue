@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
 .hello {
-  height: 100vh;
+  height: calc(var(--vh) * 100);
   position: relative;
   display: flex;
   justify-content: center;

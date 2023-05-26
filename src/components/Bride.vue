@@ -32,7 +32,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: calc(var(--vh) * 100);
   color: #55504f;
 }
 

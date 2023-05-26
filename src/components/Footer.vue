@@ -22,7 +22,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
-  height: 13vh;
+  height: calc(var(--vh) * 13);
   background-color: #f1efea;
 }
 

@@ -205,7 +205,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
-  height: 110vh;
+  height: calc(var(--vh) * 110);
 }
 
 .title {
@@ -252,7 +252,7 @@ export default {
 /* 갤럭시 폴드 */
 @media screen and (max-device-width : 359px) {
   .gallery {
-    height: 130vh;
+    height: calc(var(--vh) * 130);
   }
   .gallery-container {
     position: absolute;
@@ -265,7 +265,7 @@ export default {
 /* 아이폰 SE */
 @media screen and (min-device-width : 359px) and (max-device-width : 376px) {
   .gallery {
-    height: 130vh;
+    height: calc(var(--vh) * 130);
   }
   .gallery-container {
     position: absolute;
@@ -278,7 +278,7 @@ export default {
 /* 모바일 버전 */
 @media screen and (min-device-width : 376px) and (max-device-width: 767px) {
   .gallery {
-    height: 130vh;
+    height: calc(var(--vh) * 130);
   }
   .gallery-container {
     position: absolute;
@@ -291,7 +291,7 @@ export default {
 /* 아이패드 미니 버전 */
 @media screen and (min-device-width : 768px) and (max-device-width: 769px) {
   .gallery {
-    height: 160vh;
+    height: calc(var(--vh) * 160);
   }
   .gallery-container {
     position: absolute;
@@ -314,7 +314,7 @@ export default {
 /* 아이패드 프로 */
 @media only screen and (min-device-width : 1024px) {
   .gallery {
-    height: 150vh;
+    height: calc(var(--vh) * 150);
   }
   .gallery-container {
     position: absolute;
@@ -327,7 +327,7 @@ export default {
 /* 아이패드 (가로) */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
   .gallery {
-    height: 180vh;
+    height: calc(var(--vh) * 180);
   }
   .gallery-container {
     position: absolute;
