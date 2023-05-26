@@ -90,7 +90,7 @@ export default {
   text-align: left;
   width: 50%;
   left: 0;
-  top: 7%;
+  top: 15%;
 }
 
 .intro-container span {

@@ -57,11 +57,11 @@ export default {
   position: absolute;
   display: flex;
   top: 5%;
-  right: 11%;
+  right: 6%;
   width: max-content;
   font-size: 1em;
   line-height: 2;
-  letter-spacing : 4px;
+  letter-spacing : 2px;
 }
 .parent .name {
   font-size: 1.2em;
@@ -89,7 +89,7 @@ export default {
   }
   .parent {
     font-size: 0.9em;
-    top: 10%;
+    top: 11%;
   }
   .parent .name {
     font-size: 1.0em;
@@ -109,7 +109,7 @@ export default {
     object-position: 40% 80%;
   }
   .parent {
-    top: 3%;
+    top: 4%;
   }
   .child {
     top: 8%;
@@ -122,7 +122,7 @@ export default {
     object-position: 40% 80%;
   }
   .parent {
-    top: 10%;
+    top: 11%;
   }
   .child {
     top: 15%;
