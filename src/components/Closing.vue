@@ -21,7 +21,7 @@
               <v-col cols="7" class="col">
                 <v-row>
                   <v-col cols="5" class="v-col-4 pt-1 pb-1 col1">{{ member.position }}</v-col>
-                  <v-col cols="7" class="v-col-4 pt-1 pb-1 col2">{{ member.name }}</v-col>
+                  <v-col cols="7" :class="{ 'v-col-4': true, 'pt-1': true, 'pb-1': true, 'col2': true, 'size-change': index === 2 }">{{ member.name }}</v-col>
                 </v-row>
                 <v-row>
                   <v-col cols="5" class="v-col-4 pt-1 pb-1 col1">{{ member.bank }}</v-col>
@@ -110,13 +110,13 @@ export default {
       selectedMember: {name: '', account: ''},
       family1: [
           { position: '신랑', name: '정준영', bank: '국민은행', account: '94726400957'},
-          { position: '아버님', name: '정진열', bank: '국민은행', account: '01048084682'},
-          { position: '어머님', name: '유재희', bank: '국민은행', account: '01089287034'},
+          { position: '아버님', name: '정진열', bank: '국민은행', account: '075210246411'},
+          { position: '어머님', name: '유재희(아버님계좌)', bank: '국민은행', account: '075210246411'},
       ],
       family2: [
           { position: '신부', name: '전보민', bank: '국민은행', account: '91098818509'},
-          { position: '아버님', name: '전이원', bank: '국민은행', account: '94726400957'},
-          { position: '어머님', name: '양영옥', bank: '국민은행', account: '94726400957'},
+          { position: '아버님', name: '전이원', bank: '국민은행', account: '44442593122097'},
+          { position: '어머님', name: '양영옥', bank: '국민은행', account: '54560101091736'},
       ]
 		};
 	},
@@ -267,10 +267,16 @@ export default {
   text-align: right;
   font-weight: 500;
   color: #afa097;
+  word-break: keep-all;
 }
 
 .family .col .col2 {
   text-align: left;
+  word-break: keep-all;
+}
+
+.family .size-change {
+  font-size: 0.5em;
 }
 
 .family .copy-btn {
