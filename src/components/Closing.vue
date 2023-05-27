@@ -16,22 +16,22 @@
               <font-awesome-icon v-if="show1" icon="fa-solid fa-angle-up" />
             </span>
           </v-btn>
-          <vue-slide-up-down v-model="show1" class="family">
+          <vue-slide-up-down v-model="show1" class="family mt-2">
             <v-row v-for="(member, index) in family1" :key="index" class="row" justify="center">
-              <v-col cols="8" class="col pa-0">
+              <v-col cols="9" class="col pa-0">
                 <v-row>
-                  <v-col cols="5" class="v-col-4 pt-1 pb-1 col1">{{ member.position }}</v-col>
-                  <v-col cols="7" :class="{ 'v-col-4': true, 'pt-1': true, 'pb-1': true, 'col2': true, 'size-change': index === 2 }">{{ member.name }}</v-col>
+                  <v-col cols="4" class="v-col-4 pt-1 pb-1 col1">{{ member.position }}</v-col>
+                  <v-col cols="8" class="v-col-4 pt-1 pb-1 col2">{{ member.name }}</v-col>
                 </v-row>
                 <v-row>
-                  <v-col cols="5" class="v-col-4 pt-1 pb-1 col1">{{ member.bank }}</v-col>
-                  <v-col cols="7" class="v-col-4 pt-1 pb-1 col2 account">{{ member.account }}</v-col>
+                  <v-col cols="4" class="v-col-4 pt-1 pb-1 col1">{{ member.bank }}</v-col>
+                  <v-col cols="8" class="v-col-4 pt-1 pb-1 col2 account">{{ member.account }}</v-col>
                 </v-row>
               </v-col>
-              <v-col cols="4" class="col pa-0">
-                <v-btn class="copy-btn pa-0" variant="flat" size="small" color="#f1efea" @click="copySelectedMember(member)">
+              <v-col cols="3" class="col pa-0">
+                <v-btn class="copy-btn pa-2 ma-0" variant="flat" size="small" color="#f1efea" @click="copySelectedMember(member)">
                   <font-awesome-icon class="copy-icon" icon="fa-regular fa-copy"/>
-                  계좌 복사하기
+                  계좌 복사
                 </v-btn>
                 <v-snackbar v-model="snackbar" :timeout="timeout" variant="flat" color="brown-lighten-4" rounded="pill">
                   <span class="snackbar-content"><strong>{{ selectedMember.name }}</strong>님의 계좌를 복사했습니다.</span>
@@ -51,22 +51,22 @@
               <font-awesome-icon v-if="show2" icon="fa-solid fa-angle-up" />
             </span>
           </v-btn>
-          <vue-slide-up-down v-model="show2" class="family">
+          <vue-slide-up-down v-model="show2" class="family mt-2">
             <v-row v-for="(member, index) in family2" :key="index" class="row" justify="center">
-              <v-col cols="8" class="col pa-0">
+              <v-col cols="9" class="col pa-0">
                 <v-row>
-                  <v-col cols="5" class="v-col-4 pt-1 pb-1 col1">{{ member.position }}</v-col>
-                  <v-col cols="7" class="v-col-4 pt-1 pb-1 col2">{{ member.name }}</v-col>
+                  <v-col cols="4" class="v-col-4 pt-1 pb-1 col1">{{ member.position }}</v-col>
+                  <v-col cols="8" class="v-col-4 pt-1 pb-1 col2">{{ member.name }}</v-col>
                 </v-row>
                 <v-row>
-                  <v-col cols="5" class="v-col-4 pt-1 pb-1 col1">{{ member.bank }}</v-col>
-                  <v-col cols="7" class="v-col-4 pt-1 pb-1 col2 account">{{ member.account }}</v-col>
+                  <v-col cols="4" class="v-col-4 pt-1 pb-1 col1">{{ member.bank }}</v-col>
+                  <v-col cols="8" class="v-col-4 pt-1 pb-1 col2 account">{{ member.account }}</v-col>
                 </v-row>
               </v-col>
-              <v-col cols="4" class="col pa-0">
-                <v-btn class="copy-btn pa-0" variant="flat" size="small" color="#f1efea" @click="copySelectedMember(member)">
+              <v-col cols="3" class="col pa-0 ma-0">
+                <v-btn class="copy-btn pa-2 ma-0" variant="flat" size="small" color="#f1efea" @click="copySelectedMember(member)">
                   <font-awesome-icon class="copy-icon" icon="fa-regular fa-copy" />
-                  계좌 복사하기
+                  계좌 복사
                 </v-btn>
                 <v-snackbar v-model="snackbar" :timeout="timeout" variant="flat" color="brown-lighten-4" rounded="pill">
                   <span class="snackbar-content"><strong>{{ selectedMember.name }}</strong>님의 계좌를 복사했습니다.</span>
@@ -77,7 +77,7 @@
         </div>
       </div>
 
-      <div :class="{'message': true, 'slide-up': !(show1|show2), 'slide-down': show1|show2}">
+      <div :class="{'message': true, 'slide-up': !(show1|show2), 'slide-down-message': show1|show2}">
         <p>
           평생의 짝이 되어<br/>
           믿음의 가정을 이루겠습니다.<br/>
@@ -109,12 +109,12 @@ export default {
       timeout: 1500,
       selectedMember: {name: '', account: ''},
       family1: [
-          { position: '신랑', name: '정준영', bank: '국민은행', account: '94726400957', copy: '94726400957'},
+          { position: '신랑', name: '정준영', bank: '국민은행', account: '94726-4009-57', copy: '94726400957'},
           { position: '아버님', name: '정진열', bank: '국민은행', account: '075-21-0246-411', copy: '075210246411'},
           { position: '어머님', name: '유재희(정진열)', bank: '국민은행', account: '075-21-0246-411', copy: '075210246411'},
       ],
       family2: [
-          { position: '신부', name: '전보민', bank: '국민은행', account: '91098818509', copy: '91098818509'},
+          { position: '신부', name: '전보민', bank: '국민은행', account: '910-9881-8509', copy: '91098818509'},
           { position: '아버님', name: '전이원', bank: '국민은행', account: '444425-93-122097', copy: '44442593122097'},
           { position: '어머님', name: '양영옥', bank: '국민은행', account: '545601-01-091736', copy: '54560101091736'},
       ]
@@ -224,7 +224,7 @@ export default {
   width: 90%;
   left: 5%;
   margin-bottom: 10px;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 .groom {
@@ -242,12 +242,17 @@ export default {
 
 .slide-down {
   transition: transform 0.5s ease;
-  transform: translateY(21em);
+  transform: translateY(23em);
+}
+
+.slide-down-message {
+  transition: transform 0.5s ease;
+  transform: translateY(18em);
 }
 
 .slide-down-share {
   transition: transform 0.5s ease;
-  transform: translateY(28em);
+  transform: translateY(30em);
 }
 
 .family .row {
@@ -276,12 +281,7 @@ export default {
 }
 
 .family .account {
-  font-size: 0.9em;
-}
-
-.family .size-change {
-  font-size: 0.7em;
-  margin-top: 0.15em;
+  font-size: 1em;
 }
 
 .family .copy-btn {
@@ -293,6 +293,7 @@ export default {
   color: #5d493b;
   align-items: center;
   font-size: 0.8em;
+  width: max-content;
 }
 
 .family .copy-icon {
@@ -311,8 +312,8 @@ export default {
 	width: 90%;
 	height: 40%;
 	left: 5%;
-	top: 15em;
-	/* background-color: yellow; */
+	top: 12em;
+  font-size: 1.2em;
 }
 
 .message p {
@@ -341,5 +342,11 @@ export default {
 .share .icon {
   margin-right: 10px;
   color: #5d493b;
+}
+
+@media screen and (max-device-width : 359px) {
+  .account-box .wrapper .family {
+    font-size: 0.9em;
+  }
 }
 </style>

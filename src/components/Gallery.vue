@@ -78,7 +78,7 @@ export default {
         {
           id: 3,
           popup: false,
-          img: require("../assets/carousel/3.jpg")
+          img: require("../assets/carousel/7.jpg")
         },
         {
           id: 4,
@@ -98,7 +98,7 @@ export default {
         {
           id: 7,
           popup: false,
-          img: require("../assets/carousel/7.jpg")
+          img: require("../assets/carousel/3.jpg")
         },
         {
           id: 8,
