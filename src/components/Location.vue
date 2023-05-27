@@ -142,12 +142,12 @@ export default {
 
 .container-address {
   color: #55504f;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .container-trans .transportation {
   color: #5d493b;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .mark {

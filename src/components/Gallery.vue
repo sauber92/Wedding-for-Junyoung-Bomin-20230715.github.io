@@ -68,12 +68,12 @@ export default {
         {
           id: 1,
           popup: false,
-          img: require("../assets/carousel/1.jpg")
+          img: require("../assets/carousel/2.jpg")
         },
         {
           id: 2,
           popup: false,
-          img: require("../assets/carousel/2.jpg")
+          img: require("../assets/carousel/6.jpg")
         },
         {
           id: 3,
@@ -83,17 +83,17 @@ export default {
         {
           id: 4,
           popup: false,
-          img: require("../assets/carousel/4.jpg")
+          img: require("../assets/carousel/8.jpg")
         },
         {
           id: 5,
           popup: false,
-          img: require("../assets/carousel/5.jpg")
+          img: require("../assets/carousel/1.jpg")
         },
         {
           id: 6,
           popup: false,
-          img: require("../assets/carousel/6.jpg")
+          img: require("../assets/carousel/5.jpg")
         },
         {
           id: 7,
@@ -103,7 +103,7 @@ export default {
         {
           id: 8,
           popup: false,
-          img: require("../assets/carousel/8.jpg")
+          img: require("../assets/carousel/4.jpg")
         },
         {
           id: 9,

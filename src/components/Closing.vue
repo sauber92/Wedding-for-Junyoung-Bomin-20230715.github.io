@@ -18,18 +18,18 @@
           </v-btn>
           <vue-slide-up-down v-model="show1" class="family">
             <v-row v-for="(member, index) in family1" :key="index" class="row" justify="center">
-              <v-col cols="7" class="col">
+              <v-col cols="8" class="col pa-0">
                 <v-row>
                   <v-col cols="5" class="v-col-4 pt-1 pb-1 col1">{{ member.position }}</v-col>
                   <v-col cols="7" :class="{ 'v-col-4': true, 'pt-1': true, 'pb-1': true, 'col2': true, 'size-change': index === 2 }">{{ member.name }}</v-col>
                 </v-row>
                 <v-row>
                   <v-col cols="5" class="v-col-4 pt-1 pb-1 col1">{{ member.bank }}</v-col>
-                  <v-col cols="7" class="v-col-4 pt-1 pb-1 col2">{{ member.account }}</v-col>
+                  <v-col cols="7" class="v-col-4 pt-1 pb-1 col2 account">{{ member.account }}</v-col>
                 </v-row>
               </v-col>
-              <v-col cols="5" class="col">
-                <v-btn class="copy-btn" variant="flat" size="small" color="#f1efea" @click="copySelectedMember(member)">
+              <v-col cols="4" class="col pa-0">
+                <v-btn class="copy-btn pa-0" variant="flat" size="small" color="#f1efea" @click="copySelectedMember(member)">
                   <font-awesome-icon class="copy-icon" icon="fa-regular fa-copy"/>
                   계좌 복사하기
                 </v-btn>
@@ -53,18 +53,18 @@
           </v-btn>
           <vue-slide-up-down v-model="show2" class="family">
             <v-row v-for="(member, index) in family2" :key="index" class="row" justify="center">
-              <v-col cols="7" class="col">
+              <v-col cols="8" class="col pa-0">
                 <v-row>
                   <v-col cols="5" class="v-col-4 pt-1 pb-1 col1">{{ member.position }}</v-col>
                   <v-col cols="7" class="v-col-4 pt-1 pb-1 col2">{{ member.name }}</v-col>
                 </v-row>
                 <v-row>
                   <v-col cols="5" class="v-col-4 pt-1 pb-1 col1">{{ member.bank }}</v-col>
-                  <v-col cols="7" class="v-col-4 pt-1 pb-1 col2">{{ member.account }}</v-col>
+                  <v-col cols="7" class="v-col-4 pt-1 pb-1 col2 account">{{ member.account }}</v-col>
                 </v-row>
               </v-col>
-              <v-col cols="5" class="col">
-                <v-btn class="copy-btn" variant="flat" size="small" color="#f1efea" @click="copySelectedMember(member)">
+              <v-col cols="4" class="col pa-0">
+                <v-btn class="copy-btn pa-0" variant="flat" size="small" color="#f1efea" @click="copySelectedMember(member)">
                   <font-awesome-icon class="copy-icon" icon="fa-regular fa-copy" />
                   계좌 복사하기
                 </v-btn>
@@ -109,14 +109,14 @@ export default {
       timeout: 1500,
       selectedMember: {name: '', account: ''},
       family1: [
-          { position: '신랑', name: '정준영', bank: '국민은행', account: '94726400957'},
-          { position: '아버님', name: '정진열', bank: '국민은행', account: '075210246411'},
-          { position: '어머님', name: '유재희(정진열)', bank: '국민은행', account: '075210246411'},
+          { position: '신랑', name: '정준영', bank: '국민은행', account: '94726400957', copy: '94726400957'},
+          { position: '아버님', name: '정진열', bank: '국민은행', account: '075-21-0246-411', copy: '075210246411'},
+          { position: '어머님', name: '유재희(정진열)', bank: '국민은행', account: '075-21-0246-411', copy: '075210246411'},
       ],
       family2: [
-          { position: '신부', name: '전보민', bank: '국민은행', account: '91098818509'},
-          { position: '아버님', name: '전이원', bank: '국민은행', account: '44442593122097'},
-          { position: '어머님', name: '양영옥', bank: '국민은행', account: '54560101091736'},
+          { position: '신부', name: '전보민', bank: '국민은행', account: '91098818509', copy: '91098818509'},
+          { position: '아버님', name: '전이원', bank: '국민은행', account: '444425-93-122097', copy: '44442593122097'},
+          { position: '어머님', name: '양영옥', bank: '국민은행', account: '545601-01-091736', copy: '54560101091736'},
       ]
 		};
 	},
@@ -132,7 +132,7 @@ export default {
     },
     copySelectedMember(member) {
       const textarea = document.createElement('textarea');
-      textarea.value = member.account;
+      textarea.value = member.copy;
       document.body.appendChild(textarea);
       textarea.select();
       textarea.setSelectionRange(0, 9999);
@@ -275,6 +275,10 @@ export default {
   word-break: keep-all;
 }
 
+.family .account {
+  font-size: 0.9em;
+}
+
 .family .size-change {
   font-size: 0.7em;
   margin-top: 0.15em;
@@ -288,6 +292,7 @@ export default {
   justify-content: center;
   color: #5d493b;
   align-items: center;
+  font-size: 0.8em;
 }
 
 .family .copy-icon {

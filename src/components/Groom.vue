@@ -62,10 +62,10 @@ export default {
   font-size: 1em;
   line-height: 2;
   letter-spacing : 2px;
+  font-weight: 400;
 }
 .parent .name {
   font-size: 1.2em;
-  font-weight: 600;
 }
 
 .child {
@@ -75,11 +75,11 @@ export default {
   right: 11%;
   font-size: 1.2em;
   letter-spacing: 4px;
+  font-weight: 500;
 }
 
 .child .name {
   font-size: 1.4em;
-  font-weight: 700;
 }
 
 /* 갤럭시 폴드 */

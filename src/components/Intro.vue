@@ -98,7 +98,7 @@ export default {
   font-size: 20px;
   font-weight: 400;
   line-height: normal;
-  color: #242424;
+  color: #55504f;
 }
 
 .vertical-text {
