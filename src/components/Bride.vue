@@ -4,7 +4,7 @@
 <!-- 글자효과: 스크롤에 따라 사진 위or오른쪽에 글자 나오게 -->
 <template>
   <div class="bride">
-    <img alt="bride" src="@/assets/bride.jpg" class="bride-img">
+    <img alt="bride" src="@/assets/bride.avif" class="bride-img">
     <div class="bride-container">
       <div class="parent">
         <span>

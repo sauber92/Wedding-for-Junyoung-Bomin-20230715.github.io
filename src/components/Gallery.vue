@@ -68,112 +68,112 @@ export default {
         {
           id: 1,
           popup: false,
-          img: require("../assets/carousel/2.jpg")
+          img: require("../assets/carousel/2.avif")
         },
         {
           id: 2,
           popup: false,
-          img: require("../assets/carousel/6.jpg")
+          img: require("../assets/carousel/6.avif")
         },
         {
           id: 3,
           popup: false,
-          img: require("../assets/carousel/7.jpg")
+          img: require("../assets/carousel/7.avif")
         },
         {
           id: 4,
           popup: false,
-          img: require("../assets/carousel/8.jpg")
+          img: require("../assets/carousel/8.avif")
         },
         {
           id: 5,
           popup: false,
-          img: require("../assets/carousel/1.jpg")
+          img: require("../assets/carousel/1.avif")
         },
         {
           id: 6,
           popup: false,
-          img: require("../assets/carousel/5.jpg")
+          img: require("../assets/carousel/5.avif")
         },
         {
           id: 7,
           popup: false,
-          img: require("../assets/carousel/3.jpg")
+          img: require("../assets/carousel/3.avif")
         },
         {
           id: 8,
           popup: false,
-          img: require("../assets/carousel/4.jpg")
+          img: require("../assets/carousel/4.avif")
         },
         {
           id: 9,
           popup: false,
-          img: require("../assets/carousel/9.jpg")
+          img: require("../assets/carousel/9.avif")
         },
         {
           id: 10,
           popup: false,
-          img: require("../assets/carousel/10.jpg")
+          img: require("../assets/carousel/10.avif")
         },
         {
           id: 11,
           popup: false,
-          img: require("../assets/carousel/11.jpg")
+          img: require("../assets/carousel/11.avif")
         },
         {
           id: 12,
           popup: false,
-          img: require("../assets/carousel/12.jpg")
+          img: require("../assets/carousel/12.avif")
         },
         {
           id: 13,
           popup: false,
-          img: require("../assets/carousel/13.jpg")
+          img: require("../assets/carousel/13.avif")
         },
         {
           id: 14,
           popup: false,
-          img: require("../assets/carousel/14.jpg")
+          img: require("../assets/carousel/14.avif")
         },
         {
           id: 15,
           popup: false,
-          img: require("../assets/carousel/15.jpg")
+          img: require("../assets/carousel/15.avif")
         },
         {
           id: 16,
           popup: false,
-          img: require("../assets/carousel/16.jpg")
+          img: require("../assets/carousel/16.avif")
         },
         {
           id: 17,
           popup: false,
-          img: require("../assets/carousel/17.jpg")
+          img: require("../assets/carousel/17.avif")
         },
         {
           id: 18,
           popup: false,
-          img: require("../assets/carousel/18.jpg")
+          img: require("../assets/carousel/18.avif")
         },
         {
           id: 19,
           popup: false,
-          img: require("../assets/carousel/19.jpg")
+          img: require("../assets/carousel/19.avif")
         },
         {
           id: 20,
           popup: false,
-          img: require("../assets/carousel/20.jpg")
+          img: require("../assets/carousel/20.avif")
         },
         {
           id: 21,
           popup: false,
-          img: require("../assets/carousel/21.jpg")
+          img: require("../assets/carousel/21.avif")
         },
         {
           id: 22,
           popup: false,
-          img: require("../assets/carousel/22.jpg")
+          img: require("../assets/carousel/22.avif")
         },
 
       ],

@@ -4,7 +4,7 @@
 <!-- 글자효과: 스크롤에 따라 사진 위or오른쪽에 글자 나오게 -->
 <template>
   <div class="groom">
-    <img alt="groom" src="@/assets/groom.jpg" class="groom-img">
+    <img alt="groom" src="@/assets/groom.avif" class="groom-img">
     <div class="groom-container">
       <div class="parent">
         <span>
