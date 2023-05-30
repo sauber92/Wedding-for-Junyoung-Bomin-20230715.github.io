@@ -66,6 +66,8 @@ export default {
   display: flex;
   justify-content: center;
   color: #55504f;
+  background-image: linear-gradient(to bottom, rgba(241, 239, 234, 1), rgb(255, 255, 255));
+  margin-top: -6%;
 }
 
 .container {
