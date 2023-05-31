@@ -4,7 +4,7 @@
 <!-- 글자효과: 한번에 fade로 나오기 -->
 <template>
   <div class="intro">
-    <img alt="Intro" src="@/assets/mainveiw_0.avif" class="intro-img">
+    <img alt="Intro" src="@/assets/mainveiw_0.gif" class="intro-img">
     <div class="intro-container" data-aos="fade" data-aos-delay="300" data-aos-duration="2000">
       <span class="vertical-text">
         <span v-if="!hasQuery">
