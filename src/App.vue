@@ -70,7 +70,8 @@ export default {
   },
   computed: {
     isScreenHeightTooSmall() {
-      return window.innerHeight < this.screenHeightThreshold;
+      // return window.innerHeight < this.screenHeightThreshold;
+      return false;
     }
   },
   methods: {
