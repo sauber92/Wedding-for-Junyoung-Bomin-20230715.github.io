@@ -40,7 +40,7 @@
                   <v-carousel-item
                     v-for="(item, index) in items"
                     :key="index"
-                    :src="item.img"
+                    :src="getImage(item)"
                     contains
                   ></v-carousel-item>
                 </v-carousel>

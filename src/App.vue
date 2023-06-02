@@ -54,7 +54,7 @@ export default {
   data() {
     return {
       screenHeightThreshold: 600, // 세로 길이 임계값
-      avifSupported: this.checkAVIFSupport(),
+      avifSupported: true,
     }
   },
   beforeMount() {
@@ -66,6 +66,7 @@ export default {
     AOS.refresh(true)
   },
   mounted() {
+    this.checkAVIFSupport();
     this.scrollAnimation();
     this.setScreenSize();
   },
@@ -81,12 +82,10 @@ export default {
         avif.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUEAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAABYAAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAEAAAABAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgSAAAAAAABNjb2xybmNseAACAAIABoAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAAB5tZGF0EgAKBzgADlAgIGkyCR/wAABAAACvcA==';
 
         avif.onload = () => {
-          console.log('avif');
-          return true;
+          this.avifSupported = true;
         }
         avif.onerror = () => {
-          console.log('jpg');
-          return false;
+          this.avifSupported = false;
         }
       },
       setScreenSize() {
