@@ -79,16 +79,15 @@ export default {
       checkAVIFSupport() {
         const avif = new Image();
         avif.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUEAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAABYAAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAEAAAABAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgSAAAAAAABNjb2xybmNseAACAAIABoAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAAB5tZGF0EgAKBzgADlAgIGkyCR/wAABAAACvcA==';
-        
-        return avif.decode().then(() => {
-          // avif가 지원되는 경우
+
+        avif.onload = () => {
           console.log('avif');
           return true;
-        }).catch(() => {
-          // avif가 지원되지 않는 경우
+        }
+        avif.onerror = () => {
           console.log('jpg');
           return false;
-        });
+        }
       },
       setScreenSize() {
         let vh = window.innerHeight * 0.01;
