@@ -333,7 +333,7 @@ export default {
 }
 
 /* 최소 heihgt */
-@media (max-height : 800px), (orientation: landscape) {
+@media (max-height : 800px) {
   .gallery {
     height: 1250px;
   }
@@ -388,6 +388,13 @@ export default {
     /* top: 2%; */
     left: 0%;
     width: 100%;
+  }
+}
+
+/* landscape */
+@media (orientation: landscape) {
+  .gallery {
+    height: 1450px;
   }
 }
 </style>
