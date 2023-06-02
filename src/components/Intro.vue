@@ -114,6 +114,13 @@ export default {
   letter-spacing: 0px;
 }
 
+/* 최소 heihgt */
+@media (max-height : 600px) {
+  .intro {
+    height: 850px;
+  }
+}
+
 /* 모바일 버전 */
 @media screen and (max-width: 768px) {
   .intro-container {

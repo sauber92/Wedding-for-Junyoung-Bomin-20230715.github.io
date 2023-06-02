@@ -1,7 +1,7 @@
 <!-- 출력순서: 5 -->
 <!-- 사진: X -->
 <template>
-  <div class="date">
+  <div class="date-section">
     <div class="date-container" ref="startAnimation">
       <div class="date-month half">
         <span data-aos="fade" class="font-month animate-month"> {{ month }} <span class="date">월</span> </span>
@@ -75,6 +75,11 @@ export default {
 </script>
 
 <style scoped>
+.date-section {
+  position: relative;
+  display: flex;
+}
+
 .date {
   position: relative;
   display: flex;
@@ -226,6 +231,16 @@ export default {
   .font-day {
     bottom: 36%;
     right: 28%;
+  }
+}
+
+/* 최소 heihgt */
+@media (max-height : 600px) {
+  .date-section {
+    height: 850px;
+  }
+  .date-container {
+    height: 850px;
   }
 }
 </style>

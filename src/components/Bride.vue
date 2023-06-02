@@ -112,6 +112,13 @@ export default {
   }
 }
 
+/* 최소 heihgt */
+@media (max-height : 600px) {
+  .bride {
+    height: 850px;
+  }
+}
+
 /* 아이폰 SE */
 @media screen and (min-device-width : 359px) and (max-device-width : 376px) {
   .bride-img {

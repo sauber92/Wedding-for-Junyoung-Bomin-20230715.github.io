@@ -296,6 +296,49 @@ export default {
   transform: translate(0%, -50%);
 }
 
+/* 데스크탑 버전 */
+@media screen and (min-device-width: 769px) and (max-device-width : 1024px) {
+  .gallery-container {
+    position: absolute;
+    /* top: 0; */
+    left: 0%;
+    width: 100%;
+  }
+}
+
+/* 아이패드 프로 */
+@media only screen and (min-device-width : 1024px) {
+  .gallery {
+    height: calc(var(--vh) * 150);
+  }
+  .gallery-container {
+    position: absolute;
+    /* top: 0; */
+    left: 0%;
+    width: 100%;
+  }
+}
+
+/* 아이패드 (가로) */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+  .gallery {
+    height: calc(var(--vh) * 180);
+  }
+  .gallery-container {
+    position: absolute;
+    /* top: 0; */
+    left: 0%;
+    width: 100%;
+  }
+}
+
+/* 최소 heihgt */
+@media (max-height : 800px) {
+  .gallery {
+    height: 1250px;
+  }
+}
+
 /* 갤럭시 폴드 */
 @media screen and (max-device-width : 359px) {
   .gallery {
@@ -343,42 +386,6 @@ export default {
   .gallery-container {
     position: absolute;
     /* top: 2%; */
-    left: 0%;
-    width: 100%;
-  }
-}
-
-/* 데스크탑 버전 */
-@media screen and (min-device-width: 769px) and (max-device-width : 1024px) {
-  .gallery-container {
-    position: absolute;
-    /* top: 0; */
-    left: 0%;
-    width: 100%;
-  }
-}
-
-/* 아이패드 프로 */
-@media only screen and (min-device-width : 1024px) {
-  .gallery {
-    height: calc(var(--vh) * 150);
-  }
-  .gallery-container {
-    position: absolute;
-    /* top: 0; */
-    left: 0%;
-    width: 100%;
-  }
-}
-
-/* 아이패드 (가로) */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-  .gallery {
-    height: calc(var(--vh) * 180);
-  }
-  .gallery-container {
-    position: absolute;
-    /* top: 0; */
     left: 0%;
     width: 100%;
   }

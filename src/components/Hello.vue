@@ -4,7 +4,6 @@
 <!-- 글자효과: 천천히 올라오는 효과, 문단 별로 -->
 <template>
   <div class="hello">
-    <!-- <img alt="hello" src="@/assets/mainveiw_0.gif" class="hello-img"> -->
     <div class="hello-container">
       <div class="box">
         <p class="msg1">안녕하세요.<br/>신랑 정준영, 신부 전보민입니다.</p>
@@ -40,5 +39,12 @@ export default {
   align-items: center;
   line-height: 2;
   font-size: 1.2em;
+}
+
+/* 최소 heihgt */
+@media (max-height : 600px) {
+  .hello {
+    height: 850px;
+  }
 }
 </style>

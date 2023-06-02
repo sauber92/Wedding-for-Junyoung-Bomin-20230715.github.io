@@ -89,6 +89,14 @@ export default {
   display: inline-block;
 }
 
+/* 최소 heihgt */
+@media (max-height : 600px) {
+  .time {
+    height: 850px;
+    margin-top: -20px;
+  }
+}
+
 /* 모바일 버전 */
 @media screen and (max-width: 768px) {
   .am {

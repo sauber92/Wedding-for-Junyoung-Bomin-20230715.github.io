@@ -92,6 +92,13 @@ export default {
   font-size: 1.4em;
 }
 
+/* 최소 heihgt */
+@media (max-height : 600px) {
+  .groom {
+    height: 850px;
+  }
+}
+
 /* 갤럭시 폴드 */
 @media screen and (max-device-width : 359px) {
   .groom-img {

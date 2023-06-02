@@ -53,7 +53,7 @@ export default {
   },
   data() {
     return {
-      screenHeightThreshold: 600, // 세로 길이 임계값
+      screenHeightThreshold: 300, // 세로 길이 임계값
       avifSupported: true,
     }
   },
@@ -72,94 +72,93 @@ export default {
   },
   computed: {
     isScreenHeightTooSmall() {
-      // return window.innerHeight < this.screenHeightThreshold;
-      return false;
+      return window.innerHeight < this.screenHeightThreshold;
     }
   },
   methods: {
-      checkAVIFSupport() {
-        const avif = new Image();
-        avif.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUEAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAABYAAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAEAAAABAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgSAAAAAAABNjb2xybmNseAACAAIABoAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAAB5tZGF0EgAKBzgADlAgIGkyCR/wAABAAACvcA==';
+    checkAVIFSupport() {
+      const avif = new Image();
+      avif.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUEAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAABYAAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAEAAAABAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgSAAAAAAABNjb2xybmNseAACAAIABoAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAAB5tZGF0EgAKBzgADlAgIGkyCR/wAABAAACvcA==';
 
-        avif.onload = () => {
-          this.avifSupported = true;
+      avif.onload = () => {
+        this.avifSupported = true;
+      }
+      avif.onerror = () => {
+        this.avifSupported = false;
+      }
+    },
+    setScreenSize() {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    },
+    scrollAnimation() {
+      gsap.timeline({ // HelloCard
+        scrollTrigger: {
+          trigger: ".hello",
+          start: "top+=5px center",
+          end: "bottom top",
         }
-        avif.onerror = () => {
-          this.avifSupported = false;
+      })
+      .from(".msg1", { opacity: 0 })
+      .from(".msg2", { opacity: 0 })
+
+      gsap.timeline({ // GroomCard
+        scrollTrigger: {
+          trigger: ".groom",
+          start: "top+=5px center",
+          end: "bottom top",
         }
-      },
-      setScreenSize() {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-      },
-      scrollAnimation() {
-        gsap.timeline({ // HelloCard
-          scrollTrigger: {
-            trigger: ".hello",
-            start: "top+=5px center",
-            end: "bottom top",
-          }
-        })
-        .from(".msg1", { opacity: 0 })
-        .from(".msg2", { opacity: 0 })
+      })
+      .from(".groom-container .parent", { opacity: 0 })
+      .from(".groom-container .child", { opacity: 0 })
 
-        gsap.timeline({ // GroomCard
-          scrollTrigger: {
-            trigger: ".groom",
-            start: "top+=5px center",
-            end: "bottom top",
-          }
-        })
-        .from(".groom-container .parent", { opacity: 0 })
-        .from(".groom-container .child", { opacity: 0 })
+      gsap.timeline({ // BridCard
+        scrollTrigger: {
+          trigger: ".bride",
+          start: "top+=5px center",
+          end: "bottom top",
+        }
+      })
+      .from(".bride-container .parent", { opacity: 0 })
+      .from(".bride-container .child", { opacity: 0 })
 
-        gsap.timeline({ // BridCard
-          scrollTrigger: {
-            trigger: ".bride",
-            start: "top+=5px center",
-            end: "bottom top",
-          }
-        })
-        .from(".bride-container .parent", { opacity: 0 })
-        .from(".bride-container .child", { opacity: 0 })
+      gsap.timeline({ // DateCard
+        scrollTrigger: {
+          trigger: ".date",
+          start: "top center",
+          end: "top bottom",
+        }
+      })
 
-        gsap.timeline({ // DateCard
-          scrollTrigger: {
-            trigger: ".date",
-            start: "top center",
-            end: "top bottom",
-          }
-        })
+      gsap.timeline({ // TimeCard
+        scrollTrigger: {
+          trigger: ".time",
+          start: "top center",
+          end: "center center",
+        }
+      })
+      .from(".time .container", { opacity: 0 })
 
-        gsap.timeline({ // TimeCard
-          scrollTrigger: {
-            trigger: ".time",
-            start: "top center",
-            end: "center center",
-          }
-        })
-        .from(".time .container", { opacity: 0 })
+      gsap.timeline({ // SearchCard
+        scrollTrigger: {
+          trigger: ".search",
+          start: "top center",
+          end: "center center",
+        }
+      })
+      .from(".search-box", { opacity: 0 })
+      .from(".search-txt", { opacity: 0 })
 
-        gsap.timeline({ // SearchCard
-          scrollTrigger: {
-            trigger: ".search",
-            start: "top center",
-            end: "center center",
-          }
-        })
-        .from(".search-box", { opacity: 0 })
-        .from(".search-txt", { opacity: 0 })
-
-        gsap.timeline({ // LocationCard
-          scrollTrigger: {
-            trigger: ".location",
-            start: "top+=5px center",
-            end: "center top",
-          }
-        })
-        .from(".title", { opacity: 0 })
-        .from(".map", { opacity: 0 })
-        .from(".location .container", { opacity: 0 })
+      gsap.timeline({ // LocationCard
+        scrollTrigger: {
+          trigger: ".location",
+          start: "top+=5px center",
+          end: "center top",
+        }
+      })
+      .from(".title", { opacity: 0 })
+      .from(".map", { opacity: 0 })
+      .from(".location .container", { opacity: 0 })
     }
   }
 }
