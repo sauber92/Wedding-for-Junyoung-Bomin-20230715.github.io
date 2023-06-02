@@ -82,9 +82,11 @@ export default {
         
         return avif.decode().then(() => {
           // avif가 지원되는 경우
+          console.log('avif');
           return true;
         }).catch(() => {
           // avif가 지원되지 않는 경우
+          console.log('jpg');
           return false;
         });
       },
