@@ -4,7 +4,7 @@
 <!-- 글자효과: 스크롤에 따라 사진 위or오른쪽에 글자 나오게 -->
 <template>
   <div class="groom">
-    <img alt="groom" src="@/assets/groom.avif" class="groom-img">
+    <img alt="groom" :src="imageSrc" class="groom-img">
     <div class="groom-container">
       <div class="parent">
         <span>
@@ -20,7 +20,17 @@
 
 <script>
 export default {
-  name: 'GroomCard'
+  name: 'GroomCard',
+  props: ['avif'],
+  computed: {
+    imageSrc() {
+      if (this.avif) {
+        return require('@/assets/groom.avif');
+      } else {
+        return require('@/assets/groom.jpg');
+      }
+    }
+  }
 }
 </script>
 

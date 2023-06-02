@@ -7,13 +7,13 @@
   <div v-if="!isScreenHeightTooSmall">
     <IntroCard class="section"/>
     <HelloCard class="section"/>
-    <GroomCard class="section"/>
-    <BrideCard class="section"/>
+    <GroomCard :avif="avifSupported" class="section"/>
+    <BrideCard :avif="avifSupported" class="section"/>
     <DateCard class="section"/>
     <TimeCard class="section"/>
     <SearchCard class="section"/>
     <LocationCard class="section"/>
-    <GalleryCard class="section"/>
+    <GalleryCard :avif="avifSupported" class="section"/>
     <ClosingCard class="section"/>
     <FooterCard class="section"/>
   </div>
@@ -53,7 +53,8 @@ export default {
   },
   data() {
     return {
-      screenHeightThreshold: 600 // 세로 길이 임계값
+      screenHeightThreshold: 600, // 세로 길이 임계값
+      avifSupported: this.checkAVIFSupport(),
     }
   },
   beforeMount() {
@@ -75,6 +76,18 @@ export default {
     }
   },
   methods: {
+      checkAVIFSupport() {
+        const avif = new Image();
+        avif.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUEAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAABYAAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAEAAAABAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgSAAAAAAABNjb2xybmNseAACAAIABoAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAAB5tZGF0EgAKBzgADlAgIGkyCR/wAABAAACvcA==';
+        
+        return avif.decode().then(() => {
+          // avif가 지원되는 경우
+          return true;
+        }).catch(() => {
+          // avif가 지원되지 않는 경우
+          return false;
+        });
+      },
       setScreenSize() {
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
